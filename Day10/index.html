@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Display & Position</title>
+    <style>
+      body {
+        margin-left: 20px;
+        padding: 0;
+        height: 100vh;
+        background: #f2f2f2;
+        font-family: sans-serif;
+      }
+      .relative-box {
+        background-color: rgb(215, 146, 146);
+        width: 100px;
+        height: 100px;
+        position: relative;
+        margin-bottom: 10px;
+        z-index: 1;
+      }
+      .relative-Container {
+        background-color: rgb(96, 228, 96);
+        width: 200px;
+        height: 200px;
+        position: relative;
+        margin-bottom: 10px;
+        z-index: 0;
+      }
+      .absolute-box {
+        background-color: rgb(102, 102, 229);
+        width: 90px;
+        height: 90px;
+        position: absolute;
+        top: 50px;
+        left: 50px;
+        z-index: 2;
+      }
+      .fixed-box {
+        background-color: rgb(237, 128, 195);
+        width: 90px;
+        height: 90px;
+        position: fixed;
+        top: 50px;
+        left: 50px;
+      }
+      .Homebox1 {
+        border: 1px solid blueviolet;
+        padding: 10px;
+        margin: 20px;
+        width: 90%;
+        height: 50px;
+        box-sizing: content-box;
+        display: inline-block;
+        position: fixed;
+      }
+      .Homebox2 {
+        border: 6px double rgb(173, 205, 14);
+        padding: 10px;
+        margin-top: 100px;
+        width: 200px;
+        height: 100px;
+        position: absolute;
+      }
+      .button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: aquamarine;
+        height: 50px;
+        width: 100px;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Mini Challenge - Display & Position</h2>
+    <div class="relative-box">Relative Position</div>
+    <div class="relative-Container">
+      Relative Container
+      <div class="absolute-box">Absolute Position</div>
+    </div>
+    <div class="fixed-box">Fixed Position</div>
+    <hr />
+    <h2>Homework - Display & Position</h2>
+    <div class="Homebox1">
+      <p>This is the Header</p>
+    </div>
+    <div class="Homebox2">
+      <p>Absolute</p>
+      <button class="button">Click</button>
+    </div>
+  </body>
+</html>

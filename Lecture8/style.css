@@ -1,0 +1,31 @@
+.heading{
+  font-family: roboto;
+  color: #fb7a01;
+  text-align: center;
+  font-size: 40px;
+}
+.paragraph{
+  font-family: roboto;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 18px;
+  font-style: italic;
+}
+.paragraph1{
+  font-family: roboto;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 18px;
+  line-height: 1.6;
+  letter-spacing: 2px;
+  font-style:unset;
+}
+.box{
+  background-color: #f3bb7f;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 10px;
+}
+.link{
+  color: #000000;
+  text-decoration: none;
+  font-size: larger;
+}

@@ -1,0 +1,14 @@
+.heading{
+  color: #1abc9c;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+.paragraph{
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 18px;
+  line-height: 1.6;
+}
+.link{
+  color: #3498db;
+  text-decoration: none;
+}

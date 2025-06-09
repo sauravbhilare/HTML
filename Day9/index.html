@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Box Model Deep Dive</title>
+    <style>
+      .minibox {
+        border: 3px dashed #e74c3c;
+        padding: 20px;
+        margin: 40px;
+        width: 300px;
+        height: 200px;
+        box-sizing: border-box;
+      }
+
+      .Homebox1 {
+        border: 1px solid blueviolet;
+        padding: 50px;
+        margin: 20px;
+        width: 200px;
+        height: 200px;
+        box-sizing: content-box;
+        display: inline-block;
+      }
+
+      .Homebox2 {
+        border: 6px double rgb(173, 205, 14);
+        padding: 50px;
+        margin: 20px;
+        width: 200px;
+        height: 200px;
+        box-sizing: border-box;
+        display: inline-block;
+      }
+
+      .Homebox3 {
+        border: 6px groove rgb(8, 170, 170);
+        padding: 20px;
+        margin: 30px;
+        width: 200px;
+        height: 200px;
+        /* box-sizing: initial; */
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Box Model Deep Dive - Mini Challenge</h2>
+    <div class="minibox">
+      <p>Box Model Mini Challenge</p>
+    </div>
+    <hr />
+
+    <h2>Box Model Deep Dive - Home Work</h2>
+    <div class="Homebox1">
+      <p>Box Model Home Work</p>
+    </div>
+
+    <div class="Homebox2">
+      <p>Box Model Home Work</p>
+    </div>
+
+    <div class="Homebox3">
+      <p>Box Model Home Work</p>
+    </div>
+  </body>
+</html>

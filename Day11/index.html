@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Backgrounds, Borders & Buttons</title>
+    <style>
+      .button {
+        background-image: linear-gradient(to right, red, yellow);
+        border: solid 1px red;
+        padding: 20px;
+        width: 100px;
+        text-align: center;
+        font-size: 16px;
+        cursor: pointer;
+        border-radius: 10px;
+        display: inline-block;
+        color: white;
+      }
+
+      .button:hover {
+        background-image: linear-gradient(to right, yellow, red);
+      }
+      .container {
+        background-image: url("https://www.lehladakhtaxis.com/img/sightseeing-tours/667x270_nubra_valley_pangong_lake_tour_ladakh.jpg");
+        background-size: cover;
+        background-position: center;
+        height: 300px;
+        width: 300px;
+
+        border: solid 1px red;
+        border-radius: 150px;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="button">Submit</button>
+    <br />
+    <div class="container"></div>
+  </body>
+</html>
