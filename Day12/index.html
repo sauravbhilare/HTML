@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Myntra</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2x 20px;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        top: 0;
+        position: sticky;
+      }
+      .nav-bar {
+        display: flex;
+        align-items: center;
+        font-family: "Roboto", sans-serif;
+      }
+      .nav-bar img {
+        margin-right: 60px;
+        margin-left: 50px;
+      }
+      .nav-bar ul {
+        display: flex;
+        list-style: none;
+      }
+      .nav-bar li {
+        margin-right: 30px;
+        font-weight: bold;
+      }
+      .new {
+        color: #eb008b;
+        font-weight: bold;
+        vertical-align: super;
+        font-size: smaller;
+      }
+      .search-bar {
+        position: relative;
+        width: 400px;
+      }
+      .search-bar .search-icon {
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #888;
+        font-size: 18px;
+        pointer-events: none;
+      }
+      .search-bar input[type="text"] {
+        width: 100%;
+        padding: 10px 10px 10px 36px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      .nav-bar .icon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .user-icon,
+      .wishlist-icon,
+      .bag-icon {
+        font-size: 20px;
+        margin-right: 10px;
+      }
+      .breadcrumb {
+        margin: 20px;
+        margin-bottom: 10px;
+        font-family: "Roboto", sans-serif;
+      }
+      .count {
+        margin-top: 10px;
+      }
+      .filter {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+      }
+      .filter-left {
+        display: flex;
+        align-items: center;
+      }
+      .filter-list {
+        margin-left: 250px;
+        display: flex;
+        align-items: center;
+        padding: 0;
+        font-size: smaller;
+      }
+      .filter-list ul {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+      .filter-list li {
+        margin-right: 30px;
+      }
+      .sort-by {
+        border: 1px solid #ccc;
+        padding: 10px;
+        width: 250px;
+        font-size: 14px;
+      }
+      .products {
+        margin: 30px;
+        margin-top: 0px;
+        font-family: "Roboto", sans-serif;
+      }
+      .left {
+        width: 20%;
+        float: left;
+      }
+      .category {
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-bottom: #ccc 1px solid;
+      }
+      .category-menu {
+        margin-top: 10px;
+      }
+      .brands {
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        border-bottom: #ccc 1px solid;
+      }
+      .brand-menu {
+        margin-top: 10px;
+      }
+      .count1 {
+        color: #888;
+        vertical-align: sub;
+        font-size: 10px;
+      }
+      .right {
+        width: 80%;
+        float: right;
+        border-left: #ccc 1px solid;
+      }
+      .product-list {
+        display: flex;
+      }
+      .product-item {
+        width: 20%;
+        margin: 10px;
+        padding: 10px;
+      }
+      .product-item:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .card {
+        max-width: 300px;
+        margin: auto;
+
+        font-family: arial;
+      }
+      .card-body {
+        padding: 10px;
+      }
+      .original-price {
+        font-size: smaller;
+        color: #888;
+        text-decoration: line-through;
+      }
+      .card-text {
+        font-size: small;
+        color: #615f5f;
+      }
+      .card-price {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-bar">
+        <img src="Img/myntra_logo.webp" alt="Logo" style="width: 80px" />
+        <ul>
+          <li>MEN</li>
+          <li>WOMEN</li>
+          <li>KIDS</li>
+          <li>HOME</li>
+          <li>BEAUTY</li>
+          <li>GENZ</li>
+          <li>STUDIO <span class="new">NEW</span></li>
+        </ul>
+      </div>
+      <div class="search-bar">
+        <i class="fa fa-search search-icon"></i>
+        <input type="text" placeholder="Search for products, brands and more" />
+      </div>
+      <div class="nav-bar">
+        <ul>
+          <li class="icon">
+            <i class="fa fa-user user-icon"></i>
+            <span>Profile</span>
+          </li>
+          <li class="icon">
+            <i class="fa fa-heart-o wishlist-icon"></i>
+            <span>Wishlist</span>
+          </li>
+          <li class="icon">
+            <i class="fa fa-shopping-bag bag-icon"></i>
+            <span>Bag</span>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <section class="breadcrumb">
+      <div class="locat">
+        <span>
+          Home / Clothing / <span style="font-weight: 500">Men T-shirts</span>
+        </span>
+      </div>
+      <div class="count">
+        <span style="font-weight: 500">Men T-shirts</span>
+        <span style="color: #888">- 220842 items</span>
+      </div>
+      <div class="filter">
+        <div class="filter-left">
+          <div class="filter-menu">
+            <span style="font-weight: 700">FILTERS</span>
+          </div>
+          <div class="filter-list">
+            <ul>
+              <li>Bundles <i class="fa fa-angle-down"></i></li>
+              <li>Country of Origin <i class="fa fa-angle-down"></i></li>
+              <li>Size <i class="fa fa-angle-down"></i></li>
+            </ul>
+          </div>
+        </div>
+        <div class="sort-by">
+          <span
+            >Sort By :
+            <span style="font-weight: 700">
+              Recommended
+              <i
+                class="fa fa-angle-down"
+                style="color: #888; margin-left: 60px; font-size: 20px"
+              ></i>
+            </span>
+          </span>
+        </div>
+      </div>
+    </section>
+    <div style="border: #ccc 1px solid"></div>
+    <section class="products">
+      <aside class="left">
+        <div class="category">
+          <div class="category-menu">
+            <span style="font-weight: 700">CATEGORIES</span>
+          </div>
+          <br />
+          <input type="checkbox" />
+          <span style="margin-left: 10px"
+            >Tshirts <span class="count1">(220842)</span></span
+          >
+          <br />
+          <input type="checkbox" />
+          <span style="margin-left: 10px"
+            >Lounge Tshirts <span class="count1">(1205)</span></span
+          >
+        </div>
+        <div class="brands">
+          <div class="brand-menu">
+            <span style="font-weight: 700">BRANDS </span>
+          </div>
+          <br />
+          <input type="checkbox" />
+          <span style="margin-left: 10px"
+            >WOOSTRO <span class="count1">(6985)</span></span
+          >
+          <br />
+          <input type="checkbox" />
+          <span style="margin-left: 10px"
+            >Greylongg <span class="count1">(456)</span></span
+          >
+          <br />
+          <input type="checkbox" />
+          <span style="margin-left: 10px"
+            >Roadster <span class="count1">(5437)</span></span
+          >
+          <br />
+          <input type="checkbox" />
+          <span style="margin-left: 10px"
+            >HRX by Hrithik Roshan <span class="count1">(199)</span></span
+          >
+          <br />
+          <input type="checkbox" />
+          <span style="margin-left: 10px"
+            >COLOR CAPITAL <span class="count1">(3456)</span></span
+          >
+          <br />
+          <input type="checkbox" />
+          <span style="margin-left: 10px"
+            >Tommy Hilfiger <span class="count1">(98745)</span></span
+          >
+          <br />
+          <input type="checkbox" />
+          <span style="margin-left: 10px"
+            >Friskers <span class="count1">(220842)</span></span
+          >
+        </div>
+      </aside>
+      <main class="right">
+        <div class="product-list">
+          <div class="product-item">
+            <div class="card">
+              <img
+                src="https://m.media-amazon.com/images/I/61PIfpUrYKL._AC_UL480_FMwebp_QL65_.jpg"
+                alt="Product 1"
+                style="width: 100%; height: 100%"
+              />
+              <div class="card-body">
+                <h4 class="card-title">ADRO</h4>
+                <p class="card-text">Men's Graphic Printed T-Shirt</p>
+                <p class="card-price">
+                  Rs.1511
+                  <span class="original-price">Rs.1999</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="product-item">
+            <div class="card">
+              <img
+                src="https://m.media-amazon.com/images/I/61SR1kNbLvL._AC_UL480_FMwebp_QL65_.jpg"
+                alt="Product 1"
+                style="width: 100%; height: 100%"
+              />
+              <div class="card-body">
+                <h4 class="card-title">Lymio</h4>
+                <p class="card-text">Men T-Shirt</p>
+                <p class="card-price">
+                  Rs.999 <span class="original-price">Rs.1999</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="product-item">
+            <div class="card">
+              <img
+                src="https://m.media-amazon.com/images/I/51jnzduo7DL._AC_UF480,600_SR480,600_.jpg"
+                alt="Product 1"
+                style="width: 100%; height: 100%"
+              />
+              <div class="card-body">
+                <h4 class="card-title">ADRO</h4>
+                <p class="card-text">Men's 100% Cotton Regular Fit T-Shirt</p>
+                <p class="card-price">
+                  Rs.800 <span class="original-price">Rs.1999</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="product-item">
+            <div class="card">
+              <img
+                src="https://m.media-amazon.com/images/I/61L2lqWBxoL._AC_UL480_FMwebp_QL65_.jpg"
+                alt="Product 1"
+                style="width: 100%; height: 100%"
+              />
+              <div class="card-body">
+                <h4 class="card-title">Product 1</h4>
+                <p class="card-text">Description of Product 1</p>
+                <p class="card-price">
+                  Rs. 999 <span class="original-price">Rs.1999</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="product-item">
+            <div class="card">
+              <img
+                src="https://m.media-amazon.com/images/I/81FKfp-j0PL._AC_UL480_FMwebp_QL65_.jpg"
+                alt="Product 1"
+                style="width: 100%; height: 100%"
+              />
+              <div class="card-body">
+                <h4 class="card-title">Product 1</h4>
+                <p class="card-text">Description of Product 1</p>
+                <p class="card-price">
+                  Rs. 999 <span class="original-price">Rs.1999</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="product-list">
+          <div class="product-item">
+            <div class="card">
+              <img
+                src="https://m.media-amazon.com/images/I/71e7pr053dL._AC_UL480_FMwebp_QL65_.jpg"
+                alt="Product 1"
+                style="width: 100%; height: 100%"
+              />
+              <div class="card-body">
+                <h4 class="card-title">Product 1</h4>
+                <p class="card-text">Description of Product 1</p>
+                <p class="card-price">
+                  Rs. 999 <span class="original-price">Rs.1999</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="product-item">
+            <div class="card">
+              <img
+                src="https://m.media-amazon.com/images/I/71-F5G3honL._AC_UL480_FMwebp_QL65_.jpg"
+                alt="Product 1"
+                style="width: 100%; height: 100%"
+              />
+              <div class="card-body">
+                <h4 class="card-title">Product 1</h4>
+                <p class="card-text">Description of Product 1</p>
+                <p class="card-price">
+                  Rs. 999 <span class="original-price">Rs.1999</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="product-item">
+            <div class="card">
+              <img
+                src="https://m.media-amazon.com/images/I/61QfDk49GDL._AC_UL480_FMwebp_QL65_.jpg"
+                alt="Product 1"
+                style="width: 100%; height: 100%"
+              />
+              <div class="card-body">
+                <h4 class="card-title">Product 1</h4>
+                <p class="card-text">Description of Product 1</p>
+                <p class="card-price">
+                  Rs. 999 <span class="original-price">Rs.1999</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="product-item">
+            <div class="card">
+              <img
+                src="https://m.media-amazon.com/images/I/71gki2ZkRfL._AC_UL480_FMwebp_QL65_.jpg"
+                alt="Product 1"
+                style="width: 100%; height: 100%"
+              />
+              <div class="card-body">
+                <h4 class="card-title">Product 1</h4>
+                <p class="card-text">Description of Product 1</p>
+                <p class="card-price">
+                  Rs. 999 <span class="original-price">Rs.1999</span>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="product-item">
+            <div class="card">
+              <img
+                src="https://m.media-amazon.com/images/I/61syNVEqFPL._AC_UL480_FMwebp_QL65_.jpg"
+                alt="Product 1"
+                style="width: 100%; height: 100%"
+              />
+              <div class="card-body">
+                <h4 class="card-title">Product 1</h4>
+                <p class="card-text">Description of Product 1</p>
+                <p class="card-price">
+                  Rs. 999 <span class="original-price">Rs.1999</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </section>
+  </body>
+</html>
