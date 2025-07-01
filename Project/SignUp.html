@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asian Footwears - Sign Up</title>
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+      }
+
+      .screen {
+        width: 100%;
+        overflow-x: hidden;
+      }
+
+      /* Top Bar */
+      .upper-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #f6f6f6;
+        padding: 10px 5%;
+        font-size: 12px;
+        border-top: 1px solid #e3d7e8;
+        border-bottom: 1px solid #e3d7e8;
+        flex-wrap: wrap;
+      }
+
+      .left,
+      .right {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .left p {
+        margin-right: 13px;
+        cursor: pointer;
+        position: relative;
+        color: #000;
+        white-space: nowrap;
+        margin: 5px 13px 5px 0;
+      }
+
+      .left p:not(:last-child)::after {
+        content: "|";
+        margin-left: 13px;
+        color: #000;
+        position: absolute;
+        right: -10px;
+      }
+
+      .right p {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        color: #000;
+        white-space: nowrap;
+        margin: 5px 0;
+      }
+
+      /* Main Navbar */
+      .lower-nav {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 5%;
+        border-bottom: 1px solid #ccc;
+        background-color: white;
+      }
+
+      .logo {
+        width: 120px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      .logo-img {
+        width: 100%;
+        max-width: 100px;
+      }
+
+      .nav-menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        font-size: 14px;
+        margin-bottom: 15px;
+        text-align: center;
+      }
+
+      .nav-menu p {
+        cursor: pointer;
+        font-weight: 200;
+        color: #000;
+        white-space: nowrap;
+        padding: 5px 0;
+      }
+
+      .other-activity {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        font-size: 16px;
+        color: #000;
+      }
+
+      .other-activity i {
+        cursor: pointer;
+        color: #000;
+      }
+
+      .main-content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 5%;
+      }
+
+      .signup-form-card {
+        width: 100%;
+        max-width: 450px;
+        background-color: #fff;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        border-radius: 8px;
+      }
+
+      .signup-img {
+        width: 100%;
+        height: 120px;
+        object-fit: cover;
+      }
+
+      .signup-form {
+        padding: 20px;
+      }
+
+      .signup-form h1 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333;
+        font-size: 24px;
+        font-weight: 600;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 6px;
+        font-size: 13px;
+        color: #555;
+        font-weight: 500;
+      }
+
+      .form-group input,
+      .form-group select {
+        width: 100%;
+        padding: 10px 12px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 14px;
+        transition: border-color 0.3s;
+      }
+
+      .form-group input:focus,
+      .form-group select:focus {
+        border-color: #8a2be2;
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(138, 43, 226, 0.2);
+      }
+
+      button[type="submit"] {
+        width: 100%;
+        padding: 12px;
+        background-color: #8a2be2;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin-top: 10px;
+      }
+
+      button[type="submit"]:hover {
+        background-color: #7b1fa2;
+      }
+
+      .form-footer {
+        text-align: center;
+        margin-top: 15px;
+        font-size: 13px;
+        color: #666;
+      }
+
+      .form-footer a {
+        color: #8a2be2;
+        text-decoration: none;
+        font-weight: 500;
+      }
+
+      .form-footer a:hover {
+        text-decoration: underline;
+      }
+
+      /* Footer Styles */
+      .footer {
+        background-color: #111;
+        color: #fff;
+        padding: 40px 0 20px;
+        font-family: "Arial", sans-serif;
+      }
+
+      .footer-content {
+        width: 85%;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 30px;
+      }
+
+      .footer-logo-section {
+        flex: 1 1 100%;
+        min-width: 0;
+      }
+
+      .footer-logo {
+        width: 140px;
+        margin-bottom: 20px;
+      }
+
+      .footer-description {
+        margin: 0 0 20px 0;
+        line-height: 1.6;
+        color: #ccc;
+        font-size: 14px;
+      }
+
+      .social-icons {
+        font-size: 20px;
+        display: flex;
+        gap: 15px;
+        margin-bottom: 20px;
+      }
+
+      .social-icon {
+        color: #fff;
+        transition: color 0.3s;
+      }
+
+      .footer-contact {
+        flex: 1 1 100%;
+        min-width: 0;
+      }
+
+      .footer-heading {
+        font-size: 18px;
+        margin-bottom: 15px;
+        color: #fff;
+        position: relative;
+        padding-bottom: 8px;
+      }
+
+      .footer-heading-underline {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 2px;
+        background: #ff6b00;
+      }
+
+      .contact-text {
+        font-weight: 600;
+        margin-bottom: 12px;
+        color: #ddd;
+        font-size: 14px;
+      }
+
+      .contact-detail {
+        margin: 6px 0;
+        display: flex;
+        align-items: center;
+        color: #ccc;
+        font-size: 14px;
+      }
+
+      .contact-icon {
+        margin-right: 10px;
+        color: #ff6b00;
+        font-size: 14px;
+      }
+
+      .address-icon {
+        margin-right: 10px;
+        color: #ff6b00;
+        margin-top: 3px;
+        font-size: 14px;
+      }
+
+      .footer-links {
+        flex: 1 1 100%;
+        min-width: 0;
+      }
+
+      .footer-link-item {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        line-height: 2;
+      }
+
+      .footer-link {
+        color: #ccc;
+        text-decoration: none;
+        transition: color 0.3s;
+        font-size: 14px;
+      }
+
+      .footer-copyright {
+        width: 85%;
+        max-width: 1200px;
+        margin: 30px auto 0;
+        border-top: 1px solid #333;
+        padding-top: 20px;
+        text-align: center;
+        font-size: 13px;
+        color: #999;
+      }
+
+      /* Tablet Styles */
+      @media (min-width: 600px) {
+        .footer-logo-section,
+        .footer-contact,
+        .footer-links {
+          flex: 1 1 calc(50% - 15px);
+        }
+
+        .signup-img {
+          height: 150px;
+        }
+      }
+
+      /* Desktop Styles */
+      @media (min-width: 768px) {
+        .upper-nav {
+          padding: 10px 5%;
+          font-size: 12px;
+        }
+
+        .lower-nav {
+          height: 80px;
+          flex-direction: row;
+          padding: 0 5%;
+        }
+
+        .logo {
+          width: 120px;
+          margin-bottom: 0;
+        }
+
+        .nav-menu {
+          flex-wrap: nowrap;
+          gap: 20px;
+          font-size: 15px;
+          margin-bottom: 0;
+        }
+
+        .other-activity {
+          gap: 20px;
+          font-size: 16px;
+        }
+
+        .signup-form {
+          padding: 25px;
+        }
+
+        .signup-form h1 {
+          font-size: 26px;
+          margin-bottom: 22px;
+        }
+
+        .form-group {
+          margin-bottom: 18px;
+        }
+
+        .form-group label {
+          font-size: 14px;
+          margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group select {
+          padding: 11px 14px;
+        }
+
+        button[type="submit"] {
+          padding: 13px;
+        }
+
+        .form-footer {
+          margin-top: 18px;
+          font-size: 14px;
+        }
+
+        .footer {
+          padding: 50px 0 25px;
+        }
+
+        .footer-content {
+          gap: 40px;
+        }
+
+        .footer-logo-section,
+        .footer-contact,
+        .footer-links {
+          flex: 1 1 auto;
+        }
+
+        .footer-logo-section {
+          flex: 1 1 250px;
+        }
+
+        .footer-contact {
+          flex: 1 1 300px;
+        }
+
+        .footer-links {
+          flex: 1 1 200px;
+        }
+      }
+
+      /* Large Desktop Styles */
+      @media (min-width: 1024px) {
+        .upper-nav {
+          padding: 10px 140px;
+        }
+
+        .lower-nav {
+          padding: 0 140px;
+        }
+
+        .nav-menu {
+          gap: 35px;
+          font-size: 17px;
+        }
+
+        .other-activity {
+          gap: 25px;
+          font-size: 18px;
+        }
+
+        .signup-img {
+          height: 150px;
+        }
+
+        .signup-form {
+          padding: 30px;
+        }
+
+        .signup-form h1 {
+          font-size: 28px;
+          margin-bottom: 25px;
+        }
+      }
+
+      /* Small Mobile Screens */
+      @media (max-width: 480px) {
+        .upper-nav {
+          padding: 8px 3%;
+          font-size: 10px;
+          justify-content: center;
+        }
+
+        .left p:not(:last-child)::after {
+          margin-left: 8px;
+          right: -8px;
+        }
+
+        .nav-menu {
+          gap: 8px;
+          font-size: 12px;
+        }
+
+        .nav-menu p {
+          padding: 3px 0;
+        }
+
+        .other-activity {
+          gap: 15px;
+          font-size: 14px;
+        }
+
+        .signup-form {
+          padding: 15px;
+        }
+
+        .signup-form h1 {
+          font-size: 22px;
+          margin-bottom: 15px;
+        }
+
+        .footer {
+          padding: 30px 0 15px;
+        }
+
+        .footer-content {
+          width: 90%;
+          gap: 25px;
+        }
+
+        .footer-heading {
+          font-size: 16px;
+        }
+
+        .footer-description,
+        .contact-detail,
+        .footer-link {
+          font-size: 13px;
+        }
+
+        .footer-copyright {
+          font-size: 12px;
+          padding-top: 15px;
+          margin-top: 20px;
+        }
+      }
+
+      /* Very Small Screens (e.g., iPhone 5/SE) */
+      @media (max-width: 320px) {
+        .nav-menu {
+          font-size: 11px;
+          gap: 5px;
+        }
+
+        .other-activity {
+          gap: 12px;
+          font-size: 13px;
+        }
+
+        .signup-form h1 {
+          font-size: 20px;
+        }
+
+        .form-group input,
+        .form-group select {
+          padding: 8px 10px;
+          font-size: 13px;
+        }
+
+        button[type="submit"] {
+          padding: 10px;
+          font-size: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="screen">
+      <!-- Top Bar -->
+      <div class="upper-nav">
+        <div class="left">
+          <p>Find a Store</p>
+          <p>Help</p>
+          <p>Corporate Orders</p>
+        </div>
+        <div class="right">
+          <p>Hi, Guest <i class="fa-regular fa-user"></i></p>
+        </div>
+      </div>
+
+      <!-- Main Navbar -->
+      <div class="lower-nav">
+        <!-- Logo -->
+        <div class="logo">
+          <img
+            class="logo-img"
+            src="https://www.asianfootwears.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.9fed0b3f.png&w=640&q=75"
+            alt="logo"
+          />
+        </div>
+
+        <!-- Menu Items -->
+        <div class="nav-menu">
+          <p>Mens</p>
+          <p>Womens</p>
+          <p>Kids</p>
+          <p>Collections</p>
+          <p>Institutional</p>
+          <p>Quantum Series</p>
+          <p>Accessories</p>
+        </div>
+
+        <!-- Icons -->
+        <div class="other-activity">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <i class="fa-regular fa-heart"></i>
+          <i class="fa-solid fa-bag-shopping"></i>
+        </div>
+      </div>
+
+      <div class="main-content">
+        <div class="signup-form-card">
+          <div class="banner">
+            <img
+              class="signup-img"
+              src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fcdn.asianlive.in%2Fdigital-website%2Fmay-login-banner_93095610547561124103.jpg&w=1080&q=75"
+              alt="signup-img"
+            />
+          </div>
+          <div class="signup-form">
+            <h1>Create Your Account</h1>
+            <form>
+              <div class="form-group">
+                <label for="name">Full Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Enter your full name"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Enter your email"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="number">Mobile Number</label>
+                <input
+                  type="tel"
+                  id="number"
+                  name="number"
+                  placeholder="Enter your mobile number"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  placeholder="Create a password"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="confirm-password">Confirm Password</label>
+                <input
+                  type="password"
+                  id="confirm-password"
+                  name="confirm-password"
+                  placeholder="Confirm your password"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="role">I'm signing up as</label>
+                <select id="role" name="role">
+                  <option value="user">Regular User</option>
+                  <option value="admin">Administrator</option>
+                </select>
+              </div>
+              <button type="submit">Sign Up</button>
+              <div class="form-footer">
+                Already have an account? <a href="#">Log in</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <div class="footer-content">
+          <!-- Left Section: Logo & Description -->
+          <div class="footer-logo-section">
+            <img
+              class="footer-logo"
+              src="https://www.asianfootwears.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fasian-wave-white.e9ed6354.png&w=256&q=75"
+              alt="Asian Footwear Logo"
+            />
+            <p class="footer-description">
+              Asian is one of the fastest growing and the most loved footwear
+              brands in India. Check out our incredible range and become an
+              AsianRider today
+            </p>
+            <div class="social-icons">
+              <a href="#" class="social-icon"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="#" class="social-icon"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+              <a href="#" class="social-icon"
+                ><i class="fab fa-x-twitter"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Middle Section: Contact Details -->
+          <div class="footer-contact">
+            <h3 class="footer-heading">
+              Contact Us
+              <span class="footer-heading-underline"></span>
+            </h3>
+            <div>
+              <p class="contact-text">
+                For inquiries about refunds, order issues:
+              </p>
+              <p class="contact-detail">
+                <i class="fas fa-phone contact-icon"></i>
+                +91 7561000092
+              </p>
+              <p class="contact-detail">
+                <i class="fas fa-envelope contact-icon"></i>
+                info@asianfootwears.com
+              </p>
+              <p class="contact-detail">
+                <i class="fas fa-map-marker-alt address-icon"></i>
+                J-20, Udyog Nagar, Peeragarhi, Delhi<br />New Delhi - 110041
+              </p>
+            </div>
+            <div>
+              <p class="contact-text">For corporate/bulk purchases:</p>
+              <p class="contact-detail">
+                <i class="fas fa-phone contact-icon"></i>
+                +91 9996027231
+              </p>
+            </div>
+          </div>
+
+          <!-- Right Section: Quick Links -->
+          <div class="footer-links">
+            <h3 class="footer-heading">
+              Quick Links
+              <span class="footer-heading-underline"></span>
+            </h3>
+            <ul class="footer-link-item">
+              <li>
+                <a href="#" class="footer-link">Privacy Policy</a>
+              </li>
+              <li>
+                <a href="#" class="footer-link">Refund Policy</a>
+              </li>
+              <li>
+                <a href="#" class="footer-link">Shipping Policy</a>
+              </li>
+              <li>
+                <a href="#" class="footer-link">Terms of Service</a>
+              </li>
+              <li>
+                <a href="#" class="footer-link">Corporate / Bulk Orders</a>
+              </li>
+              <li>
+                <a href="#" class="footer-link">Blog</a>
+              </li>
+              <li>
+                <a href="#" class="footer-link">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Bottom Copyright -->
+        <div class="footer-copyright">
+          <p>
+            All Rights Reserved by Asian Footwears Pvt. Ltd.<br />2025 ©
+            Copyright
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brizo</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      #screen {
+        height: 100vh;
+      }
+      #header {
+        height: 70px;
+        display: flex;
+        justify-content: space-between;
+        width: 96%;
+        margin: auto;
+      }
+      .logo {
+        width: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .nav-menu {
+        width: 35%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .other-activity {
+        width: 25%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      .search {
+        border: 1px black solid;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 4px;
+      }
+      .searchbox {
+        border: none;
+        outline: none;
+        padding: 4px;
+        width: 110px;
+      }
+      .login {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+      }
+      .bg-img {
+        background-image: url("https://static.wixstatic.com/media/c837a6_47b79e5c794c44479756b0253e68dc65~mv2.jpg/v1/fill/w_1771,h_859,fp_0.08_0.00,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Hero.jpg");
+        height: 640px;
+        width: 100%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin: auto;
+        width: 86%;
+        border-radius: 30px;
+        display: flex;
+        justify-content: space-between;
+      }
+      .left-content {
+        width: 45%;
+        padding: 25px;
+      }
+      .right-content {
+        width: 45%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .tittle {
+        font-size: 64px;
+      }
+      .sub-tittle {
+        font-size: 24px;
+      }
+      .card {
+        height: 80%;
+        width: 450px;
+        background-color: white;
+        border-radius: 15px;
+        padding: 22px;
+      }
+      .card-img {
+        width: 100%;
+        height: 80%;
+        border-radius: 8px;
+      }
+      .card-title {
+        margin: 5px;
+      }
+      .sell-price {
+        text-decoration: line-through;
+        font-size: large;
+        font-weight: 800;
+      }
+      .original-price {
+        text-decoration: none;
+        color: rgba(21, 112, 195, 1);
+        font-size: large;
+        font-weight: 800;
+      }
+      .add-cart {
+        background-color: rgba(21, 112, 195, 1);
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        margin: 5px;
+      }
+      .add-cart:hover {
+        text-decoration: underline;
+        background-color: rgba(11, 88, 158, 1);
+      }
+      .best-seller-tittle {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 86%;
+        margin: 70px auto;
+      }
+      .best-seller-card {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 86%;
+        margin: auto;
+      }
+      .card1 {
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="screen">
+      <div id="header">
+        <div class="logo">
+          <h1>Brizo</h1>
+        </div>
+        <div class="nav-menu">
+          <p>Shop All</p>
+          <p>Best Sellers</p>
+          <p>Active QX</p>
+          <p>Artisanal</p>
+          <p>Kids</p>
+          <p>About Us</p>
+        </div>
+        <div class="other-activity">
+          <div class="search">
+            <li class="fa fa-search"></li>
+            <input class="searchbox" type="text" placeholder="Search" />
+          </div>
+          <div class="login">
+            <p>Log In</p>
+            <i class="fa-solid fa-circle-user"></i>
+          </div>
+          <div class="like">
+            <i class="fa-regular fa-heart"></i>
+          </div>
+          <div class="cart">
+            <i class="fa-solid fa-bag-shopping"></i>
+          </div>
+        </div>
+      </div>
+      <div id="body">
+        <div class="bg-img">
+          <div class="left-content">
+            <h1 class="tittle">WALKING WITH PURPOSE.</h1>
+            <h2 class="sub-tittle">Premium Vegan Sneakers</h2>
+          </div>
+          <div class="right-content">
+            <div class="card">
+              <img
+                class="card-img"
+                src="https://static.wixstatic.com/media/c837a6_f4b16c06d8b5449c954a72eb34be2b4b~mv2.jpg/v1/fill/w_505,h_379,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/c837a6_f4b16c06d8b5449c954a72eb34be2b4b~mv2.jpg"
+                alt="img"
+              />
+              <h3 class="card-title">Bio Runner</h3>
+
+              <h3>
+                <span class="sell-price">$199.00</span>
+                <span class="original-price"> $99.00</span>
+              </h3>
+              <button class="add-cart"><h3>ADD TO CART</h3></button>
+            </div>
+          </div>
+        </div>
+        <div class="best-seller">
+          <div class="best-seller-tittle">
+            <h1>OUR BEST SELLERS</h1>
+            <h2>View All<i class="fa-solid fa-arrow-right"></i></h2>
+          </div>
+          <div class="best-seller-card">
+            <div class="card1">
+              <img
+                class="card-img"
+                src="https://static.wixstatic.com/media/c837a6_9e4500e0fa504a0b9cda0a2390b5e9a8~mv2.jpg/v1/fill/w_424,h_424,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/c837a6_9e4500e0fa504a0b9cda0a2390b5e9a8~mv2.jpg"
+                alt="sell-img"
+              />
+              <p class="card-title">Active JR</p>
+
+              <p>
+                <span>$80.00</span>
+                <span class="original-price"> $64.00</span>
+              </p>
+            </div>
+            <div class="card1">
+              <img
+                class="card-img"
+                src="https://static.wixstatic.com/media/c837a6_96481ea655134a6789d7fdc909b280d2~mv2.jpg/v1/fill/w_424,h_424,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/c837a6_96481ea655134a6789d7fdc909b280d2~mv2.jpg"
+                alt="sell-img"
+              />
+              <p>Bio original</p>
+
+              <p>
+                <span> $119.00</span>
+              </p>
+            </div>
+            <div class="card1">
+              <img
+                class="card-img"
+                src="https://static.wixstatic.com/media/c837a6_da34515a9ca049c9b729fa92e5f3e25f~mv2.jpg/v1/fill/w_424,h_424,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/c837a6_da34515a9ca049c9b729fa92e5f3e25f~mv2.jpg"
+                alt="sell-img"
+              />
+              <p class="card-title">Bio Perform</p>
+
+              <p>
+                <span>$119.00</span>
+                <span class="original-price"> $99.00</span>
+              </p>
+            </div>
+            <div class="card1">
+              <img
+                class="card-img"
+                src="https://static.wixstatic.com/media/c837a6_a9b28eeb2641483ab21505b3b575a752~mv2.jpg/v1/fill/w_424,h_424,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/c837a6_a9b28eeb2641483ab21505b3b575a752~mv2.jpg"
+                alt="sell-img"
+              />
+              <p class="card-title">Limited DL</p>
+
+              <p>
+                <span> $129.00</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer"></div>
+  </body>
+</html>

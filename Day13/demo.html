@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Myntra Clone</title>
+    <style>
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        top: 0;
+        position: sticky;
+      }
+      nav img {
+        margin-right: 60px;
+        margin-left: 50px;
+      }
+      nav ul {
+        display: flex;
+        list-style: none;
+      }
+      nav li {
+        margin-right: 20px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .new {
+        color: red;
+      }
+      .search-bar {
+        display: flex;
+        align-items: center;
+        border: 1px solid #ccc;
+        padding: 5px;
+        border-radius: 5px;
+      }
+      .search-icon {
+        margin-right: 5px;
+      }
+      .search-bar input {
+        border: none;
+        outline: none;
+      }
+      .nav-bar {
+        display: flex;
+        align-items: center;
+        font-family: "Roboto", sans-serif;
+      }
+      .nav-bar img {
+        margin-right: 60px;
+        margin-left: 50px;
+      }
+      .nav-bar ul {
+        display: flex;
+        list-style: none;
+      }
+      .nav-bar li {
+        margin-right: 20px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .icon {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      .user-icon,
+      .wishlist-icon,
+      .bag-icon {
+        font-size: 20px;
+        margin-right: 10px;
+      }
+      .count {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <container>
+      <nav>
+        <img src="Img/myntra_logo.webp" alt="Logo" style="width: 80px" />
+        <ul>
+          <li>MEN</li>
+          <li>WOMEN</li>
+          <li>KIDS</li>
+          <li>HOME</li>
+          <li>BEAUTY</li>
+          <li>GENZ</li>
+          <li>STUDIO <span class="new">NEW</span></li>
+        </ul>
+        <div class="search-bar">
+          <i class="fa fa-search search-icon"></i>
+          <input
+            type="text"
+            placeholder="Search for products, brands and more"
+          />
+        </div>
+        <div class="nav-bar">
+          <ul>
+            <li class="icon">
+              <i class="fa fa-user user-icon"></i>
+              <span>Profile</span>
+            </li>
+            <li class="icon">
+              <i class="fa fa-heart-o wishlist-icon"></i>
+              <span>Wishlist</span>
+            </li>
+            <li class="icon">
+              <i class="fa fa-shopping-bag bag-icon"></i>
+              <span>Bag</span>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </container>
+  </body>
+</html>
