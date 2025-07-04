@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asian Footwears - Product Listing</title>
+
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <style>
+      /* ========== DEFAULT STYLES ========== */
+      /* Reset and Base Styles */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+      }
+
+      /* Main Container */
+      .screen {
+        width: 100%;
+        overflow-x: hidden;
+      }
+
+      /* Top Navigation Bar */
+      .upper-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #f6f6f6;
+        padding: 5px 5%;
+        font-size: 12px;
+        border-top: 1px solid #e3d7e8;
+        border-bottom: 1px solid #e3d7e8;
+        flex-wrap: wrap;
+      }
+
+      .left {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .left p {
+        margin-right: 13px;
+        cursor: pointer;
+        position: relative;
+        color: #000;
+        white-space: nowrap;
+        margin: 5px 13px 5px 0;
+      }
+
+      .left p:not(:last-child)::after {
+        content: "|";
+        margin-left: 13px;
+        color: #000;
+        position: absolute;
+        right: -10px;
+      }
+
+      .right {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .right p {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        color: #000;
+        white-space: nowrap;
+        margin: 5px 0;
+      }
+
+      /* Main Navigation */
+      .lower-nav {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 5%;
+        border-bottom: 1px solid #ccc;
+        background-color: white;
+      }
+
+      .logo {
+        width: 120px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      .logo-img {
+        width: 100%;
+        max-width: 100px;
+      }
+
+      .nav-menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        font-size: 14px;
+        margin-bottom: 15px;
+        text-align: center;
+      }
+
+      .nav-menu p {
+        cursor: pointer;
+        font-weight: 200;
+        color: #000;
+        white-space: nowrap;
+        padding: 5px 0;
+      }
+
+      .other-activity {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        font-size: 16px;
+        color: #000;
+      }
+
+      .other-activity i {
+        cursor: pointer;
+        color: #000;
+      }
+
+      /* Main Content */
+      .main-content {
+        width: 80%;
+        margin: 0 auto;
+        padding: 10px 0;
+      }
+
+      .offer-label {
+        background-color: #000;
+        color: white;
+        width: 100%;
+        text-align: center;
+        padding: 5px;
+      }
+
+      .page-map {
+        font-size: small;
+      }
+
+      .active-page {
+        font-weight: bold;
+        color: #000;
+      }
+
+      /* Filters Sidebar */
+      .products {
+        display: flex;
+      }
+
+      .aside-filters {
+        width: 20%;
+        max-height: 80vh;
+        overflow-y: auto;
+        padding-right: 15px;
+      }
+
+      .sort {
+        background-color: #ffffff;
+        padding: 15px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        margin-top: 10px;
+        width: 110%;
+        border-radius: 8px;
+      }
+
+      .sort-by-text {
+        font-size: 19px;
+        font-weight: 600;
+        color: #333;
+        margin: 0 0 15px 0;
+      }
+
+      hr {
+        border: none;
+        border-top: 1px solid #e0e0e0;
+        margin: 15px 0;
+      }
+
+      .sort-by-options {
+        margin-top: 15px;
+      }
+
+      .form-radio {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        padding: 10px 12px;
+        border-radius: 6px;
+      }
+
+      .form-radio input[type="radio"] {
+        margin-right: 12px;
+        accent-color: black;
+        transform: scale(1.2);
+      }
+
+      .filter {
+        background-color: #ffffff;
+        padding: 15px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        margin-top: 20px;
+        width: 110%;
+        border-radius: 8px;
+      }
+
+      h4 {
+        font-size: 17px;
+        font-weight: 600;
+        color: #444;
+        margin: 18px 0 12px 0;
+      }
+
+      .filter-by-options {
+        margin-top: 10px;
+      }
+
+      .form-check {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        padding: 10px 12px;
+        border-radius: 6px;
+      }
+
+      .form-check input[type="checkbox"] {
+        margin-right: 12px;
+        accent-color: black;
+        transform: scale(1.2);
+      }
+
+      .filter-price-range h4 {
+        font-size: 17px;
+        font-weight: 600;
+        color: #000;
+        margin-bottom: 15px;
+      }
+
+      .price-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .price-box {
+        border: 1px solid #000;
+        border-radius: 6px;
+        padding: 12px 5px;
+        text-align: center;
+        font-weight: 500;
+        font-size: 15px;
+        background-color: #fff;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+
+      .price-box:hover {
+        background-color: #000;
+        color: #fff;
+        transform: scale(1.02);
+      }
+
+      .filter-by-size h4 {
+        font-size: 17px;
+        font-weight: 600;
+        color: #000;
+        margin-bottom: 15px;
+      }
+
+      .size-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .size-box {
+        border: 1px solid #000;
+        border-radius: 6px;
+        padding: 12px 5px;
+        text-align: center;
+        font-weight: 500;
+        font-size: 15px;
+        background-color: #fff;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+
+      .size-box:hover {
+        background-color: #000;
+        color: #fff;
+        transform: scale(1.02);
+      }
+
+      .shoe-type-options {
+        margin-top: 10px;
+      }
+
+      /* Product Grid */
+      .product-list {
+        width: 80%;
+        max-width: 1200px;
+        margin-left: 20px;
+      }
+
+      .shoe-cards-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+      }
+
+      .shoe-card {
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+        background: white;
+        position: relative;
+      }
+
+      .shoe-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .shoe-image-container {
+        position: relative;
+        padding-top: 100%;
+        overflow: hidden;
+      }
+
+      .shoe-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-bottom: 1px solid #eee;
+      }
+
+      .bestseller-badge {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 140px;
+        height: auto;
+        z-index: 2;
+      }
+
+      .shoe-info {
+        padding: 15px;
+        text-align: left;
+      }
+
+      .shoe-name {
+        margin: 0 0 10px 0;
+        font-size: 18px;
+        font-weight: 600;
+        color: #333;
+      }
+
+      .shoe-price {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-start;
+      }
+
+      .current-price {
+        font-weight: bold;
+        font-size: 18px;
+        color: #000;
+      }
+
+      .original-price {
+        text-decoration: line-through;
+        color: #999;
+        font-size: 14px;
+      }
+
+      .discount {
+        color: #ff5722;
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      /* Footer */
+      .footer {
+        background-color: #111;
+        color: #fff;
+        padding: 40px 0 20px;
+        font-family: "Arial", sans-serif;
+      }
+
+      .footer-content {
+        width: 85%;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+      }
+
+      .footer-logo-section {
+        flex: 1;
+        min-width: 250px;
+      }
+
+      .footer-logo {
+        width: 140px;
+        margin-bottom: 20px;
+      }
+
+      .footer-description {
+        margin: 0 0 20px 0;
+        line-height: 1.6;
+        color: #ccc;
+        font-size: 14px;
+      }
+
+      .social-icons {
+        font-size: 20px;
+        display: flex;
+        gap: 15px;
+        margin-bottom: 20px;
+      }
+
+      .social-icon {
+        color: #fff;
+        transition: color 0.3s;
+      }
+
+      .footer-contact {
+        flex: 1;
+        min-width: 250px;
+      }
+
+      .footer-heading {
+        font-size: 18px;
+        margin-bottom: 15px;
+        color: #fff;
+        position: relative;
+        padding-bottom: 8px;
+      }
+
+      .footer-heading-underline {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 2px;
+        background: #ff6b00;
+      }
+
+      .contact-text {
+        font-weight: 600;
+        margin-bottom: 12px;
+        color: #ddd;
+        font-size: 14px;
+      }
+
+      .contact-detail {
+        margin: 6px 0;
+        display: flex;
+        align-items: center;
+        color: #ccc;
+        font-size: 14px;
+      }
+
+      .contact-icon {
+        margin-right: 10px;
+        color: #ff6b00;
+        font-size: 14px;
+      }
+
+      .address-icon {
+        margin-right: 10px;
+        color: #ff6b00;
+        margin-top: 3px;
+        font-size: 14px;
+      }
+
+      .footer-links {
+        flex: 1;
+        min-width: 200px;
+      }
+
+      .footer-link-item {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        line-height: 2;
+      }
+
+      .footer-link {
+        color: #ccc;
+        text-decoration: none;
+        transition: color 0.3s;
+        font-size: 14px;
+      }
+
+      .footer-copyright {
+        width: 85%;
+        max-width: 1200px;
+        margin: 30px auto 0;
+        border-top: 1px solid #333;
+        padding-top: 20px;
+        text-align: center;
+        font-size: 13px;
+        color: #999;
+      }
+
+      /* ========== RESPONSIVE STYLES ========== */
+      /* Large Desktop (1024px and up) */
+      @media (min-width: 1024px) {
+        .upper-nav {
+          padding: 5px 140px;
+        }
+
+        .lower-nav {
+          padding: 0 140px;
+        }
+
+        .nav-menu {
+          gap: 35px;
+          font-size: 17px;
+        }
+
+        .other-activity {
+          gap: 25px;
+          font-size: 18px;
+        }
+      }
+
+      /* Desktop (768px and up) */
+      @media (min-width: 768px) {
+        .upper-nav {
+          padding: 5px 5%;
+          font-size: 12px;
+        }
+
+        .lower-nav {
+          height: 80px;
+          flex-direction: row;
+          padding: 0 5%;
+        }
+
+        .logo {
+          width: 120px;
+          margin-bottom: 0;
+        }
+
+        .nav-menu {
+          flex-wrap: nowrap;
+          gap: 20px;
+          font-size: 15px;
+          margin-bottom: 0;
+        }
+
+        .other-activity {
+          gap: 20px;
+          font-size: 16px;
+        }
+
+        .footer {
+          padding: 50px 0 25px;
+        }
+
+        .footer-content {
+          gap: 40px;
+          flex-wrap: nowrap;
+        }
+
+        .footer-logo-section {
+          flex: 1;
+        }
+        .footer-contact {
+          flex: 1;
+        }
+        .footer-links {
+          flex: 1;
+        }
+      }
+
+      /* Tablet (600px and up) */
+      @media (min-width: 600px) {
+        .footer-logo-section,
+        .footer-contact,
+        .footer-links {
+          flex: 1 1 calc(50% - 15px);
+        }
+      }
+
+      /* Mobile (768px and below) */
+      @media (max-width: 768px) {
+        .products {
+          flex-direction: column;
+        }
+
+        .aside-filters {
+          width: 100%;
+          padding-right: 0;
+          max-height: none;
+          margin-bottom: 20px;
+        }
+
+        .product-list {
+          width: 100%;
+          margin-left: 0;
+        }
+
+        .shoe-cards-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .filter,
+        .sort {
+          padding: 20px;
+        }
+      }
+
+      /* Small Mobile (480px and below) */
+      @media (max-width: 480px) {
+        .upper-nav {
+          padding: 5px 3%;
+          font-size: 10px;
+          justify-content: center;
+        }
+
+        .left p:not(:last-child)::after {
+          margin-left: 8px;
+          right: -8px;
+        }
+
+        .nav-menu {
+          gap: 8px;
+          font-size: 12px;
+        }
+
+        .nav-menu p {
+          padding: 3px 0;
+        }
+
+        .other-activity {
+          gap: 15px;
+          font-size: 14px;
+        }
+
+        .shoe-cards-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .footer {
+          padding: 30px 0 15px;
+        }
+
+        .footer-content {
+          width: 90%;
+          gap: 25px;
+        }
+
+        .footer-heading {
+          font-size: 16px;
+        }
+
+        .footer-description,
+        .contact-detail,
+        .footer-link {
+          font-size: 13px;
+        }
+
+        .footer-copyright {
+          font-size: 12px;
+          padding-top: 15px;
+          margin-top: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Main Container -->
+    <div class="screen">
+      <!-- Top Navigation Bar -->
+      <div class="upper-nav">
+        <div class="left">
+          <p>Find a Store</p>
+          <p>Help</p>
+          <p>Corporate Orders</p>
+        </div>
+        <div class="right">
+          <p>Hi, Guest <i class="fa-regular fa-user"></i></p>
+        </div>
+      </div>
+
+      <!-- Main Navigation -->
+      <div class="lower-nav">
+        <!-- Logo -->
+        <div class="logo">
+          <img
+            class="logo-img"
+            src="https://www.asianfootwears.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.9fed0b3f.png&w=640&q=75"
+            alt="logo"
+          />
+        </div>
+
+        <!-- Navigation Menu -->
+        <div class="nav-menu">
+          <p>Mens</p>
+          <p>Womens</p>
+          <p>Kids</p>
+          <p>Collections</p>
+          <p>Institutional</p>
+          <p>Quantum Series</p>
+          <p>Accessories</p>
+        </div>
+
+        <!-- Action Icons -->
+        <div class="other-activity">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <i class="fa-regular fa-heart"></i>
+          <i class="fa-solid fa-bag-shopping"></i>
+        </div>
+      </div>
+
+      <!-- Main Content Area -->
+      <div class="main">
+        <div class="offer-label">
+          <p>
+            Mid Season Sale! Save Upto 70% OFF + extra 10% off Use Code:
+            MIDSALE10"
+          </p>
+        </div>
+        <div class="main-content">
+          <p class="page-map">
+            Home / Mens /
+            <span class="active-page">Casual Shoes</span>
+          </p>
+
+          <div class="products">
+            <div class="aside-filters">
+              <div class="sort">
+                <div class="sort-by">
+                  <p class="sort-by-text">Sort By</p>
+                  <hr />
+                  <div class="sort-by-options">
+                    <div class="form-radio">
+                      <input
+                        type="radio"
+                        id="sort-newest"
+                        name="sort"
+                        value="newest"
+                      />
+                      <label for="sort-newest">Newest</label>
+                    </div>
+                    <div class="form-radio">
+                      <input
+                        type="radio"
+                        id="sort-price-low"
+                        name="sort"
+                        value="price-low"
+                      />
+                      <label for="sort-price-low">Price: Low to High</label>
+                    </div>
+                    <div class="form-radio">
+                      <input
+                        type="radio"
+                        id="sort-price-high"
+                        name="sort"
+                        value="price-high"
+                      />
+                      <label for="sort-price-high">Price: High to Low</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="filter">
+                <div class="filter-by">
+                  <p class="sort-by-text">Filter By</p>
+                  <hr />
+                  <h4>Gender</h4>
+                  <div class="filter-by-options">
+                    <div class="form-check">
+                      <input
+                        type="checkbox"
+                        id="filter-gender-men"
+                        name="men"
+                        value="Mens"
+                      />
+                      <label for="filter-gender-men">Mens</label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        type="checkbox"
+                        id="filter-gender-women"
+                        name="women"
+                        value="Womens"
+                      />
+                      <label for="filter-gender-women">Womens</label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        type="checkbox"
+                        id="filter-gender-kids"
+                        name="kids"
+                        value="Kids"
+                      />
+                      <label for="filter-gender-kids">Kids</label>
+                    </div>
+                  </div>
+                </div>
+                <hr />
+                <div class="filter-price-range">
+                  <h4>Price Range</h4>
+                  <div class="price-grid">
+                    <div class="price-box">Under 1000</div>
+                    <div class="price-box">1001-1500</div>
+                    <div class="price-box">1500-2000</div>
+                    <div class="price-box">Above 2000</div>
+                  </div>
+                </div>
+                <hr />
+                <div class="filter-by-size">
+                  <h4>Filter by Size</h4>
+                  <div class="size-grid">
+                    <div class="size-box">6 UK</div>
+                    <div class="size-box">7 UK</div>
+                    <div class="size-box">8 UK</div>
+                    <div class="size-box">9 UK</div>
+                    <div class="size-box">10 UK</div>
+                    <div class="size-box">11 UK</div>
+                    <div class="size-box">12 UK</div>
+                  </div>
+                </div>
+                <hr />
+                <div class="shoe-type">
+                  <h4>Shoe Type</h4>
+                  <div class="shoe-type-options">
+                    <div class="form-check">
+                      <input
+                        type="checkbox"
+                        id="filter-shoe-type-sport"
+                        name="shoe-type"
+                        value="Sport Shoes"
+                      />
+                      <label for="filter-shoe-type-sport">Sport Shoes</label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        type="checkbox"
+                        id="filter-shoe-type-casual"
+                        name="shoe-type"
+                        value="Casual Shoes"
+                      />
+                      <label for="filter-shoe-type-casual">Casual Shoes</label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        type="checkbox"
+                        id="filter-shoe-type-kids"
+                        name="shoe-type"
+                        value="Kids Shoes"
+                      />
+                      <label for="filter-shoe-type-kids">Kids Shoes</label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        type="checkbox"
+                        id="filter-shoe-type-slippers"
+                        name="shoe-type"
+                        value="Slippers"
+                      />
+                      <label for="filter-shoe-type-slippers">Slippers</label>
+                    </div>
+                    <div class="form-check">
+                      <input
+                        type="checkbox"
+                        id="filter-shoe-type-sports-sandals"
+                        name="shoe-type"
+                        value="Sports Sandals"
+                      />
+                      <label for="filter-shoe-type-sports-sandals"
+                        >Sports Sandals</label
+                      >
+                    </div>
+                    <div class="form-check">
+                      <input
+                        type="checkbox"
+                        id="filter-shoe-type-formal"
+                        name="shoe-type"
+                        value="Formal Shoes"
+                      />
+                      <label for="filter-shoe-type-formal">Formal Shoes</label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="product-list">
+              <div class="shoe-cards-grid">
+                <!-- Gelon -->
+                <article class="shoe-card">
+                  <div class="shoe-image-container">
+                    <img
+                      class="bestseller-badge"
+                      src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fs3-ap-southeast-1.amazonaws.com%2Fasianapp%2Fdigital-website%2FBS_f%20copy_47763114713557565721.png&w=640&q=75"
+                      alt="Bestseller"
+                      width="140"
+                      height="auto"
+                    />
+                    <img
+                      class="shoe-image"
+                      src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fcdn.asianlive.in%2Fproduct_assets%2Ftarzan-11%2Fwhite-navy%2Fprimary-photo%2Fprimary%20photo_31840686291918569838.jpg&w=828&q=75"
+                      alt="Gelon - White"
+                      width="300"
+                      height="300"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="shoe-info">
+                    <h3 class="shoe-name">Gelon</h3>
+                    <div class="shoe-price">
+                      <span class="current-price">₹807.45</span>
+                      <span class="original-price">₹4499</span>
+                      <span class="discount">(46% off)</span>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Tarzan 11 -->
+                <article class="shoe-card">
+                  <div class="shoe-image-container">
+                    <img
+                      class="bestseller-badge"
+                      src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fs3-ap-southeast-1.amazonaws.com%2Fasianapp%2Fdigital-website%2FBS_f%20copy_47763114713557565721.png&w=640&q=75"
+                      alt="Bestseller"
+                      width="140"
+                      height="auto"
+                    />
+                    <img
+                      class="shoe-image"
+                      src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fcdn.asianlive.in%2Fproduct_assets%2Fboston-01%2Ffull-black%2Fprimary-photo%2Fprimary%20photo_33024931407031758063.jpg&w=828&q=75"
+                      alt="Tarzan 11 - White Navy"
+                      width="300"
+                      height="300"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="shoe-info">
+                    <h3 class="shoe-name">Tarzan 11</h3>
+                    <div class="shoe-price">
+                      <span class="current-price">₹729.75</span>
+                      <span class="original-price">₹4499</span>
+                      <span class="discount">(51% off)</span>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Mexico 11 -->
+                <article class="shoe-card">
+                  <div class="shoe-image-container">
+                    <img
+                      class="bestseller-badge"
+                      src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fs3-ap-southeast-1.amazonaws.com%2Fasianapp%2Fdigital-website%2FBS_f%20copy_47763114713557565721.png&w=640&q=75"
+                      alt="Bestseller"
+                      width="140"
+                      height="auto"
+                    />
+                    <img
+                      class="shoe-image"
+                      src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fcdn.asianlive.in%2Fproduct_assets%2Fmexico-11%2Fbeej-leaf-green%2Fprimary-photo%2Fprimary%20photo_24572989289198793306.jpg&w=828&q=75"
+                      alt="Mexico 11 - Beige Olive"
+                      width="300"
+                      height="300"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="shoe-info">
+                    <h3 class="shoe-name">Mexico 11</h3>
+                    <div class="shoe-price">
+                      <span class="current-price">₹838.95</span>
+                      <span class="original-price">₹4499</span>
+                      <span class="discount">(44% off)</span>
+                    </div>
+                  </div>
+                </article>
+                <!-- Mexico 11 -->
+                <article class="shoe-card">
+                  <div class="shoe-image-container">
+                    <img
+                      class="bestseller-badge"
+                      src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fs3-ap-southeast-1.amazonaws.com%2Fasianapp%2Fdigital-website%2FBS_f%20copy_47763114713557565721.png&w=640&q=75"
+                      alt="Bestseller"
+                      width="140"
+                      height="auto"
+                    />
+                    <img
+                      class="shoe-image"
+                      src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fcdn.asianlive.in%2Fproduct_assets%2Fmexico-11%2Fbeej-leaf-green%2Fprimary-photo%2Fprimary%20photo_24572989289198793306.jpg&w=828&q=75"
+                      alt="Mexico 11 - Beige Olive"
+                      width="300"
+                      height="300"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="shoe-info">
+                    <h3 class="shoe-name">Mexico 11</h3>
+                    <div class="shoe-price">
+                      <span class="current-price">₹838.95</span>
+                      <span class="original-price">₹4499</span>
+                      <span class="discount">(44% off)</span>
+                    </div>
+                  </div>
+                </article>
+                <!-- Mexico 11 -->
+                <article class="shoe-card">
+                  <div class="shoe-image-container">
+                    <img
+                      class="bestseller-badge"
+                      src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fs3-ap-southeast-1.amazonaws.com%2Fasianapp%2Fdigital-website%2FBS_f%20copy_47763114713557565721.png&w=640&q=75"
+                      alt="Bestseller"
+                      width="140"
+                      height="auto"
+                    />
+                    <img
+                      class="shoe-image"
+                      src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fcdn.asianlive.in%2Fproduct_assets%2Fmexico-11%2Fbeej-leaf-green%2Fprimary-photo%2Fprimary%20photo_24572989289198793306.jpg&w=828&q=75"
+                      alt="Mexico 11 - Beige Olive"
+                      width="300"
+                      height="300"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="shoe-info">
+                    <h3 class="shoe-name">Mexico 11</h3>
+                    <div class="shoe-price">
+                      <span class="current-price">₹838.95</span>
+                      <span class="original-price">₹4499</span>
+                      <span class="discount">(44% off)</span>
+                    </div>
+                  </div>
+                </article>
+                <!-- Mexico 11 -->
+                <article class="shoe-card">
+                  <div class="shoe-image-container">
+                    <img
+                      class="bestseller-badge"
+                      src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fs3-ap-southeast-1.amazonaws.com%2Fasianapp%2Fdigital-website%2FBS_f%20copy_47763114713557565721.png&w=640&q=75"
+                      alt="Bestseller"
+                      width="140"
+                      height="auto"
+                    />
+                    <img
+                      class="shoe-image"
+                      src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fcdn.asianlive.in%2Fproduct_assets%2Fmexico-11%2Fbeej-leaf-green%2Fprimary-photo%2Fprimary%20photo_24572989289198793306.jpg&w=828&q=75"
+                      alt="Mexico 11 - Beige Olive"
+                      width="300"
+                      height="300"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="shoe-info">
+                    <h3 class="shoe-name">Mexico 11</h3>
+                    <div class="shoe-price">
+                      <span class="current-price">₹838.95</span>
+                      <span class="original-price">₹4499</span>
+                      <span class="discount">(44% off)</span>
+                    </div>
+                  </div>
+                </article>
+                <!-- Mexico 11 -->
+                <article class="shoe-card">
+                  <div class="shoe-image-container">
+                    <img
+                      class="bestseller-badge"
+                      src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fs3-ap-southeast-1.amazonaws.com%2Fasianapp%2Fdigital-website%2FBS_f%20copy_47763114713557565721.png&w=640&q=75"
+                      alt="Bestseller"
+                      width="140"
+                      height="auto"
+                    />
+                    <img
+                      class="shoe-image"
+                      src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fcdn.asianlive.in%2Fproduct_assets%2Fmexico-11%2Fbeej-leaf-green%2Fprimary-photo%2Fprimary%20photo_24572989289198793306.jpg&w=828&q=75"
+                      alt="Mexico 11 - Beige Olive"
+                      width="300"
+                      height="300"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="shoe-info">
+                    <h3 class="shoe-name">Mexico 11</h3>
+                    <div class="shoe-price">
+                      <span class="current-price">₹838.95</span>
+                      <span class="original-price">₹4499</span>
+                      <span class="discount">(44% off)</span>
+                    </div>
+                  </div>
+                </article>
+                <!-- Mexico 11 -->
+                <article class="shoe-card">
+                  <div class="shoe-image-container">
+                    <img
+                      class="bestseller-badge"
+                      src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fs3-ap-southeast-1.amazonaws.com%2Fasianapp%2Fdigital-website%2FBS_f%20copy_47763114713557565721.png&w=640&q=75"
+                      alt="Bestseller"
+                      width="140"
+                      height="auto"
+                    />
+                    <img
+                      class="shoe-image"
+                      src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fcdn.asianlive.in%2Fproduct_assets%2Fmexico-11%2Fbeej-leaf-green%2Fprimary-photo%2Fprimary%20photo_24572989289198793306.jpg&w=828&q=75"
+                      alt="Mexico 11 - Beige Olive"
+                      width="300"
+                      height="300"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="shoe-info">
+                    <h3 class="shoe-name">Mexico 11</h3>
+                    <div class="shoe-price">
+                      <span class="current-price">₹838.95</span>
+                      <span class="original-price">₹4499</span>
+                      <span class="discount">(44% off)</span>
+                    </div>
+                  </div>
+                </article>
+                <!-- Mexico 11 -->
+                <article class="shoe-card">
+                  <div class="shoe-image-container">
+                    <img
+                      class="bestseller-badge"
+                      src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fs3-ap-southeast-1.amazonaws.com%2Fasianapp%2Fdigital-website%2FBS_f%20copy_47763114713557565721.png&w=640&q=75"
+                      alt="Bestseller"
+                      width="140"
+                      height="auto"
+                    />
+                    <img
+                      class="shoe-image"
+                      src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fcdn.asianlive.in%2Fproduct_assets%2Fmexico-11%2Fbeej-leaf-green%2Fprimary-photo%2Fprimary%20photo_24572989289198793306.jpg&w=828&q=75"
+                      alt="Mexico 11 - Beige Olive"
+                      width="300"
+                      height="300"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="shoe-info">
+                    <h3 class="shoe-name">Mexico 11</h3>
+                    <div class="shoe-price">
+                      <span class="current-price">₹838.95</span>
+                      <span class="original-price">₹4499</span>
+                      <span class="discount">(44% off)</span>
+                    </div>
+                  </div>
+                </article>
+                <!-- Mexico 11 -->
+                <article class="shoe-card">
+                  <div class="shoe-image-container">
+                    <img
+                      class="bestseller-badge"
+                      src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fs3-ap-southeast-1.amazonaws.com%2Fasianapp%2Fdigital-website%2FBS_f%20copy_47763114713557565721.png&w=640&q=75"
+                      alt="Bestseller"
+                      width="140"
+                      height="auto"
+                    />
+                    <img
+                      class="shoe-image"
+                      src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fcdn.asianlive.in%2Fproduct_assets%2Fmexico-11%2Fbeej-leaf-green%2Fprimary-photo%2Fprimary%20photo_24572989289198793306.jpg&w=828&q=75"
+                      alt="Mexico 11 - Beige Olive"
+                      width="300"
+                      height="300"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="shoe-info">
+                    <h3 class="shoe-name">Mexico 11</h3>
+                    <div class="shoe-price">
+                      <span class="current-price">₹838.95</span>
+                      <span class="original-price">₹4499</span>
+                      <span class="discount">(44% off)</span>
+                    </div>
+                  </div>
+                </article>
+                <!-- Mexico 11 -->
+                <article class="shoe-card">
+                  <div class="shoe-image-container">
+                    <img
+                      class="bestseller-badge"
+                      src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fs3-ap-southeast-1.amazonaws.com%2Fasianapp%2Fdigital-website%2FBS_f%20copy_47763114713557565721.png&w=640&q=75"
+                      alt="Bestseller"
+                      width="140"
+                      height="auto"
+                    />
+                    <img
+                      class="shoe-image"
+                      src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fcdn.asianlive.in%2Fproduct_assets%2Fmexico-11%2Fbeej-leaf-green%2Fprimary-photo%2Fprimary%20photo_24572989289198793306.jpg&w=828&q=75"
+                      alt="Mexico 11 - Beige Olive"
+                      width="300"
+                      height="300"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="shoe-info">
+                    <h3 class="shoe-name">Mexico 11</h3>
+                    <div class="shoe-price">
+                      <span class="current-price">₹838.95</span>
+                      <span class="original-price">₹4499</span>
+                      <span class="discount">(44% off)</span>
+                    </div>
+                  </div>
+                </article>
+                <!-- Mexico 11 -->
+                <article class="shoe-card">
+                  <div class="shoe-image-container">
+                    <img
+                      class="bestseller-badge"
+                      src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fs3-ap-southeast-1.amazonaws.com%2Fasianapp%2Fdigital-website%2FBS_f%20copy_47763114713557565721.png&w=640&q=75"
+                      alt="Bestseller"
+                      width="140"
+                      height="auto"
+                    />
+                    <img
+                      class="shoe-image"
+                      src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fcdn.asianlive.in%2Fproduct_assets%2Fmexico-11%2Fbeej-leaf-green%2Fprimary-photo%2Fprimary%20photo_24572989289198793306.jpg&w=828&q=75"
+                      alt="Mexico 11 - Beige Olive"
+                      width="300"
+                      height="300"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div class="shoe-info">
+                    <h3 class="shoe-name">Mexico 11</h3>
+                    <div class="shoe-price">
+                      <span class="current-price">₹838.95</span>
+                      <span class="original-price">₹4499</span>
+                      <span class="discount">(44% off)</span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Section -->
+      <div class="footer">
+        <div class="footer-content">
+          <!-- Company Info Section -->
+          <div class="footer-logo-section">
+            <img
+              class="footer-logo"
+              src="https://www.asianfootwears.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fasian-wave-white.e9ed6354.png&w=256&q=75"
+              alt="Asian Footwear Logo"
+            />
+            <p class="footer-description">
+              Asian is one of the fastest growing and the most loved footwear
+              brands in India. Check out our incredible range and become an
+              AsianRider today
+            </p>
+            <!-- Social Media Links -->
+            <div class="social-icons">
+              <a href="#" class="social-icon"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="#" class="social-icon"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+              <a href="#" class="social-icon"
+                ><i class="fab fa-x-twitter"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Contact Information -->
+          <div class="footer-contact">
+            <h3 class="footer-heading">
+              Contact Us
+              <span class="footer-heading-underline"></span>
+            </h3>
+            <div>
+              <p class="contact-text">
+                For inquiries about refunds, order issues:
+              </p>
+              <p class="contact-detail">
+                <i class="fas fa-phone contact-icon"></i>
+                +91 7561000092
+              </p>
+              <p class="contact-detail">
+                <i class="fas fa-envelope contact-icon"></i>
+                info@asianfootwears.com
+              </p>
+              <p class="contact-detail">
+                <i class="fas fa-map-marker-alt address-icon"></i>
+                J-20, Udyog Nagar, Peeragarhi, Delhi<br />New Delhi - 110041
+              </p>
+            </div>
+            <div>
+              <p class="contact-text">For corporate/bulk purchases:</p>
+              <p class="contact-detail">
+                <i class="fas fa-phone contact-icon"></i>
+                +91 9996027231
+              </p>
+            </div>
+          </div>
+
+          <!-- Quick Links Section -->
+          <div class="footer-links">
+            <h3 class="footer-heading">
+              Quick Links
+              <span class="footer-heading-underline"></span>
+            </h3>
+            <ul class="footer-link-item">
+              <li><a href="#" class="footer-link">Privacy Policy</a></li>
+              <li><a href="#" class="footer-link">Refund Policy</a></li>
+              <li><a href="#" class="footer-link">Shipping Policy</a></li>
+              <li><a href="#" class="footer-link">Terms of Service</a></li>
+              <li>
+                <a href="#" class="footer-link">Corporate / Bulk Orders</a>
+              </li>
+              <li><a href="#" class="footer-link">Blog</a></li>
+              <li><a href="#" class="footer-link">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Copyright Notice -->
+        <div class="footer-copyright">
+          <p>
+            All Rights Reserved by Asian Footwears Pvt. Ltd.<br />2025 ©
+            Copyright
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

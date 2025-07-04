@@ -3,74 +3,579 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shoe Card Layout</title>
-  </head>
-  <body
-    style="
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #fff;
-    "
-  >
-    <h2 style="text-align: center; padding: 20px">Explore the Perfect Pair</h2>
+    <title>Asian Footwears - Casual Shoes</title>
+    <style>
+      /* Reset and Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Arial", sans-serif;
+      }
 
-    <div
-      style="
+      /* Main Layout */
+      .main {
+        width: 80%;
+        margin: 0 auto;
+      }
+
+      .offer-label {
+        background-color: #000;
+        color: white;
+        text-align: center;
+        padding: 10px;
+        font-size: 14px;
+        width: 100%;
+      }
+
+      .main-content {
+        width: 100%;
+        margin: 20px 0;
+      }
+
+      .page-map {
+        font-size: 14px;
+        margin-bottom: 20px;
+        color: #555;
+      }
+
+      .active-page {
+        font-weight: bold;
+        color: #000;
+      }
+
+      .products-container {
         display: flex;
-        justify-content: center;
+        width: 100%;
+      }
+
+      /* Filters Section with Scrollbar */
+      .aside-filters {
+        width: 20%;
+        height: 80vh; /* Fixed height for scroll */
+        position: sticky;
+        top: 20px;
+        overflow-y: auto; /* Enable vertical scroll */
+        padding-right: 10px; /* Space for scrollbar */
+      }
+
+      /* Custom scrollbar styling */
+      .aside-filters::-webkit-scrollbar {
+        width: 8px;
+      }
+
+      .aside-filters::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 10px;
+      }
+
+      .aside-filters::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 10px;
+      }
+
+      .aside-filters::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+
+      .sort,
+      .filter {
+        background-color: #fff;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Product List */
+      .product-list {
+        width: 60%;
+        margin-left: 20px;
+      }
+
+      /* Rest of your styles remain the same */
+      .sort-by-text {
+        font-size: 18px;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 15px;
+      }
+
+      hr {
+        border: none;
+        border-top: 1px solid #e0e0e0;
+        margin: 15px 0;
+      }
+
+      h4 {
+        font-size: 16px;
+        font-weight: 600;
+        color: #444;
+        margin-bottom: 15px;
+      }
+
+      .sort-by-options,
+      .filter-by-options,
+      .shoe-type-options {
+        margin-top: 10px;
+      }
+
+      .form-radio,
+      .form-check {
+        margin-bottom: 12px;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        padding: 8px 10px;
+        border-radius: 6px;
+        transition: background 0.2s;
+      }
+
+      .form-radio:hover,
+      .form-check:hover {
+        background-color: #f5f5f5;
+      }
+
+      .form-radio input[type="radio"],
+      .form-check input[type="checkbox"] {
+        margin-right: 10px;
+        accent-color: black;
+      }
+
+      .price-grid,
+      .size-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+
+      .price-box,
+      .size-box {
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        padding: 10px 0;
+        text-align: center;
+        font-weight: 500;
+        font-size: 14px;
+        background-color: #fff;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+
+      .price-box:hover,
+      .size-box:hover {
+        background-color: #000;
+        color: #fff;
+        border-color: #000;
+      }
+
+      .shoe-cards-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
         gap: 20px;
+        width: 100%;
+        padding: 0;
+      }
+
+      .shoe-card {
+        width: 100%;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background: white;
+        transition: transform 0.3s ease;
+      }
+
+      .shoe-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      .shoe-image-container {
+        position: relative;
+        padding-top: 100%;
+        overflow: hidden;
+      }
+
+      .shoe-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .bestseller-badge {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 140px;
+        height: auto;
+        z-index: 2;
+      }
+
+      .shoe-info {
+        padding: 15px;
+      }
+
+      .shoe-name {
+        margin: 0 0 10px 0;
+        font-size: 16px;
+        font-weight: 600;
+        color: #333;
+      }
+
+      .shoe-price {
+        display: flex;
+        gap: 8px;
         flex-wrap: wrap;
-        padding: 0 20px;
-      "
-    >
-      <!-- Shoe Card -->
-      <div
-        style="
-          width: 200px;
-          border-radius: 8px;
-          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-          background: #fff;
-          overflow: hidden;
-        "
-      >
-        <div style="position: relative">
-          <!-- Bestseller Image Badge -->
-          <img
-            src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fs3-ap-southeast-1.amazonaws.com%2Fasianapp%2Fdigital-website%2FBS_f%20copy_47763114713557565721.png&w=640&q=75"
-            alt="Bestseller"
-            style="
-              position: absolute;
-              top: 0px;
-              left: 0px;
-              width: 80px;
-              height: auto;
-              z-index: 1;
-            "
-          />
+        align-items: center;
+      }
 
-          <!-- Shoe Image -->
-          <img
-            src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fcdn.asianlive.in%2Fproduct_assets%2Feverest-22%2Fdark-grey%2Fprimary-photo%2Fprimary%20photo_97493772578200315023.jpg&w=828&q=75"
-            alt="Everest 22"
-            style="width: 100%; height: auto"
-          />
-        </div>
+      .current-price {
+        font-weight: bold;
+        font-size: 16px;
+        color: #000;
+      }
 
-        <div style="padding: 10px">
-          <p style="margin: 5px 0; font-size: 14px">Everest 22</p>
-          <p style="margin: 5px 0; font-size: 14px">
-            <span style="font-weight: bold">₹ 1573.95</span>
-            <span
-              style="
-                text-decoration: line-through;
-                color: gray;
-                font-size: 12px;
-              "
-              >₹ 2999</span
-            >
-            <span style="color: red; font-size: 12px">(48% off)</span>
-          </p>
+      .original-price {
+        text-decoration: line-through;
+        color: #999;
+        font-size: 14px;
+      }
+
+      .discount {
+        color: #ff5722;
+        font-size: 14px;
+        font-weight: bold;
+      }
+
+      @media (max-width: 1024px) {
+        .products-container {
+          flex-direction: column;
+        }
+
+        .aside-filters,
+        .product-list {
+          width: 100%;
+        }
+
+        .aside-filters {
+          position: static;
+          margin-bottom: 30px;
+        }
+
+        .product-list {
+          margin-left: 0;
+        }
+
+        .shoe-cards-grid {
+          grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+        }
+      }
+
+      @media (max-width: 768px) {
+        .main {
+          width: 90%;
+        }
+
+        .shoe-cards-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .bestseller-badge {
+          width: 120px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .main {
+          width: 95%;
+        }
+
+        .shoe-cards-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .price-grid,
+        .size-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .bestseller-badge {
+          width: 100px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Main Content Area -->
+    <div class="main">
+      <div class="offer-label">
+        <p>
+          Mid Season Sale! Save Upto 70% OFF + extra 10% off Use Code: MIDSALE10
+        </p>
+      </div>
+      <div class="main-content">
+        <p class="page-map">
+          Home / Mens / <span class="active-page">Casual Shoes</span>
+        </p>
+
+        <div class="products-container">
+          <div class="aside-filters">
+            <div class="sort">
+              <div class="sort-by">
+                <p class="sort-by-text">Sort By</p>
+                <hr />
+                <div class="sort-by-options">
+                  <div class="form-radio">
+                    <input
+                      type="radio"
+                      id="sort-newest"
+                      name="sort"
+                      value="newest"
+                      checked
+                    />
+                    <label for="sort-newest">Newest</label>
+                  </div>
+                  <div class="form-radio">
+                    <input
+                      type="radio"
+                      id="sort-price-low"
+                      name="sort"
+                      value="price-low"
+                    />
+                    <label for="sort-price-low">Price: Low to High</label>
+                  </div>
+                  <div class="form-radio">
+                    <input
+                      type="radio"
+                      id="sort-price-high"
+                      name="sort"
+                      value="price-high"
+                    />
+                    <label for="sort-price-high">Price: High to Low</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="filter">
+              <div class="filter-by">
+                <p class="sort-by-text">Filter By</p>
+                <hr />
+                <h4>Gender</h4>
+                <div class="filter-by-options">
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      id="filter-gender-men"
+                      name="men"
+                      value="Mens"
+                      checked
+                    />
+                    <label for="filter-gender-men">Mens</label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      id="filter-gender-women"
+                      name="women"
+                      value="Womens"
+                    />
+                    <label for="filter-gender-women">Womens</label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      id="filter-gender-kids"
+                      name="kids"
+                      value="Kids"
+                    />
+                    <label for="filter-gender-kids">Kids</label>
+                  </div>
+                </div>
+              </div>
+              <hr />
+              <div class="filter-price-range">
+                <h4>Price Range</h4>
+                <div class="price-grid">
+                  <div class="price-box">Under ₹1000</div>
+                  <div class="price-box">₹1001-₹1500</div>
+                  <div class="price-box">₹1500-₹2000</div>
+                  <div class="price-box">Above ₹2000</div>
+                </div>
+              </div>
+              <hr />
+              <div class="filter-by-size">
+                <h4>Filter by Size</h4>
+                <div class="size-grid">
+                  <div class="size-box">6 UK</div>
+                  <div class="size-box">7 UK</div>
+                  <div class="size-box">8 UK</div>
+                  <div class="size-box">9 UK</div>
+                  <div class="size-box">10 UK</div>
+                  <div class="size-box">11 UK</div>
+                  <div class="size-box">12 UK</div>
+                </div>
+              </div>
+              <hr />
+              <div class="shoe-type">
+                <h4>Shoe Type</h4>
+                <div class="shoe-type-options">
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      id="filter-shoe-type-sport"
+                      name="shoe-type"
+                      value="Sport Shoes"
+                    />
+                    <label for="filter-shoe-type-sport">Sport Shoes</label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      id="filter-shoe-type-casual"
+                      name="shoe-type"
+                      value="Casual Shoes"
+                      checked
+                    />
+                    <label for="filter-shoe-type-casual">Casual Shoes</label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      id="filter-shoe-type-kids"
+                      name="shoe-type"
+                      value="Kids Shoes"
+                    />
+                    <label for="filter-shoe-type-kids">Kids Shoes</label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      id="filter-shoe-type-slippers"
+                      name="shoe-type"
+                      value="Slippers"
+                    />
+                    <label for="filter-shoe-type-slippers">Slippers</label>
+                  </div>
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      id="filter-shoe-type-sports-sandals"
+                      name="shoe-type"
+                      value="Sports Sandals"
+                    />
+                    <label for="filter-shoe-type-sports-sandals"
+                      >Sports Sandals</label
+                    >
+                  </div>
+                  <div class="form-check">
+                    <input
+                      type="checkbox"
+                      id="filter-shoe-type-formal"
+                      name="shoe-type"
+                      value="Formal Shoes"
+                    />
+                    <label for="filter-shoe-type-formal">Formal Shoes</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="product-list">
+            <div class="shoe-cards-grid">
+              <!-- Gelon -->
+              <article class="shoe-card">
+                <div class="shoe-image-container">
+                  <img
+                    class="bestseller-badge"
+                    src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fs3-ap-southeast-1.amazonaws.com%2Fasianapp%2Fdigital-website%2FBS_f%20copy_47763114713557565721.png&w=640&q=75"
+                    alt="Bestseller"
+                    width="140"
+                    height="auto"
+                  />
+                  <img
+                    class="shoe-image"
+                    src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fcdn.asianlive.in%2Fproduct_assets%2Ftarzan-11%2Fwhite-navy%2Fprimary-photo%2Fprimary%20photo_31840686291918569838.jpg&w=828&q=75"
+                    alt="Gelon - White"
+                    width="300"
+                    height="300"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="shoe-info">
+                  <h3 class="shoe-name">Gelon</h3>
+                  <div class="shoe-price">
+                    <span class="current-price">₹807.45</span>
+                    <span class="original-price">₹4499</span>
+                    <span class="discount">(46% off)</span>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Tarzan 11 -->
+              <article class="shoe-card">
+                <div class="shoe-image-container">
+                  <img
+                    class="bestseller-badge"
+                    src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fs3-ap-southeast-1.amazonaws.com%2Fasianapp%2Fdigital-website%2FBS_f%20copy_47763114713557565721.png&w=640&q=75"
+                    alt="Bestseller"
+                    width="140"
+                    height="auto"
+                  />
+                  <img
+                    class="shoe-image"
+                    src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fcdn.asianlive.in%2Fproduct_assets%2Ftarzan-11%2Fwhite-navy%2Fprimary-photo%2Fprimary%20photo_31840686291918569838.jpg&w=828&q=75"
+                    alt="Tarzan 11 - White Navy"
+                    width="300"
+                    height="300"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="shoe-info">
+                  <h3 class="shoe-name">Tarzan 11</h3>
+                  <div class="shoe-price">
+                    <span class="current-price">₹729.75</span>
+                    <span class="original-price">₹4499</span>
+                    <span class="discount">(51% off)</span>
+                  </div>
+                </div>
+              </article>
+
+              <!-- Mexico 11 -->
+              <article class="shoe-card">
+                <div class="shoe-image-container">
+                  <img
+                    class="bestseller-badge"
+                    src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fs3-ap-southeast-1.amazonaws.com%2Fasianapp%2Fdigital-website%2FBS_f%20copy_47763114713557565721.png&w=640&q=75"
+                    alt="Bestseller"
+                    width="140"
+                    height="auto"
+                  />
+                  <img
+                    class="shoe-image"
+                    src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fcdn.asianlive.in%2Fproduct_assets%2Ftarzan-11%2Fwhite-navy%2Fprimary-photo%2Fprimary%20photo_31840686291918569838.jpg&w=828&q=75"
+                    alt="Mexico 11 - Beige Olive"
+                    width="300"
+                    height="300"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="shoe-info">
+                  <h3 class="shoe-name">Mexico 11</h3>
+                  <div class="shoe-price">
+                    <span class="current-price">₹838.95</span>
+                    <span class="original-price">₹4499</span>
+                    <span class="discount">(44% off)</span>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
         </div>
       </div>
     </div>
