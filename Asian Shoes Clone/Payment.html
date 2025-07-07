@@ -156,6 +156,561 @@
         padding: 5px;
       }
 
+      /* Payment Process Steps */
+      .order-process {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0;
+        margin: 40px auto;
+        width: 80%;
+        max-width: 600px;
+      }
+
+      .process-step {
+        background-color: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #6b7280;
+        font-size: 14px;
+        z-index: 1;
+      }
+
+      .process-step.active {
+        background-color: black;
+        color: white;
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+      }
+
+      .process-line {
+        flex: 1;
+        height: 2.5px;
+        background-color: black;
+      }
+
+      .process-step-label {
+        font-size: 12px;
+        margin-top: 5px;
+        color: black;
+        text-align: center;
+      }
+
+      /* Payment Container */
+      .payment-container {
+        display: flex;
+        gap: 40px;
+        flex-wrap: wrap;
+      }
+
+      /* Shipping/Payment Section */
+      .payment-section {
+        flex: 1;
+        min-width: 60px;
+        background-color: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        border-radius: 10px;
+        font-family: sans-serif;
+        margin-bottom: 20px;
+      }
+
+      .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .section-title {
+        margin: 0;
+        font-size: 18px;
+      }
+
+      .change-link {
+        color: rgb(0 113 217);
+        text-decoration: underline;
+        margin: 0;
+        cursor: pointer;
+        font-size: 14px;
+      }
+
+      .divider {
+        border: none;
+        border-top: 1px solid #e5e7eb;
+        margin: 15px 0;
+      }
+
+      .address-details p {
+        color: #6b7280;
+        font-size: 15px;
+        line-height: 1;
+        margin: 10px 0;
+      }
+
+      /* Payment Methods */
+      .payment-methods {
+        border: 1px solid #e5e7eb;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      .payment-methods-header {
+        display: flex;
+        align-items: center;
+        padding: 15px 20px;
+      }
+
+      .payment-methods-header-text {
+        flex: 1;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .payment-methods-header-icon {
+        flex-shrink: 0;
+        margin-left: 15px;
+      }
+
+      .payment-methods-header-icon img {
+        width: 120px;
+        height: auto;
+      }
+
+      /* UPI Payment Option */
+      .payment-option {
+        padding: 15px 20px;
+      }
+
+      .payment-option-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 10px 0;
+      }
+
+      .payment-option-left {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .payment-option-icon {
+        color: rgb(0 113 217);
+        font-size: 18px;
+      }
+
+      .payment-option-icon.inactive {
+        color: #e5e7eb;
+      }
+
+      .payment-option-text {
+        font-weight: bold;
+        font-size: 15px;
+      }
+
+      .payment-option-badge {
+        background-color: rgb(0 113 217);
+        color: white;
+        padding: 5px 10px;
+        border-radius: 6px;
+        font-size: 13px;
+        font-weight: bold;
+        margin-left: 10px;
+      }
+
+      .payment-option-chevron {
+        font-size: 14px;
+        color: black;
+      }
+
+      /* UPI Payment Box */
+      .upi-payment-box {
+        background-color: #d1ede9;
+        padding: 10px 20px;
+        text-align: center;
+        font-family: Arial, sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+        width: 80%;
+        margin: 20px auto;
+        position: relative;
+        border-radius: 8px;
+        clip-path: polygon(
+          0% 0%,
+          3% 10%,
+          0% 20%,
+          3% 30%,
+          0% 40%,
+          3% 50%,
+          0% 60%,
+          3% 70%,
+          0% 80%,
+          3% 90%,
+          0% 100%,
+          100% 100%,
+          97% 90%,
+          100% 80%,
+          97% 70%,
+          100% 60%,
+          97% 50%,
+          100% 40%,
+          97% 30%,
+          100% 20%,
+          97% 10%,
+          100% 0%
+        );
+      }
+
+      .upi-amount {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        padding: 0 10px;
+      }
+
+      .upi-amount-text {
+        color: #000;
+        margin: 0;
+      }
+
+      .upi-amount-value {
+        margin: 0;
+        font-weight: bold;
+        font-size: 18px;
+        padding: 4px 8px;
+        border-radius: 3px;
+      }
+
+      /* UPI ID Input */
+      .upi-id-box {
+        margin: 20px 0;
+      }
+
+      .upi-id-input {
+        width: 100%;
+        padding: 15px;
+        border-radius: 10px;
+        border: none;
+        background-color: #f5f5f5;
+        font-size: 16px;
+        box-sizing: border-box;
+        outline: none;
+      }
+
+      .suggestions {
+        margin-top: 10px;
+        display: flex;
+        gap: 10px;
+        overflow-x: auto;
+        padding-bottom: 6px;
+      }
+
+      .suggestion-item {
+        padding: 7px 6px;
+        background-color: #f2f2f2;
+        border-radius: 15px;
+        white-space: nowrap;
+        font-size: 12px;
+        color: #555;
+      }
+
+      /* Order Summary */
+      .order-summary-container {
+        flex: 1;
+        min-width: 40%;
+        font-family: sans-serif;
+      }
+
+      .order-summary-card {
+        background-color: white;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+      }
+
+      .coupon-section {
+        margin-bottom: 30px;
+      }
+
+      .coupon-header {
+        margin: 0 0 10px 0;
+        font-size: 16px;
+      }
+
+      .coupon-text {
+        margin: 0;
+        color: #4e5158;
+        font-size: 16px;
+      }
+
+      .coupon-details {
+        margin: 20px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+
+      .coupon-info {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .coupon-img {
+        width: 30px;
+        height: 30px;
+      }
+
+      .coupon-text-group {
+        line-height: 1.4;
+      }
+
+      .coupon-save-text {
+        color: #00a884;
+        font-weight: bold;
+        margin: 0;
+        font-size: 15px;
+      }
+
+      .view-coupons {
+        color: black;
+        cursor: pointer;
+        font-size: 14px;
+      }
+
+      .coupon-status {
+        color: #00a884;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+
+      .dotted-divider {
+        border: none;
+        border-top: 1px dashed #ccc;
+        margin: 15px 0;
+      }
+
+      /* Voucher Section */
+      .voucher-section {
+        margin: 20px 0;
+      }
+
+      .voucher-text {
+        margin-bottom: 8px;
+        font-size: 16px;
+        font-weight: 500;
+      }
+
+      .voucher-input-group {
+        display: flex;
+        border-radius: 8px;
+        overflow: hidden;
+        width: 100%;
+      }
+
+      .voucher-input {
+        flex: 1;
+        padding: 12px;
+        border: none;
+        background-color: #eeeeee;
+        font-size: 14px;
+        color: #6c757d;
+        outline: none;
+      }
+
+      .voucher-button {
+        background-color: #98a0ae;
+        color: white;
+        font-weight: bold;
+        padding: 12px 16px;
+        border: none;
+        cursor: pointer;
+        font-size: 14px;
+      }
+
+      /* Order Details */
+      .order-summary-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      .order-title {
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      .item-count {
+        font-size: 14px;
+        color: gray;
+      }
+
+      .original-price {
+        font-size: 14px;
+        color: gray;
+        text-decoration: line-through;
+      }
+
+      .total-price {
+        font-size: 18px;
+        font-weight: bold;
+        color: #00a884;
+      }
+
+      /* Product Info */
+      .product-info {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        margin: 20px 0;
+      }
+
+      .product-image-container {
+        width: 90px;
+        height: 90px;
+        border: 1px solid #242323;
+        border-radius: 10px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-shrink: 0;
+      }
+
+      .product-image {
+        width: 70%;
+        height: auto;
+      }
+
+      .product-details {
+        flex: 1;
+      }
+
+      .product-title {
+        margin: 0 0 5px 0;
+        font-size: 16px;
+      }
+
+      .product-size,
+      .product-color {
+        font-size: 14px;
+        color: gray;
+        margin: 5px 0;
+      }
+
+      .product-price {
+        font-size: 14px;
+        color: rgb(0, 0, 0);
+        font-weight: bold;
+      }
+
+      .product-original-price {
+        font-size: 14px;
+        color: gray;
+        text-decoration: line-through;
+      }
+
+      .product-discount {
+        font-size: 14px;
+        color: #00a884;
+      }
+
+      /* Price Details */
+      .price-details {
+        margin: 20px 0;
+      }
+
+      .price-details-header {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .price-row {
+        display: flex;
+        justify-content: space-between;
+        margin: 8px 0;
+      }
+
+      .price-label {
+        font-size: 16px;
+        color: gray;
+      }
+
+      .price-value {
+        font-size: 16px;
+        color: gray;
+      }
+
+      .price-discount {
+        color: #00a884;
+      }
+
+      .grand-total {
+        font-size: 18px;
+        font-weight: bold;
+        margin: 15px 0 5px 0;
+      }
+
+      .final-price {
+        font-size: 16px;
+        color: black;
+        font-weight: bold;
+      }
+
+      /* Place Order */
+      .place-order-container {
+        background-color: white;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+      }
+
+      .order-total {
+        margin-bottom: 10px;
+        font-size: 18px;
+        font-weight: bold;
+      }
+
+      .order-items {
+        font-size: 16px;
+        color: gray;
+      }
+
+      .place-order-button {
+        width: 60%;
+      }
+
+      .place-order-btn {
+        width: 100%;
+        padding: 12px 0;
+        background-color: rgb(0 113 217);
+        color: white;
+        font-weight: bold;
+        font-size: 1.2rem;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+
       /* Footer */
       footer {
         background-color: #111;
@@ -302,6 +857,23 @@
           gap: 25px;
           font-size: 18px;
         }
+
+        .main-content {
+          width: 80%;
+          max-width: 1200px;
+        }
+
+        .payment-container {
+          flex-wrap: nowrap;
+        }
+
+        .payment-section {
+          flex: 2;
+        }
+
+        .order-summary-container {
+          flex: 1;
+        }
       }
 
       /* Desktop (768px and up) */
@@ -331,6 +903,10 @@
           gap: 40px;
           flex-wrap: nowrap;
         }
+
+        .payment-container {
+          flex-direction: row;
+        }
       }
 
       /* Tablet (600px to 767px) */
@@ -339,6 +915,15 @@
         .footer-contact,
         .footer-links {
           flex: 1 1 calc(50% - 15px);
+        }
+
+        .main-content {
+          width: 90%;
+        }
+
+        .payment-section,
+        .order-summary-container {
+          min-width: 100%;
         }
       }
 
@@ -437,6 +1022,32 @@
         .lower-nav .nav-menu p:last-child {
           border-bottom: none;
         }
+
+        /* Payment process steps */
+        .order-process {
+          width: 90%;
+          margin: 30px auto;
+        }
+
+        /* Payment sections */
+        .payment-section,
+        .order-summary-container {
+          min-width: 100%;
+        }
+
+        .place-order-container {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .place-order-content {
+          width: 100%;
+          margin-bottom: 15px;
+        }
+
+        .place-order-button {
+          width: 100%;
+        }
       }
 
       /* Small Mobile (360px and below) */
@@ -448,6 +1059,15 @@
         .upper-nav .left p:not(:last-child)::after {
           margin-left: 5px;
           right: -8px;
+        }
+
+        .upi-payment-box {
+          font-size: 16px;
+          padding: 8px 15px;
+        }
+
+        .upi-amount-value {
+          font-size: 16px;
         }
       }
     </style>
@@ -511,292 +1131,302 @@
           </p>
         </section>
         <article class="main-content">
-          <div
-            class="order-process"
-            style="
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              gap: 0;
-              margin: 40px 0;
-              width: 50%;
-              margin-left: auto;
-              margin-right: auto;
-            "
-          >
+          <!-- Order Process Steps -->
+          <div class="order-process">
             <!-- Step 1: User -->
-            <div
-              style="
-                background-color: white;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                padding: 10px;
-                border-radius: 50%;
-                width: 36px;
-                height: 36px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                color: #6b7280;
-                font-size: 14px;
-              "
-            >
+            <div class="process-step">
               <i class="fa-solid fa-user" aria-hidden="true"></i>
             </div>
 
             <!-- Line 1 -->
-            <div style="flex: 1; height: 2.5px; background-color: black"></div>
+            <div class="process-line"></div>
 
             <!-- Step 2: Location -->
-            <div
-              style="
-                background-color: white;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                padding: 10px;
-                border-radius: 50%;
-                width: 36px;
-                height: 36px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                color: #6b7280;
-                font-size: 14px;
-              "
-            >
+            <div class="process-step">
               <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
             </div>
 
             <!-- Line 2 -->
-            <div style="flex: 1; height: 2.5px; background-color: black"></div>
+            <div class="process-line"></div>
 
             <!-- Step 3: Payment (active) -->
             <div style="text-align: center">
-              <div
-                style="
-                  background-color: black;
-                  color: white;
-                  padding: 10px;
-                  border-radius: 50%;
-                  width: 40px;
-                  height: 40px;
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-                  font-size: 16px;
-                  margin-top: 12px;
-                "
-              >
+              <div class="process-step active">
                 <i class="fa-solid fa-credit-card" aria-hidden="true"></i>
               </div>
-              <div
-                style="
-                  font-size: 12px;
-                  margin-top: 5px;
-                  color: black;
-                  text-align: center;
-                "
-              >
-                Payment
-              </div>
+              <div class="process-step-label">Payment</div>
             </div>
           </div>
 
           <div class="payment-container">
-            <section
-              class="Shipping-details"
-              style="
-                width: 50%;
-                background-color: white;
-                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                padding: 20px;
-                border-radius: 10px;
-                font-family: sans-serif;
-              "
-            >
+            <!-- Payment Form Section -->
+            <section class="payment-section">
               <!-- Shipping Header -->
-              <div
-                class="shipping-header"
-                style="
-                  display: flex;
-                  justify-content: space-between;
-                  align-items: center;
-                  margin-bottom: 20px;
-                "
-              >
-                <h3 style="margin: 0; font-size: 18px">SHIPPING DETAILS</h3>
-                <p
-                  class="change-address"
-                  style="
-                    color: rgb(0 113 217);
-                    text-decoration: underline;
-                    margin: 0;
-                    cursor: pointer;
-                    font-size: 14px;
-                  "
-                >
-                  Change Address
-                </p>
+              <div class="section-header">
+                <h3 class="section-title">SHIPPING DETAILS</h3>
+                <p class="change-link">Change Address</p>
               </div>
 
-              <hr
-                style="border: none; border-top: 1px solid #e5e7eb; margin: 0"
-              />
+              <hr class="divider" />
 
               <!-- Shipping Address -->
-              <div class="shipping-address-div" style="margin: 20px 0">
-                <p
-                  style="
-                    color: #6b7280;
-                    font-size: 15px;
-
-                    line-height: 1.5;
-                  "
-                >
+              <div class="address-details">
+                <p>
                   Near Ganesh Mandir, Shivtej Nagar, Opposite Birla Soft
                   Company., Hinjewadi Pune 411017 Pune.
                 </p>
-                <p
-                  style="
-                    color: #6b7280;
-                    font-size: 15px;
-
-                    line-height: 1.5;
-                  "
-                >
-                  Pune, Maharashtra
-                </p>
-                <p
-                  style="
-                    color: #6b7280;
-                    font-size: 15px;
-
-                    line-height: 1.5;
-                  "
-                >
-                  Mob : 9834873769
-                </p>
+                <p>Pune, Maharashtra</p>
+                <p>Mob : 9834873769</p>
               </div>
 
-              <hr
-                style="border: none; border-top: 1px solid #e5e7eb; margin: 0"
-              />
+              <hr class="divider" />
 
               <!-- Payment Details -->
-              <div class="Payment-details-container" style="margin-top: 20px">
-                <div class="payment-header" style="margin-bottom: 15px">
-                  <h3 style="margin: 0 0 5px 0; font-size: 18px">Payment</h3>
-                  <p style="margin: 0; color: #6b7280; font-size: 14px">
+              <div class="Payment-details-container">
+                <div class="payment-header" style="margin-bottom: 10px">
+                  <h3 class="section-title">Payment</h3>
+                  <p
+                    style="
+                      margin: 0;
+                      color: #6b7280;
+                      font-size: 16px;
+                      margin-top: 5px;
+                    "
+                  >
                     Choose your preferred payment method
                   </p>
                 </div>
 
                 <!-- Payment Methods -->
-                <div
-                  class="payments-methods"
-                  style="
-                    border: 1px solid #e5e7eb;
-                    border-radius: 10px;
-                    overflow: hidden;
-                  "
-                >
-                  <div
-                    class="payment-methods-header"
-                    style="
-                      display: flex;
-                      align-items: center;
-                      padding: 15px 20px;
-                    "
-                  >
-                    <div
-                      class="payment-methods-header-text"
-                      style="
-                        flex: 1;
-                        white-space: nowrap;
-                        overflow: hidden;
-                        text-overflow: ellipsis;
-                      "
-                    >
+                <div class="payment-methods">
+                  <div class="payment-methods-header">
+                    <div class="payment-methods-header-text">
                       <h4 style="margin: 0; font-size: 16px">
                         Select Payment Method
                       </h4>
                     </div>
-                    <div
-                      class="payment-methods-header-icon"
-                      style="flex-shrink: 0; margin-left: 15px"
-                    >
+                    <div class="payment-methods-header-icon">
                       <img
                         src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fcdn.asianlive.in%2Fdigital-website%2FSafeAndSecurePayment_6019661435803128727.png&w=384&q=75"
                         alt="Safe and Secure Payment"
-                        style="width: 120px; height: auto"
                       />
                     </div>
                   </div>
-                  <hr
-                    style="
-                      border: none;
-                      border-top: 1px solid #e5e7eb;
-                      margin: 0;
-                    "
-                  />
+                  <hr class="divider" />
 
-                  <!-- Payment options would go here -->
-                  <div class="upi-container">
-                    <div class="upi-option">
-                      <div
-                        class="upi-row"
-                        style="
-                          display: flex;
-                          align-items: center;
-                          justify-content: space-between;
-
-                          width: 90%;
-                          max-width: 800px;
-                          margin: 20px auto;
-                          font-family: sans-serif;
-                        "
-                      >
-                        <!-- Left side: Icons and text -->
-                        <div
-                          class="upi-icons"
-                          style="display: flex; align-items: center; gap: 10px"
+                  <!-- UPI Payment Option -->
+                  <div class="payment-option">
+                    <div class="payment-option-row">
+                      <div class="payment-option-left">
+                        <i
+                          class="fa fa-check-circle payment-option-icon"
+                          aria-hidden="true"
+                        ></i>
+                        <img
+                          src="Img\bhim-upi.png"
+                          alt="UPI"
+                          style="height: 20px"
+                        />
+                        <span class="payment-option-text">UPI</span>
+                        <span class="payment-option-badge"
+                          >Fastest - Recommended</span
                         >
-                          <i
-                            class="fa fa-check-circle"
-                            style="color: rgb(0 113 217); font-size: 18px"
-                            aria-hidden="true"
-                          ></i>
-                          <img
-                            src="Img\bhim-upi.png"
-                            alt="UPI"
-                            style="height: 20px"
-                          />
+                      </div>
+                      <div>
+                        <i
+                          class="fa fa-chevron-up payment-option-chevron"
+                          aria-hidden="true"
+                        ></i>
+                      </div>
+                    </div>
+                    <div class="upi-payment-box">
+                      <div class="upi-amount">
+                        <p class="upi-amount-text">Pay</p>
+                        <h3 class="upi-amount-value">₹ 726.7</h3>
+                        <span class="upi-amount-text">via UPI</span>
+                      </div>
+                    </div>
+                    <div class="upi-id-box">
+                      <input
+                        type="text"
+                        class="upi-id-input"
+                        placeholder="Enter Your UPI ID"
+                      />
 
-                          <span style="font-weight: bold; font-size: 15px"
-                            >UPI</span
-                          >
-                          <span
-                            style="
-                              background-color: rgb(0 113 217);
-                              color: white;
-                              padding: 4px 10px;
-                              border-radius: 6px;
-                              font-size: 12px;
-                              font-weight: bold;
-                            "
-                            >Fastest - Recommended</span
-                          >
-                        </div>
-
-                        <!-- Right side: Chevron icon -->
-                        <div>
-                          <i
-                            class="fa fa-chevron-up"
-                            style="font-size: 14px; color: black"
-                            aria-hidden="true"
-                          ></i>
-                        </div>
+                      <div class="suggestions">
+                        <span class="suggestion-item"> @okhdfcbank </span>
+                        <span class="suggestion-item">@okaxis</span>
+                        <span class="suggestion-item">@okicici</span>
+                        <span class="suggestion-item">@ybl</span>
+                        <span class="suggestion-item">@Sbi</span>
                       </div>
                     </div>
                   </div>
+
+                  <hr class="divider" />
+
+                  <!-- Credit/Debit Card Option -->
+                  <div class="payment-option">
+                    <div class="payment-option-row">
+                      <div class="payment-option-left">
+                        <i
+                          class="fa fa-check-circle payment-option-icon inactive"
+                          aria-hidden="true"
+                        ></i>
+                        <i class="fa fa-credit-card" aria-hidden="true"></i>
+                        <span class="payment-option-text">
+                          Credit / Debit Cards
+                        </span>
+                      </div>
+                      <div class="payment-option-right">
+                        <i
+                          class="fa fa-chevron-down payment-option-chevron"
+                          aria-hidden="true"
+                        ></i>
+                      </div>
+                    </div>
+                  </div>
+
+                  <hr class="divider" />
+
+                  <!-- Net Banking Option -->
+                  <div class="payment-option">
+                    <div class="payment-option-row">
+                      <div class="payment-option-left">
+                        <i
+                          class="fa fa-check-circle payment-option-icon inactive"
+                          aria-hidden="true"
+                        ></i>
+                        <i class="fa fa-university" aria-hidden="true"></i>
+                        <span class="payment-option-text">Net Banking</span>
+                      </div>
+                      <div class="payment-option-right">
+                        <i
+                          class="fa fa-chevron-down payment-option-chevron"
+                          aria-hidden="true"
+                        ></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Order Summary Section -->
+            <section class="order-summary-container">
+              <div class="order-summary-card coupon-section">
+                <div class="coupon-section">
+                  <h3 class="coupon-header">Discount & Coupons</h3>
+                  <p class="coupon-text">
+                    Proceed to checkout to apply coupons and avail discounts.
+                  </p>
+                </div>
+                <div class="coupon-details">
+                  <div class="coupon-info">
+                    <div class="coupon-img">
+                      <img
+                        src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fcdn.asianlive.in%2Fdigital-website%2Fdiscount_icon_96324590850601285477.png&w=64&q=75"
+                        alt="Discount Icon"
+                        width="100%"
+                      />
+                    </div>
+                    <div class="coupon-text-group">
+                      <p class="coupon-save-text">
+                        Saved Rs.80.75 with MONSOON10
+                      </p>
+                      <span class="view-coupons"
+                        >View all coupons <i class="fa fa-chevron-right"></i
+                      ></span>
+                    </div>
+                  </div>
+                  <div class="coupon-status">
+                    <i class="fa fa-check-circle" aria-hidden="true"></i>
+                    <span>Applied</span>
+                  </div>
+                </div>
+
+                <hr class="dotted-divider" />
+
+                <div class="voucher-section">
+                  <p class="voucher-text">Redeem Gift Voucher</p>
+                  <div class="voucher-input-group">
+                    <input
+                      type="text"
+                      placeholder="Enter Voucher Code"
+                      class="voucher-input"
+                    />
+                    <button class="voucher-button">Redeem</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="order-summary-card">
+                <div class="order-summary-header">
+                  <div>
+                    <h3 class="order-title">Order Summary</h3>
+                    <p class="item-count">(1 Item)</p>
+                  </div>
+                  <div>
+                    <span class="original-price">Rs. 807.45</span>
+                    <span class="total-price">Rs. 726.7</span>
+                  </div>
+                </div>
+
+                <div class="product-info">
+                  <div class="product-image-container">
+                    <img
+                      src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fcdn.asianlive.in%2Fproduct_assets%2Fmexico-01%2Fwhite-lgrey-orange%2Fprimary-photo%2Fprimary%20photo_44124357365025094981.jpg&w=256&q=75"
+                      alt="Product Image"
+                      class="product-image"
+                    />
+                  </div>
+                  <div class="product-details">
+                    <h3 class="product-title">MEXICO 01</h3>
+                    <p class="product-size">Size: 9</p>
+                    <p class="product-color">Color: White lgrey orange</p>
+                    <p class="product-price">
+                      ₹ 807.45
+                      <span class="product-original-price">₹ 1499.00</span>
+                      <span class="product-discount">(46% off)</span>
+                    </p>
+                  </div>
+                </div>
+
+                <div class="price-details">
+                  <h3 class="price-details-header">
+                    Price Details <span class="item-count">(1 Item)</span>
+                  </h3>
+                  <hr class="divider" />
+                  <div class="price-row">
+                    <span class="price-label">Amount</span>
+                    <span class="price-value">₹ 807.45</span>
+                  </div>
+                  <div class="price-row">
+                    <span class="price-label">Coupon Discount</span>
+                    <span class="price-value price-discount">-Rs 80.75</span>
+                  </div>
+                  <div class="price-row">
+                    <span class="price-label">Delivery Charges</span>
+                    <span class="price-value price-discount">Free</span>
+                  </div>
+                  <hr class="divider" />
+                  <div class="price-row">
+                    <h3 class="grand-total">Grand Total</h3>
+                    <div>
+                      <span class="original-price">₹ 807.45</span>
+                      <span class="final-price">₹ 726.70</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="place-order-container">
+                <div class="place-order-content">
+                  <h3 class="order-total">Rs. 726.7</h3>
+                  <p class="order-items">Total (1 Item)</p>
+                </div>
+                <div class="place-order-button">
+                  <button class="place-order-btn">PLACE ORDER</button>
                 </div>
               </div>
             </section>
