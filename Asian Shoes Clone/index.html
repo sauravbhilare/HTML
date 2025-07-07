@@ -1,0 +1,1830 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Asian Footwears - Up to 70% Off Men's, Women's & Kids' Footwear
+    </title>
+    <!-- Font Awesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #fffdfd;
+      }
+
+      .screen {
+        width: 100%;
+        overflow-x: hidden;
+      }
+
+      /* Top Bar */
+      .upper-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #f6f6f6;
+        padding: 10px 5%;
+        font-size: 12px;
+        border-top: 1px solid #e3d7e8;
+        border-bottom: 1px solid #e3d7e8;
+        flex-wrap: wrap;
+      }
+
+      .left,
+      .right {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .left p {
+        margin-right: 13px;
+        cursor: pointer;
+        position: relative;
+        color: #000;
+        white-space: nowrap;
+        margin: 5px 13px 5px 0;
+      }
+
+      .left p:not(:last-child)::after {
+        content: "|";
+        margin-left: 13px;
+        color: #000;
+        position: absolute;
+        right: -10px;
+      }
+
+      .right p {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        color: #000;
+        white-space: nowrap;
+        margin: 5px 0;
+      }
+
+      /* Main Navbar */
+      .lower-nav {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 5%;
+        border-bottom: 1px solid #ccc;
+        background-color: white;
+      }
+
+      .logo {
+        width: 120px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      .logo-img {
+        width: 100%;
+        max-width: 100px;
+      }
+
+      .nav-menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        font-size: 14px;
+        margin-bottom: 15px;
+        text-align: center;
+      }
+
+      .nav-menu p {
+        cursor: pointer;
+        font-weight: 200;
+        color: #000;
+        white-space: nowrap;
+        padding: 5px 0;
+      }
+
+      .other-activity {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        font-size: 16px;
+        color: #000;
+      }
+
+      .other-activity i {
+        cursor: pointer;
+        color: #000;
+      }
+
+      .offer-label {
+        background-color: #000;
+        color: white;
+        width: 100%;
+        height: 10%;
+        text-align: center;
+        padding: 5px;
+      }
+
+      /* Common styles for all sections */
+      .section-container {
+        margin: 50px 0;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 10px;
+      }
+
+      .section-subtitle {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .products-grid {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+
+      /* SHOP FOR section specific styles */
+      .shop-for-grid {
+        margin-bottom: 50px;
+      }
+
+      .category-card {
+        width: 30%;
+        min-width: 250px;
+      }
+
+      .category-img {
+        width: 100%;
+        border-radius: 8px;
+        background-color: rgba(247, 247, 247, 1);
+      }
+
+      /* Product card styles (used in FIRST LOOK and Best Sellers) */
+      .product-card {
+        width: 300px;
+        background-color: rgba(247, 247, 247, 1);
+        border-radius: 10px;
+        padding: 10px;
+        margin-bottom: 20px;
+      }
+
+      .product-img {
+        width: 100%;
+        border-radius: 8px;
+      }
+
+      .product-name {
+        margin: 10px 0 5px;
+        font-weight: bold;
+      }
+
+      .product-price {
+        margin: 0;
+        color: #333;
+      }
+
+      .thala-favourite {
+        display: flex;
+        width: 100%;
+        height: 700px;
+      }
+
+      .thala-favourite-content {
+        width: 80%;
+      }
+
+      .thala-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .thala-fav-shoes {
+        width: 20%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        height: 100%;
+        padding: 24px 12px;
+        box-sizing: border-box;
+        background: linear-gradient(to bottom, #bbceed, rgba(187, 206, 237, 0));
+        gap: 18px;
+      }
+
+      .shoe-item {
+        border: 1px solid #bbb;
+        border-radius: 10px;
+        width: 100%;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+      }
+
+      .shoe-item-img-container {
+        height: 70%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .shoe-item-img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        padding: 10px;
+      }
+
+      .shoe-item-details {
+        padding: 10px;
+        height: 30%;
+      }
+
+      .shoe-item-name {
+        font-weight: bold;
+        font-size: 14px;
+      }
+
+      .shoe-item-price {
+        color: #e63946;
+        font-weight: bold;
+        font-size: 16px;
+      }
+
+      /* Common section styles */
+      .section {
+        margin: 60px 0;
+        padding: 0 20px;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .section-title {
+        font-size: 28px;
+        margin: 0 0 10px 0;
+        color: #333;
+        font-weight: 600;
+      }
+
+      .section-subtitle {
+        color: #777;
+        font-size: 16px;
+        margin: 0;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      /* Explore Accessories specific styles */
+      .explore-accessories {
+        margin: 40px 0;
+      }
+
+      .accessories-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 25px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .accessory-item {
+        width: 250px;
+      }
+
+      .accessory-card {
+        height: 250px;
+        background: white;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px;
+      }
+
+      .accessory-img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+      }
+
+      .accessory-info {
+        margin-top: 15px;
+      }
+
+      .accessory-name {
+        font-weight: 600;
+        margin: 0 0 8px 0;
+        font-size: 16px;
+        line-height: 1.3;
+      }
+
+      .accessory-price {
+        color: #e63946;
+        font-weight: 700;
+        margin: 0 0 15px 0;
+        font-size: 16px;
+      }
+
+      .add-to-cart-btn {
+        background-color: #000;
+        color: white;
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+        border-radius: 4px;
+        border: none;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      .add-to-cart-btn:hover {
+        background-color: #333;
+      }
+
+      /* Price tiers/grid styles (used in Smart Buys and Biggest Sale) */
+      .grid-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .price-tier {
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .price-tier:hover {
+        transform: translateY(-5px);
+      }
+
+      .price-tier-img-container {
+        position: relative;
+      }
+
+      .price-tier-img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* Shoe Style Collection specific styles */
+      .shoe-style-title {
+        margin: 0 0 60px 0;
+      }
+
+      .style-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .style-card {
+        text-align: center;
+        transition: transform 0.3s ease;
+      }
+
+      .style-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .style-img-container {
+        margin-bottom: 60px;
+        height: 180px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .style-img {
+        width: 100%;
+        object-fit: contain;
+      }
+
+      .style-name {
+        font-size: 16px;
+        margin: 0;
+        color: #333;
+      }
+
+      /* Why Asian Section Styles */
+      .why-asian {
+        background-color: #f8f9fa;
+        padding: 60px 20px;
+        text-align: center;
+        margin: 40px 0;
+      }
+
+      .why-asian-container {
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .why-asian-title {
+        font-size: 25px;
+        color: #333;
+        margin-bottom: 20px;
+        font-weight: 700;
+      }
+
+      .why-asian-subtitle {
+        font-size: 17px;
+        color: #555;
+        margin-bottom: 30px;
+        line-height: 1.5;
+      }
+
+      .features-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 125px;
+        margin-top: 40px;
+      }
+
+      .feature-card {
+        max-width: 250px;
+      }
+
+      .feature-image {
+        width: 100%;
+        border-radius: 8px;
+        background-color: rgba(247, 247, 247, 1);
+      }
+
+      .feature-title {
+        font-size: 17px;
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 10px;
+      }
+
+      /* Main Container */
+      .perfect-pair-container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+      }
+
+      /* Section Styling */
+      .perfect-pair-section {
+        margin: 40px 0;
+        padding: 0 20px;
+      }
+
+      /* Section Title */
+      .section-title {
+        font-size: 28px;
+        margin: 0 0 60px 0;
+        color: #333;
+        font-weight: 600;
+        text-align: center;
+      }
+
+      /* Shoe Cards Grid */
+      .shoe-cards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+        padding: 0 20px;
+        margin-top: 20px;
+      }
+
+      /* Individual Shoe Card */
+      .shoe-card {
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        background: #fff;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+      }
+
+      .shoe-card:hover {
+        transform: translateY(-5px);
+      }
+
+      /* Image Container */
+      .shoe-image-container {
+        position: relative;
+      }
+
+      /* Bestseller Badge */
+      .bestseller-badge {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 140px;
+        height: auto;
+        z-index: 1;
+      }
+
+      /* Shoe Image */
+      .shoe-image {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* Shoe Info */
+      .shoe-info {
+        padding: 10px;
+      }
+
+      .shoe-name {
+        margin: 5px 0;
+        font-size: 14px;
+      }
+
+      .shoe-price {
+        margin: 5px 0;
+        font-size: 14px;
+      }
+
+      .current-price {
+        font-weight: bold;
+      }
+
+      .original-price {
+        text-decoration: line-through;
+        color: gray;
+        font-size: 12px;
+        margin-left: 5px;
+      }
+
+      .discount {
+        color: red;
+        font-size: 12px;
+        margin-left: 5px;
+      }
+
+      /* Responsive Adjustments */
+      @media (max-width: 1024px) {
+        .shoe-cards-grid {
+          grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        }
+      }
+
+      @media (max-width: 768px) {
+        .shoe-cards-grid {
+          grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+          gap: 15px;
+        }
+
+        .section-title {
+          font-size: 24px;
+          margin-bottom: 40px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .perfect-pair-section {
+          padding: 0 10px;
+        }
+
+        .shoe-cards-grid {
+          grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+          gap: 10px;
+          padding: 0 10px;
+        }
+
+        .bestseller-badge {
+          width: 100px;
+        }
+
+        .shoe-name,
+        .shoe-price {
+          font-size: 12px;
+        }
+      }
+
+      /* Footer Styles */
+      .footer {
+        background-color: #111;
+        color: #fff;
+        padding: 40px 0 20px;
+        font-family: "Arial", sans-serif;
+      }
+
+      .footer-content {
+        width: 85%;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 30px;
+      }
+
+      .footer-logo-section {
+        flex: 1 1 100%;
+        min-width: 0;
+      }
+
+      .footer-logo {
+        width: 140px;
+        margin-bottom: 20px;
+      }
+
+      .footer-description {
+        margin: 0 0 20px 0;
+        line-height: 1.6;
+        color: #ccc;
+        font-size: 14px;
+      }
+
+      .social-icons {
+        font-size: 20px;
+        display: flex;
+        gap: 15px;
+        margin-bottom: 20px;
+      }
+
+      .social-icon {
+        color: #fff;
+        transition: color 0.3s;
+      }
+
+      .footer-contact {
+        flex: 1 1 100%;
+        min-width: 0;
+      }
+
+      .footer-heading {
+        font-size: 18px;
+        margin-bottom: 15px;
+        color: #fff;
+        position: relative;
+        padding-bottom: 8px;
+      }
+
+      .footer-heading-underline {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 2px;
+        background: #ff6b00;
+      }
+
+      .contact-text {
+        font-weight: 600;
+        margin-bottom: 12px;
+        color: #ddd;
+        font-size: 14px;
+      }
+
+      .contact-detail {
+        margin: 6px 0;
+        display: flex;
+        align-items: center;
+        color: #ccc;
+        font-size: 14px;
+      }
+
+      .contact-icon {
+        margin-right: 10px;
+        color: #ff6b00;
+        font-size: 14px;
+      }
+
+      .address-icon {
+        margin-right: 10px;
+        color: #ff6b00;
+        margin-top: 3px;
+        font-size: 14px;
+      }
+
+      .footer-links {
+        flex: 1 1 100%;
+        min-width: 0;
+      }
+
+      .footer-link-item {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        line-height: 2;
+      }
+
+      .footer-link {
+        color: #ccc;
+        text-decoration: none;
+        transition: color 0.3s;
+        font-size: 14px;
+      }
+
+      .footer-copyright {
+        width: 85%;
+        max-width: 1200px;
+        margin: 30px auto 0;
+        border-top: 1px solid #333;
+        padding-top: 20px;
+        text-align: center;
+        font-size: 13px;
+        color: #999;
+      }
+
+      /* Tablet Styles */
+      @media (min-width: 600px) {
+        .footer-logo-section,
+        .footer-contact,
+        .footer-links {
+          flex: 1 1 calc(50% - 15px);
+        }
+      }
+
+      /* Desktop Styles */
+      @media (min-width: 768px) {
+        .upper-nav {
+          padding: 10px 5%;
+          font-size: 12px;
+        }
+
+        .lower-nav {
+          height: 80px;
+          flex-direction: row;
+          padding: 0 5%;
+        }
+
+        .logo {
+          width: 120px;
+          margin-bottom: 0;
+        }
+
+        .nav-menu {
+          flex-wrap: nowrap;
+          gap: 20px;
+          font-size: 15px;
+          margin-bottom: 0;
+        }
+
+        .other-activity {
+          gap: 20px;
+          font-size: 16px;
+        }
+
+        .footer {
+          padding: 50px 0 25px;
+        }
+
+        .footer-content {
+          gap: 40px;
+        }
+
+        .footer-logo-section {
+          flex: 1 1 250px;
+        }
+
+        .footer-contact {
+          flex: 1 1 300px;
+        }
+
+        .footer-links {
+          flex: 1 1 200px;
+        }
+      }
+
+      /* Large Desktop Styles */
+      @media (min-width: 1024px) {
+        .upper-nav {
+          padding: 10px 140px;
+        }
+
+        .lower-nav {
+          padding: 0 140px;
+        }
+
+        .nav-menu {
+          gap: 35px;
+          font-size: 17px;
+        }
+
+        .other-activity {
+          gap: 25px;
+          font-size: 18px;
+        }
+      }
+
+      /* Small Mobile Screens */
+      @media (max-width: 480px) {
+        .upper-nav {
+          padding: 8px 3%;
+          font-size: 10px;
+          justify-content: center;
+        }
+
+        .left p:not(:last-child)::after {
+          margin-left: 8px;
+          right: -8px;
+        }
+
+        .nav-menu {
+          gap: 8px;
+          font-size: 12px;
+        }
+
+        .nav-menu p {
+          padding: 3px 0;
+        }
+
+        .other-activity {
+          gap: 15px;
+          font-size: 14px;
+        }
+
+        .footer {
+          padding: 30px 0 15px;
+        }
+
+        .footer-content {
+          width: 90%;
+          gap: 25px;
+        }
+
+        .footer-heading {
+          font-size: 16px;
+        }
+
+        .footer-description,
+        .contact-detail,
+        .footer-link {
+          font-size: 13px;
+        }
+
+        .footer-copyright {
+          font-size: 12px;
+          padding-top: 15px;
+          margin-top: 20px;
+        }
+      }
+
+      /* Very Small Screens (e.g., iPhone 5/SE) */
+      @media (max-width: 320px) {
+        .nav-menu {
+          font-size: 11px;
+          gap: 5px;
+        }
+
+        .other-activity {
+          gap: 12px;
+          font-size: 13px;
+        }
+      }
+
+      .slider-container {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .slider-image {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+      }
+      /* Offer label */
+      .offer-label {
+        background-color: #000;
+        color: #fff;
+        text-align: center;
+        padding: 5px;
+        font-size: 1rem;
+
+        max-width: 100%;
+      }
+
+      /* Responsive styles for tablet */
+      @media (max-width: 1024px) {
+        .offer-label {
+          font-size: 1rem;
+          padding: 10px 15px;
+        }
+      }
+
+      /* Responsive styles for mobile */
+      @media (max-width: 767px) {
+        .offer-label {
+          font-size: 0.9rem;
+          padding: 8px 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="screen">
+      <!-- Top Bar -->
+      <div class="upper-nav">
+        <div class="left">
+          <p>Find a Store</p>
+          <p>Help</p>
+          <p>Corporate Orders</p>
+        </div>
+        <div class="right">
+          <p>Hi, Guest <i class="fa-regular fa-user"></i></p>
+        </div>
+      </div>
+
+      <!-- Main Navbar -->
+      <div class="lower-nav">
+        <!-- Logo -->
+        <div class="logo">
+          <img
+            class="logo-img"
+            src="https://www.asianfootwears.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.9fed0b3f.png&w=640&q=75"
+            alt="logo"
+          />
+        </div>
+
+        <!-- Menu Items -->
+        <div class="nav-menu">
+          <p>Mens</p>
+          <p>Womens</p>
+          <p>Kids</p>
+          <p>Collections</p>
+          <p>Institutional</p>
+          <p>Quantum Series</p>
+          <p>Accessories</p>
+        </div>
+
+        <!-- Icons -->
+        <div class="other-activity">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <i class="fa-regular fa-heart"></i>
+          <i class="fa-solid fa-bag-shopping"></i>
+        </div>
+      </div>
+
+      <div class="main-content">
+        <div class="offer-label">
+          <p
+            class="offer-text"
+            style="animation: slide-left 15s linear infinite"
+          >
+            Mid Season Sale! Save Upto 70% OFF + extra 10% off Use Code:
+            MIDSALE10"
+          </p>
+        </div>
+        <div class="slider-container">
+          <img
+            class="slider-image"
+            src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fcdn.asianlive.in%2Fdigital-website%2FMID%20SEASON%20SALE_30188005691564137498.jpg%3Ftr%3Dw-1536&w=3840&q=75"
+            alt="Mid Season Sale"
+          />
+        </div>
+
+        <div style="width: 80%; margin: 0 auto">
+          <!-- SHOP FOR Section -->
+          <div class="section-container">
+            <h3 class="section-title" style="margin-bottom: 20px">SHOP FOR</h3>
+            <div class="products-grid shop-for-grid">
+              <div class="category-card">
+                <img
+                  class="category-img"
+                  src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fs3-ap-southeast-1.amazonaws.com%2Fasianapp%2Fdigital-website%2FMen%20(1)_38296015347945907043.png%3Ftr%3Dw-400&w=1080&q=75"
+                  alt="Men's footwear"
+                />
+              </div>
+              <div class="category-card">
+                <img
+                  class="category-img"
+                  src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fs3-ap-southeast-1.amazonaws.com%2Fasianapp%2Fdigital-website%2FWomen%20(1)_78339552774875641563.png%3Ftr%3Dw-400&w=1080&q=75"
+                  alt="Women's footwear"
+                />
+              </div>
+              <div class="category-card">
+                <img
+                  class="category-img"
+                  src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fs3-ap-southeast-1.amazonaws.com%2Fasianapp%2Fdigital-website%2FKids%20(1)_15487276532494259644.png%3Ftr%3Dw-400&w=1080&q=75"
+                  alt="Kids' footwear"
+                />
+              </div>
+            </div>
+          </div>
+
+          <!-- FIRST LOOK Section -->
+          <div class="section-container">
+            <h3 class="section-title">FIRST LOOK: Latest On The Shelf</h3>
+            <p class="section-subtitle">Be the first to own what's trending.</p>
+            <div class="products-grid">
+              <div class="product-card">
+                <img
+                  class="product-img"
+                  src="https://cdn.asianlive.in/product_assets/wind-pro-08/navy/primary-photo/primary%20photo_1498485103387629328.jpg"
+                  alt="Wind Pro 08 shoes"
+                />
+                <p class="product-name">Wind Pro 08</p>
+                <p class="product-price">Rs. 999</p>
+              </div>
+              <div class="product-card">
+                <img
+                  class="product-img"
+                  src="https://cdn.asianlive.in/product_assets/wind-pro-09/lgrey-pgreen/primary-photo/primary%20photo_67574442876707332258.jpg"
+                  alt="Wind Pro 09 shoes"
+                />
+                <p class="product-name">Wind Pro 09</p>
+                <p class="product-price">Rs. 1118</p>
+              </div>
+              <div class="product-card">
+                <img
+                  class="product-img"
+                  src="https://cdn.asianlive.in/product_assets/nexus-11/white-slateblue/primary-photo/primary%20photo_10941215153135754396.jpg"
+                  alt="Nexus 11 shoes"
+                />
+                <p class="product-name">Nexus 11</p>
+                <p class="product-price">Rs. 799</p>
+              </div>
+              <div class="product-card">
+                <img
+                  class="product-img"
+                  src="https://cdn.asianlive.in/product_assets/nexus-02/white-slate-blue/primary-photo/primary%20photo_74004867209410487838.jpg"
+                  alt="Nexus 02 shoes"
+                />
+                <p class="product-name">Nexus 02</p>
+                <p class="product-price">Rs. 819</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Best Sellers Section -->
+          <div class="section-container">
+            <h3 class="section-title">Best Seller</h3>
+            <div class="products-grid">
+              <div class="product-card">
+                <img
+                  class="product-img"
+                  src="https://cdn.asianlive.in/product_assets/quantum-21/full-black/primary-photo/primary%20photo_27806146850196333089.jpg"
+                  alt="Quantum 21 shoes"
+                />
+                <p class="product-name">Quantum 21</p>
+                <p class="product-price">Rs. 2309</p>
+              </div>
+              <div class="product-card">
+                <img
+                  class="product-img"
+                  src="https://cdn.asianlive.in/product_assets/airweave-02/navy-slate-pgreen/primary-photo/primary%20photo_76113891999114865438.jpg"
+                  alt="Airweave 02 shoes"
+                />
+                <p class="product-name">Airweave 02</p>
+                <p class="product-price">Rs. 1749</p>
+              </div>
+              <div class="product-card">
+                <img
+                  class="product-img"
+                  src="https://cdn.asianlive.in/product_assets/everest-01/black-olive/primary-photo/primary%20photo_68323647427191028023.jpg"
+                  alt="Everest 01 shoes"
+                />
+                <p class="product-name">Everest 01</p>
+                <p class="product-price">Rs. 1299</p>
+              </div>
+              <div class="product-card">
+                <img
+                  class="product-img"
+                  src="https://cdn.asianlive.in/product_assets/powerplay-01/lgrey-black/primary-photo/primary%20photo_38811698327120248030.jpg"
+                  alt="Powerplay 01 shoes"
+                />
+                <p class="product-name">Powerplay 01</p>
+                <p class="product-price">Rs. 1363.95</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Thala Favourite Section -->
+          <div class="thala-favourite">
+            <div class="thala-favourite-content">
+              <img
+                class="thala-img"
+                src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fs3-ap-southeast-1.amazonaws.com%2Fasianapp%2Fdigital-website%2FThala%20favorites_85673683471057883403.jpg&w=2048&q=75"
+                alt="Thala Favourite"
+              />
+            </div>
+            <div class="thala-fav-shoes">
+              <div class="shoe-item">
+                <div class="shoe-item-img-container">
+                  <img
+                    class="shoe-item-img"
+                    src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fcdn.asianlive.in%2Fproduct_assets%2Ftitanium-02%2Ffull-black%2Fprimary-photo%2Fprimary%20photo_93127031112995360907.jpg&w=828&q=75"
+                    alt="Shoe 1"
+                  />
+                </div>
+                <div class="shoe-item-details">
+                  <div class="shoe-item-name">
+                    Asian Titanium 02 Running Sports
+                  </div>
+                  <div class="shoe-item-price">Rs. 1459/-</div>
+                </div>
+              </div>
+
+              <div class="shoe-item">
+                <div class="shoe-item-img-container">
+                  <img
+                    class="shoe-item-img"
+                    src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fcdn.asianlive.in%2Fproduct_assets%2Furban-05%2Ffull-black%2Fprimary-photo%2Fprimary%20photo_28028657205214299607.jpg&w=828&q=75"
+                    alt="Shoe 2"
+                  />
+                </div>
+                <div class="shoe-item-details">
+                  <div class="shoe-item-name">Asian Urban 05 Running Shoes</div>
+                  <div class="shoe-item-price">Rs. 1299/-</div>
+                </div>
+              </div>
+
+              <div class="shoe-item">
+                <div class="shoe-item-img-container">
+                  <img
+                    class="shoe-item-img"
+                    src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fcdn.asianlive.in%2Fproduct_assets%2Fairweave-02%2Fnavy-slate-pgreen%2Fprimary-photo%2Fprimary%20photo_76113891999114865438.jpg&w=828&q=75"
+                    alt="Shoe 3"
+                  />
+                </div>
+                <div class="shoe-item-details">
+                  <div class="shoe-item-name">Asian Airweave 02 Sports</div>
+                  <div class="shoe-item-price">Rs. 1599/-</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Explore Accessories Section -->
+          <div class="section explore-accessories">
+            <h3
+              class="section-title"
+              style="font-size: 24px; margin-bottom: 30px"
+            >
+              Explore Accessories
+            </h3>
+            <div class="accessories-container">
+              <!-- Accessory Item 1 -->
+              <div class="accessory-item">
+                <div class="accessory-card">
+                  <img
+                    class="accessory-img"
+                    src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fcdn.asianlive.in%2Fshoeshampoo-100ml-white&w=640&q=75"
+                    alt="Shoe Shampoo"
+                  />
+                </div>
+                <div class="accessory-info">
+                  <h3 class="accessory-name">Shoe Shampoo 100ml</h3>
+                  <p class="accessory-price">Rs. 200/-</p>
+                  <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+              </div>
+
+              <!-- Accessory Item 2 -->
+              <div class="accessory-item">
+                <div class="accessory-card">
+                  <img
+                    class="accessory-img"
+                    src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fcdn.asianlive.in%2Fproduct_assets%2Fprofeet-m-ankle-07-packof3%2Fblack-grey-pattern%2Fprimary-photo%2Fprimary%20photo_15991875744401255106.jpg&w=640&q=75"
+                    alt="Memory Insole"
+                  />
+                </div>
+                <div class="accessory-info">
+                  <h3 class="accessory-name">
+                    Asian Memory Insole (Pack of 3)
+                  </h3>
+                  <p class="accessory-price">Rs. 199/-</p>
+                  <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+              </div>
+
+              <!-- Accessory Item 3 -->
+              <div class="accessory-item">
+                <div class="accessory-card">
+                  <img
+                    class="accessory-img"
+                    src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fcdn.asianlive.in%2Fproduct_assets%2Fmemoryinsole-6x10%2Forange%2Fprimary-photo%2Fprimary%20photo_13480809886359628197.jpg&w=640&q=75"
+                    alt="Profeet Insole"
+                  />
+                </div>
+                <div class="accessory-info">
+                  <h3 class="accessory-name">
+                    Asian Men Profeet-M Ankle Socks
+                  </h3>
+                  <p class="accessory-price">Rs. 399/-</p>
+                  <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+              </div>
+
+              <!-- Accessory Item 4 -->
+              <div class="accessory-item">
+                <div class="accessory-card">
+                  <img
+                    class="accessory-img"
+                    src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fcdn.asianlive.in%2Fproduct_assets%2Fsneakerwipes-packof10%2Fmix%2Fprimary-photo%2Fprimary%20photo_58495398997572092858.jpg&w=640&q=75"
+                    alt="Sneaker Wipes"
+                  />
+                </div>
+                <div class="accessory-info">
+                  <h3 class="accessory-name">
+                    Asian Sneaker Wipes (Pack of 10)
+                  </h3>
+                  <p class="accessory-price">Rs. 75/-</p>
+                  <button class="add-to-cart-btn">Add to Cart</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Smart Buys Section -->
+          <div class="section">
+            <div class="section-header">
+              <h3 class="section-title">Smart Buys, Big Savings ✨⚡</h3>
+              <p class="section-subtitle">
+                Find footwear that fits both your style and your wallet. Explore
+                by price now!
+              </p>
+            </div>
+
+            <div class="grid-container">
+              <!-- Price Tier 1 -->
+              <div class="price-tier">
+                <div class="price-tier-img-container">
+                  <img
+                    class="price-tier-img"
+                    src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fs3-ap-southeast-1.amazonaws.com%2Fasianapp%2Fdigital-website%2F599_59231454123326324637.jpg&w=1920&q=75"
+                    alt="Under ₹599"
+                  />
+                </div>
+              </div>
+
+              <!-- Price Tier 2 -->
+              <div class="price-tier">
+                <div class="price-tier-img-container">
+                  <img
+                    class="price-tier-img"
+                    src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fs3-ap-southeast-1.amazonaws.com%2Fasianapp%2Fdigital-website%2F999_90213050265928707085.jpg&w=1920&q=75"
+                    alt="Under ₹999"
+                  />
+                </div>
+              </div>
+
+              <!-- Price Tier 3 -->
+              <div class="price-tier">
+                <div class="price-tier-img-container">
+                  <img
+                    class="price-tier-img"
+                    src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fs3-ap-southeast-1.amazonaws.com%2Fasianapp%2Fdigital-website%2F1599_22535282382887701108.jpg&w=1920&q=75"
+                    alt="Under ₹1599"
+                  />
+                </div>
+              </div>
+
+              <!-- Price Tier 4 -->
+              <div class="price-tier">
+                <div class="price-tier-img-container">
+                  <img
+                    class="price-tier-img"
+                    src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fs3-ap-southeast-1.amazonaws.com%2Fasianapp%2Fdigital-website%2F1999_71619532942864728228.jpg&w=1920&q=75"
+                    alt="Under ₹1999"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Biggest Sale Section -->
+          <div class="section">
+            <div class="section-header">
+              <h3 class="section-title">Smart Buys, Big Savings ✨⚡</h3>
+              <p class="section-subtitle">
+                Find footwear that fits both your style and your wallet. Explore
+                by price now!
+              </p>
+            </div>
+
+            <div class="grid-container price-tiers">
+              <!-- Price Tier 1 -->
+              <div class="price-tier">
+                <div class="price-tier-img-container">
+                  <img
+                    class="price-tier-img"
+                    src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fs3-ap-southeast-1.amazonaws.com%2Fasianapp%2Fdigital-website%2FASIAN_MOB_COL_DISC_20_11589103846986693941.png&w=1920&q=75"
+                    alt="Under ₹599"
+                  />
+                </div>
+              </div>
+
+              <!-- Price Tier 2 -->
+              <div class="price-tier">
+                <div class="price-tier-img-container">
+                  <img
+                    class="price-tier-img"
+                    src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fs3-ap-southeast-1.amazonaws.com%2Fasianapp%2Fdigital-website%2FASIAN_MOB_COL_DISC_40_61958995237830865091.png&w=1920&q=75"
+                    alt="Under ₹999"
+                  />
+                </div>
+              </div>
+
+              <!-- Price Tier 3 -->
+              <div class="price-tier">
+                <div class="price-tier-img-container">
+                  <img
+                    class="price-tier-img"
+                    src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fcdn.asianlive.in%2Fdigital-website%2FASIAN_MOB_COL_DISC_60%20(1)_25598403801563708104.png&w=1920&q=75"
+                    alt="Under ₹1599"
+                  />
+                </div>
+              </div>
+
+              <!-- Price Tier 4 -->
+              <div class="price-tier">
+                <div class="price-tier-img-container">
+                  <img
+                    class="price-tier-img"
+                    src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fs3-ap-southeast-1.amazonaws.com%2Fasianapp%2Fdigital-website%2FASIAN_MOB_COL_CLEAR_97287617195448098133.png&w=1920&q=75"
+                    alt="Under ₹1999"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Shoe Style Collection Section -->
+          <div class="section">
+            <div class="section-header">
+              <h3 class="section-title shoe-style-title">
+                Shoe Style Collection
+              </h3>
+            </div>
+
+            <div class="style-container">
+              <!-- Style 1 - Men Sneakers -->
+              <div class="style-card">
+                <div class="style-img-container">
+                  <img
+                    class="style-img"
+                    src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fs3-ap-southeast-1.amazonaws.com%2Fasianapp%2Fdigital-website%2FRunning_48026547343656069284.png&w=1920&q=75"
+                    alt="Men Sneakers"
+                  />
+                </div>
+                <p class="style-name">Men Sneakers</p>
+              </div>
+
+              <!-- Style 2 - Men Running -->
+              <div class="style-card">
+                <div class="style-img-container">
+                  <img
+                    class="style-img"
+                    src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fs3-ap-southeast-1.amazonaws.com%2Fasianapp%2Fdigital-website%2FRectangle%209227-1_39257991784875597274.png&w=1920&q=75"
+                    alt="Men Running Shoes"
+                  />
+                </div>
+                <p class="style-name">Men Running Shoes</p>
+              </div>
+
+              <!-- Style 3 - Women Running -->
+              <div class="style-card">
+                <div class="style-img-container">
+                  <img
+                    class="style-img"
+                    src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fs3-ap-southeast-1.amazonaws.com%2Fasianapp%2Fdigital-website%2FRectangle%209227_95960738346826702358.png&w=1920&q=75"
+                    alt="Women Running Shoes"
+                  />
+                </div>
+                <p class="style-name">Women Running Shoes</p>
+              </div>
+
+              <!-- Style 4 - Kids Shoes -->
+              <div class="style-card">
+                <div class="style-img-container">
+                  <img
+                    class="style-img"
+                    src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fs3-ap-southeast-1.amazonaws.com%2Fasianapp%2Fdigital-website%2FRectangle%209227-2_69992293954853988356.png&w=1920&q=75"
+                    alt="Kids Shoes"
+                  />
+                </div>
+                <p class="style-name">Kids Shoes</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Why Asian Section -->
+        <div class="why-asian">
+          <div class="why-asian-container">
+            <h2 class="why-asian-title">Why Asian?</h2>
+            <p class="why-asian-subtitle">
+              We are India's fastest growing premium<br />footwear brand.
+            </p>
+
+            <div class="features-container">
+              <!-- Feature 1 -->
+              <div class="feature-card">
+                <img
+                  class="feature-image"
+                  src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fs3-ap-southeast-1.amazonaws.com%2Fasianapp%2Fdigital-website%2FUntitled_Artwork%204%20(2)_69987840206015444209.png&w=1920&q=75"
+                  alt="Designed for style"
+                />
+                <div class="feature-title">Designed for style.</div>
+              </div>
+
+              <!-- Feature 2 -->
+              <div class="feature-card">
+                <img
+                  class="feature-image"
+                  src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fs3-ap-southeast-1.amazonaws.com%2Fasianapp%2Fdigital-website%2FUntitled_Artwork%206%20(2)_18668775395942904371.png&w=1920&q=75"
+                  alt="Engineered for performance"
+                />
+                <div class="feature-title">Engineered for performance.</div>
+              </div>
+
+              <!-- Feature 3 -->
+              <div class="feature-card">
+                <img
+                  class="feature-image"
+                  src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fs3-ap-southeast-1.amazonaws.com%2Fasianapp%2Fdigital-website%2FUntitled_Artwork%205%20(1)_61771120615152740995.png&w=1920&q=75"
+                  alt="Made for comfort"
+                />
+                <div class="feature-title">Made for comfort.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Explore the Perfect Pair Section -->
+        <div class="perfect-pair-container">
+          <div class="perfect-pair-section">
+            <h3 class="section-title">Explore the Perfect Pair</h3>
+
+            <div class="shoe-cards-grid">
+              <!-- Shoe Card 1 -->
+              <div class="shoe-card">
+                <div class="shoe-image-container">
+                  <img
+                    class="bestseller-badge"
+                    src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fs3-ap-southeast-1.amazonaws.com%2Fasianapp%2Fdigital-website%2FBS_f%20copy_47763114713557565721.png&w=640&q=75"
+                    alt="Bestseller"
+                  />
+                  <img
+                    class="shoe-image"
+                    src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fcdn.asianlive.in%2Fproduct_assets%2Feverest-22%2Fdark-grey%2Fprimary-photo%2Fprimary%20photo_97493772578200315023.jpg&w=828&q=75"
+                    alt="Everest 22"
+                  />
+                </div>
+                <div class="shoe-info">
+                  <p class="shoe-name">Everest 22</p>
+                  <p class="shoe-price">
+                    <span class="current-price">₹ 1573.95</span>
+                    <span class="original-price">₹ 2999</span>
+                    <span class="discount">(48% off)</span>
+                  </p>
+                </div>
+              </div>
+
+              <!-- Shoe Card 2 -->
+              <div class="shoe-card">
+                <div class="shoe-image-container">
+                  <img
+                    class="bestseller-badge"
+                    src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fs3-ap-southeast-1.amazonaws.com%2Fasianapp%2Fdigital-website%2FBS_f%20copy_47763114713557565721.png&w=640&q=75"
+                    alt="Bestseller"
+                  />
+                  <img
+                    class="shoe-image"
+                    src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fcdn.asianlive.in%2Fproduct_assets%2Feverest-21%2Fblack-red%2Fprimary-photo%2Fprimary%20photo_23579062518711278593.jpg&w=828&q=75"
+                    alt="Everest 21"
+                  />
+                </div>
+                <div class="shoe-info">
+                  <p class="shoe-name">Everest 21</p>
+                  <p class="shoe-price">
+                    <span class="current-price">₹ 1573.95</span>
+                    <span class="original-price">₹ 2999</span>
+                    <span class="discount">(48% off)</span>
+                  </p>
+                </div>
+              </div>
+
+              <!-- Shoe Card 3 -->
+              <div class="shoe-card">
+                <div class="shoe-image-container">
+                  <img
+                    class="bestseller-badge"
+                    src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fs3-ap-southeast-1.amazonaws.com%2Fasianapp%2Fdigital-website%2FBS_f%20copy_47763114713557565721.png&w=640&q=75"
+                    alt="Bestseller"
+                  />
+                  <img
+                    class="shoe-image"
+                    src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fcdn.asianlive.in%2Fproduct_assets%2Fsuperstar-02%2Fblack-orange%2Fprimary-photo%2Fprimary%20photo_82094455813822329164.jpg&w=828&q=75"
+                    alt="Superstar 02"
+                  />
+                </div>
+                <div class="shoe-info">
+                  <p class="shoe-name">Superstar 02</p>
+                  <p class="shoe-price">
+                    <span class="current-price">₹ 1573.95</span>
+                    <span class="original-price">₹ 2999</span>
+                    <span class="discount">(48% off)</span>
+                  </p>
+                </div>
+              </div>
+
+              <!-- Shoe Card 4 -->
+              <div class="shoe-card">
+                <div class="shoe-image-container">
+                  <img
+                    class="bestseller-badge"
+                    src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fs3-ap-southeast-1.amazonaws.com%2Fasianapp%2Fdigital-website%2FBS_f%20copy_47763114713557565721.png&w=640&q=75"
+                    alt="Bestseller"
+                  />
+                  <img
+                    class="shoe-image"
+                    src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fcdn.asianlive.in%2Fproduct_assets%2Fairweave-02%2Fdgrey-black-sgreen%2Fprimary-photo%2Fprimary%20photo_9313610019792867622.jpg&w=828&q=75"
+                    alt="Airweave 02"
+                  />
+                </div>
+                <div class="shoe-info">
+                  <p class="shoe-name">Airweave 02</p>
+                  <p class="shoe-price">
+                    <span class="current-price">₹ 1573.95</span>
+                    <span class="original-price">₹ 2999</span>
+                    <span class="discount">(48% off)</span>
+                  </p>
+                </div>
+              </div>
+
+              <!-- Shoe Card 5 -->
+              <div class="shoe-card">
+                <div class="shoe-image-container">
+                  <img
+                    class="bestseller-badge"
+                    src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fs3-ap-southeast-1.amazonaws.com%2Fasianapp%2Fdigital-website%2FBS_f%20copy_47763114713557565721.png&w=640&q=75"
+                    alt="Bestseller"
+                  />
+                  <img
+                    class="shoe-image"
+                    src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fcdn.asianlive.in%2Fproduct_assets%2Fsuperstar-01%2Fblack%2Fprimary-photo%2Fprimary%20photo_38468568250429343540.jpg&w=828&q=75"
+                    alt="Superstar 01"
+                  />
+                </div>
+                <div class="shoe-info">
+                  <p class="shoe-name">Superstar 01</p>
+                  <p class="shoe-price">
+                    <span class="current-price">₹ 1573.95</span>
+                    <span class="original-price">₹ 2999</span>
+                    <span class="discount">(48% off)</span>
+                  </p>
+                </div>
+              </div>
+
+              <!-- Shoe Card 6 -->
+              <div class="shoe-card">
+                <div class="shoe-image-container">
+                  <img
+                    class="bestseller-badge"
+                    src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fs3-ap-southeast-1.amazonaws.com%2Fasianapp%2Fdigital-website%2FBS_f%20copy_47763114713557565721.png&w=640&q=75"
+                    alt="Bestseller"
+                  />
+                  <img
+                    class="shoe-image"
+                    src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fcdn.asianlive.in%2Fproduct_assets%2Fpowerplay-01%2Ffull-black%2Fprimary-photo%2Fprimary%20photo_65288006969690801733.jpg&w=828&q=75"
+                    alt="Powerplay 01"
+                  />
+                </div>
+                <div class="shoe-info">
+                  <p class="shoe-name">Powerplay 01</p>
+                  <p class="shoe-price">
+                    <span class="current-price">₹ 1573.95</span>
+                    <span class="original-price">₹ 2999</span>
+                    <span class="discount">(48% off)</span>
+                  </p>
+                </div>
+              </div>
+
+              <!-- Shoe Card 7 -->
+              <div class="shoe-card">
+                <div class="shoe-image-container">
+                  <img
+                    class="bestseller-badge"
+                    src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fs3-ap-southeast-1.amazonaws.com%2Fasianapp%2Fdigital-website%2FBS_f%20copy_47763114713557565721.png&w=640&q=75"
+                    alt="Bestseller"
+                  />
+                  <img
+                    class="shoe-image"
+                    src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fcdn.asianlive.in%2Fproduct_assets%2Fquantum-11%2Fblack-white%2Fprimary-photo%2Fprimary%20photo_44535065084791455975.jpg&w=828&q=75"
+                    alt="Quantum 11"
+                  />
+                </div>
+                <div class="shoe-info">
+                  <p class="shoe-name">Quantum 11</p>
+                  <p class="shoe-price">
+                    <span class="current-price">₹ 1573.95</span>
+                    <span class="original-price">₹ 2999</span>
+                    <span class="discount">(48% off)</span>
+                  </p>
+                </div>
+              </div>
+
+              <!-- Shoe Card 8 -->
+              <div class="shoe-card">
+                <div class="shoe-image-container">
+                  <img
+                    class="bestseller-badge"
+                    src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fs3-ap-southeast-1.amazonaws.com%2Fasianapp%2Fdigital-website%2FBS_f%20copy_47763114713557565721.png&w=640&q=75"
+                    alt="Bestseller"
+                  />
+                  <img
+                    class="shoe-image"
+                    src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fcdn.asianlive.in%2Fproduct_assets%2Feverest-01%2Fblack%2Fprimary-photo%2Fprimary%20photo_59193462635693704980.jpg&w=828&q=75"
+                    alt="Everest 01"
+                  />
+                </div>
+                <div class="shoe-info">
+                  <p class="shoe-name">Everest 01</p>
+                  <p class="shoe-price">
+                    <span class="current-price">₹ 1573.95</span>
+                    <span class="original-price">₹ 2999</span>
+                    <span class="discount">(48% off)</span>
+                  </p>
+                </div>
+              </div>
+
+              <!-- Shoe Card 9 -->
+              <div class="shoe-card">
+                <div class="shoe-image-container">
+                  <img
+                    class="bestseller-badge"
+                    src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fs3-ap-southeast-1.amazonaws.com%2Fasianapp%2Fdigital-website%2FBS_f%20copy_47763114713557565721.png&w=640&q=75"
+                    alt="Bestseller"
+                  />
+                  <img
+                    class="shoe-image"
+                    src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fcdn.asianlive.in%2Fproduct_assets%2Fpowerplay-08%2Ffull-black%2Fprimary-photo%2Fprimary%20photo_75457635473760052286.jpg&w=828&q=75"
+                    alt="Powerplay 08"
+                  />
+                </div>
+                <div class="shoe-info">
+                  <p class="shoe-name">Powerplay 08</p>
+                  <p class="shoe-price">
+                    <span class="current-price">₹ 1573.95</span>
+                    <span class="original-price">₹ 2999</span>
+                    <span class="discount">(48% off)</span>
+                  </p>
+                </div>
+              </div>
+
+              <!-- Shoe Card 10 -->
+              <div class="shoe-card">
+                <div class="shoe-image-container">
+                  <img
+                    class="bestseller-badge"
+                    src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fs3-ap-southeast-1.amazonaws.com%2Fasianapp%2Fdigital-website%2FBS_f%20copy_47763114713557565721.png&w=640&q=75"
+                    alt="Bestseller"
+                  />
+                  <img
+                    class="shoe-image"
+                    src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fcdn.asianlive.in%2Fproduct_assets%2Fcrystal-13-big%2Fblack-sky%2Fprimary-photo%2Fprimary%20photo_23651860706236048497.jpeg&w=828&q=75"
+                    alt="Crystal 13"
+                  />
+                </div>
+                <div class="shoe-info">
+                  <p class="shoe-name">Crystal 13</p>
+                  <p class="shoe-price">
+                    <span class="current-price">₹ 1573.95</span>
+                    <span class="original-price">₹ 2999</span>
+                    <span class="discount">(48% off)</span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <div class="footer-content">
+          <!-- Left Section: Logo & Description -->
+          <div class="footer-logo-section">
+            <img
+              class="footer-logo"
+              src="https://www.asianfootwears.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fasian-wave-white.e9ed6354.png&w=256&q=75"
+              alt="Asian Footwear Logo"
+            />
+            <p class="footer-description">
+              Asian is one of the fastest growing and the most loved footwear
+              brands in India. Check out our incredible range and become an
+              AsianRider today
+            </p>
+            <div class="social-icons">
+              <a href="#" class="social-icon"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="#" class="social-icon"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+              <a href="#" class="social-icon"
+                ><i class="fab fa-x-twitter"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Middle Section: Contact Details -->
+          <div class="footer-contact">
+            <h3 class="footer-heading">
+              Contact Us
+              <span class="footer-heading-underline"></span>
+            </h3>
+            <div>
+              <p class="contact-text">
+                For inquiries about refunds, order issues:
+              </p>
+              <p class="contact-detail">
+                <i class="fas fa-phone contact-icon"></i>
+                +91 7561000092
+              </p>
+              <p class="contact-detail">
+                <i class="fas fa-envelope contact-icon"></i>
+                info@asianfootwears.com
+              </p>
+              <p class="contact-detail">
+                <i class="fas fa-map-marker-alt address-icon"></i>
+                J-20, Udyog Nagar, Peeragarhi, Delhi<br />New Delhi - 110041
+              </p>
+            </div>
+            <div>
+              <p class="contact-text">For corporate/bulk purchases:</p>
+              <p class="contact-detail">
+                <i class="fas fa-phone contact-icon"></i>
+                +91 9996027231
+              </p>
+            </div>
+          </div>
+
+          <!-- Right Section: Quick Links -->
+          <div class="footer-links">
+            <h3 class="footer-heading">
+              Quick Links
+              <span class="footer-heading-underline"></span>
+            </h3>
+            <ul class="footer-link-item">
+              <li>
+                <a href="#" class="footer-link">Privacy Policy</a>
+              </li>
+              <li>
+                <a href="#" class="footer-link">Refund Policy</a>
+              </li>
+              <li>
+                <a href="#" class="footer-link">Shipping Policy</a>
+              </li>
+              <li>
+                <a href="#" class="footer-link">Terms of Service</a>
+              </li>
+              <li>
+                <a href="#" class="footer-link">Corporate / Bulk Orders</a>
+              </li>
+              <li>
+                <a href="#" class="footer-link">Blog</a>
+              </li>
+              <li>
+                <a href="#" class="footer-link">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Bottom Copyright -->
+        <div class="footer-copyright">
+          <p>
+            All Rights Reserved by Asian Footwears Pvt. Ltd.<br />2025 ©
+            Copyright
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

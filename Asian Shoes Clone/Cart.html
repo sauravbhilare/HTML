@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Asian Footwears - Premium quality footwear for men, women and kids"
+    />
+    <title>Asian Footwears - Product Listing</title>
+
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <style>
+      /* ========== DEFAULT STYLES ========== */
+      /* Reset and Base Styles */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+      }
+
+      /* Main Container */
+      .screen {
+        width: 100%;
+        overflow-x: hidden;
+      }
+
+      /* Top Navigation Bar */
+      .upper-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #f6f6f6;
+        padding: 5px 5%;
+        font-size: 12px;
+        border-top: 1px solid #e3d7e8;
+        border-bottom: 1px solid #e3d7e8;
+        flex-wrap: wrap;
+      }
+
+      .upper-nav .left {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .upper-nav .left p {
+        margin-right: 13px;
+        cursor: pointer;
+        position: relative;
+        color: #000;
+        white-space: nowrap;
+        margin: 5px 13px 5px 0;
+      }
+
+      .upper-nav .left p:not(:last-child)::after {
+        content: "|";
+        margin-left: 13px;
+        color: #000;
+        position: absolute;
+        right: -10px;
+      }
+
+      .upper-nav .right {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .upper-nav .right p {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        color: #000;
+        white-space: nowrap;
+        margin: 5px 0;
+      }
+
+      /* Main Navigation */
+      .lower-nav {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 5%;
+        border-bottom: 1px solid #ccc;
+        background-color: white;
+        position: relative;
+      }
+
+      .lower-nav .logo {
+        width: 120px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      .lower-nav .logo-img {
+        width: 100%;
+        max-width: 100px;
+      }
+
+      .lower-nav .nav-menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        font-size: 14px;
+        margin-bottom: 15px;
+        text-align: center;
+      }
+
+      .lower-nav .nav-menu p {
+        cursor: pointer;
+        font-weight: 200;
+        color: #000;
+        white-space: nowrap;
+        padding: 5px 0;
+      }
+
+      .lower-nav .other-activity {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        font-size: 16px;
+        color: #000;
+      }
+
+      .lower-nav .other-activity i {
+        cursor: pointer;
+        color: #000;
+      }
+
+      /* Hamburger Menu Styles */
+      .lower-nav .hamburger-menu {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        color: #000;
+        padding: 10px;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        z-index: 100;
+      }
+
+      /* Main Content */
+      .main-content {
+        width: 80%;
+        margin: 0 auto;
+        padding: 10px 0;
+      }
+
+      .offer-label {
+        background-color: #000;
+        color: white;
+        width: 100%;
+        text-align: center;
+        padding: 5px;
+      }
+
+      /* Cart Section */
+      .main-cart {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .my-cart {
+        width: 60%;
+        padding: 10px;
+        font-family: sans-serif;
+      }
+
+      .cart-header {
+        margin-bottom: 15px;
+      }
+
+      .cart-title {
+        margin: 0;
+        font-weight: 600;
+      }
+
+      .cart-description {
+        color: gray;
+        margin: 5px 0 0;
+      }
+
+      .cart-item {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        border: 1px solid #ddd;
+        border-radius: 12px;
+        position: relative;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .cart-item .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+
+      .cart-item-image {
+        width: 30%;
+        padding: 15px;
+      }
+
+      .cart-item-image img {
+        width: 100%;
+        border-radius: 15px;
+      }
+
+      .cart-item-info {
+        width: 70%;
+        padding: 15px;
+      }
+
+      .cart-item-name {
+        margin: 0;
+        font-weight: 600;
+      }
+
+      .cart-item-size,
+      .cart-item-color {
+        color: gray;
+        margin: 5px 0;
+      }
+
+      .cart-item-price {
+        color: black;
+        margin: 5px 0;
+      }
+
+      .move-to-wishlist {
+        color: rgb(0 113 217);
+        cursor: pointer;
+        text-decoration: underline;
+        text-align: right;
+        margin: 10px 0 0;
+      }
+
+      /* Cart Summary */
+      .cart-summary-section {
+        width: 35%;
+        border-radius: 10px;
+        font-family: sans-serif;
+        padding: 20px;
+      }
+
+      .discount-coupons {
+        margin-bottom: 20px;
+      }
+
+      .pay-details h3 {
+        margin-bottom: 10px;
+        font-weight: 600;
+      }
+
+      .pay-row {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 8px;
+        font-size: 14px;
+        color: grey;
+      }
+
+      .order-total {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 15px;
+      }
+
+      .place-order-btn {
+        width: 100%;
+        padding: 12px 0;
+        background-color: rgb(0 113 217);
+        color: white;
+        font-weight: bold;
+        font-size: 1rem;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        margin-top: 20px;
+      }
+
+      /* Wishlist Section */
+      .wishlist-items {
+        margin-top: 20px;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .wishlist-outer-container {
+        padding-left: 3px;
+        background-color: rgb(0 113 217);
+        border-radius: 10px;
+        display: inline-block;
+      }
+
+      .wishlist-button {
+        padding: 18px 20px;
+        border-radius: 10px;
+        border: none;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        font-size: 15px;
+        font-weight: 500;
+        color: #000;
+        background-color: rgb(234 237 239);
+      }
+
+      .wishlist-button i {
+        color: #888;
+        margin-right: 3px;
+        font-size: 22px;
+      }
+
+      /* Footer */
+      footer {
+        background-color: #111;
+        color: #fff;
+        padding: 40px 0 20px;
+        font-family: "Arial", sans-serif;
+      }
+
+      .footer-content {
+        width: 85%;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+      }
+
+      .footer-logo-section {
+        flex: 1;
+        min-width: 250px;
+      }
+
+      .footer-logo {
+        width: 140px;
+        margin-bottom: 20px;
+      }
+
+      .footer-description {
+        margin: 0 0 20px 0;
+        line-height: 1.6;
+        color: #ccc;
+        font-size: 14px;
+      }
+
+      .social-icons {
+        font-size: 20px;
+        display: flex;
+        gap: 15px;
+        margin-bottom: 20px;
+      }
+
+      .social-icon {
+        color: #fff;
+        transition: color 0.3s;
+      }
+
+      .social-icon:hover {
+        color: #ff6b00;
+      }
+
+      .footer-contact {
+        flex: 1;
+        min-width: 250px;
+      }
+
+      .footer-heading {
+        font-size: 18px;
+        margin-bottom: 15px;
+        color: #fff;
+        position: relative;
+        padding-bottom: 8px;
+      }
+
+      .footer-heading-underline {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 2px;
+        background: #ff6b00;
+      }
+
+      .contact-text {
+        font-weight: 600;
+        margin-bottom: 12px;
+        color: #ddd;
+        font-size: 14px;
+      }
+
+      .contact-detail {
+        margin: 6px 0;
+        display: flex;
+        align-items: center;
+        color: #ccc;
+        font-size: 14px;
+      }
+
+      .contact-icon {
+        margin-right: 10px;
+        color: #ff6b00;
+        font-size: 14px;
+      }
+
+      .address-icon {
+        margin-right: 10px;
+        color: #ff6b00;
+        margin-top: 3px;
+        font-size: 14px;
+      }
+
+      .footer-links {
+        flex: 1;
+        min-width: 200px;
+      }
+
+      .footer-link-item {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        line-height: 2;
+      }
+
+      .footer-link {
+        color: #ccc;
+        text-decoration: none;
+        transition: color 0.3s;
+        font-size: 14px;
+      }
+
+      .footer-link:hover {
+        color: #ff6b00;
+      }
+
+      .footer-copyright {
+        width: 85%;
+        max-width: 1200px;
+        margin: 30px auto 0;
+        border-top: 1px solid #333;
+        padding-top: 20px;
+        text-align: center;
+        font-size: 13px;
+        color: #999;
+      }
+
+      /* ========== RESPONSIVE STYLES ========== */
+      /* Large Desktop (1024px and up) */
+      @media (min-width: 1024px) {
+        .upper-nav {
+          padding: 5px 140px;
+        }
+
+        .lower-nav {
+          padding: 0 140px;
+        }
+
+        .lower-nav .nav-menu {
+          gap: 35px;
+          font-size: 17px;
+        }
+
+        .lower-nav .other-activity {
+          gap: 25px;
+          font-size: 18px;
+        }
+      }
+
+      /* Desktop (768px and up) */
+      @media (min-width: 768px) {
+        .upper-nav {
+          padding: 5px 5%;
+          font-size: 12px;
+        }
+
+        .lower-nav {
+          height: 80px;
+          flex-direction: row;
+          padding: 0 5%;
+        }
+
+        .lower-nav .logo {
+          width: 120px;
+          margin-bottom: 0;
+        }
+
+        .lower-nav .nav-menu {
+          flex-wrap: nowrap;
+          gap: 20px;
+          font-size: 15px;
+          margin-bottom: 0;
+        }
+
+        .lower-nav .other-activity {
+          gap: 20px;
+          font-size: 16px;
+        }
+
+        footer {
+          padding: 50px 0 25px;
+        }
+
+        .footer-content {
+          gap: 40px;
+          flex-wrap: nowrap;
+        }
+
+        .footer-logo-section {
+          flex: 1;
+        }
+        .footer-contact {
+          flex: 1;
+        }
+        .footer-links {
+          flex: 1;
+        }
+      }
+
+      /* Tablet (600px to 767px) */
+      @media (min-width: 600px) and (max-width: 767px) {
+        .footer-logo-section,
+        .footer-contact,
+        .footer-links {
+          flex: 1 1 calc(50% - 15px);
+        }
+
+        .my-cart {
+          width: 100%;
+        }
+
+        .cart-summary-section {
+          width: 100%;
+        }
+
+        .cart-item {
+          flex-direction: column;
+        }
+
+        .cart-item-image {
+          width: 100%;
+          text-align: center;
+        }
+
+        .cart-item-image img {
+          width: 70%;
+        }
+
+        .cart-item-info {
+          width: 100%;
+        }
+      }
+
+      /* Mobile (480px and below) */
+      @media (max-width: 599px) {
+        .upper-nav {
+          padding: 5px 3%;
+          font-size: 10px;
+          justify-content: center;
+        }
+
+        .upper-nav .left p:not(:last-child)::after {
+          margin-left: 8px;
+          right: -8px;
+        }
+
+        .lower-nav .nav-menu {
+          gap: 8px;
+          font-size: 12px;
+        }
+
+        .lower-nav .nav-menu p {
+          padding: 3px 0;
+        }
+
+        .lower-nav .other-activity {
+          gap: 15px;
+          font-size: 14px;
+        }
+
+        .main-content {
+          width: 95%;
+        }
+
+        footer {
+          padding: 30px 0 15px;
+        }
+
+        .footer-content {
+          width: 90%;
+          gap: 25px;
+        }
+
+        .footer-heading {
+          font-size: 16px;
+        }
+
+        .footer-description,
+        .contact-detail,
+        .footer-link {
+          font-size: 13px;
+        }
+
+        .footer-copyright {
+          font-size: 12px;
+          padding-top: 15px;
+          margin-top: 20px;
+        }
+
+        /* Enhanced Hamburger menu styles */
+        .lower-nav .hamburger-menu {
+          display: block;
+        }
+
+        .lower-nav {
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: center;
+          padding: 15px 5%;
+        }
+
+        .lower-nav .logo {
+          order: 1;
+          margin-bottom: 15px;
+          width: 100%;
+          text-align: center;
+        }
+
+        .lower-nav .other-activity {
+          order: 3;
+          width: 100%;
+          justify-content: center;
+          margin-top: 15px;
+        }
+
+        .lower-nav .nav-menu {
+          display: none;
+          width: 100%;
+          flex-direction: column;
+          background-color: white;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          z-index: 99;
+          padding: 15px 0;
+          box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+          border-bottom: 1px solid #ccc;
+        }
+
+        .lower-nav .nav-menu.active {
+          display: flex;
+        }
+
+        .lower-nav .nav-menu p {
+          padding: 10px 0;
+          width: 100%;
+          border-bottom: 1px solid #f0f0f0;
+        }
+
+        .lower-nav .nav-menu p:last-child {
+          border-bottom: none;
+        }
+
+        .my-cart {
+          width: 100%;
+        }
+
+        .cart-summary-section {
+          width: 100%;
+        }
+
+        .cart-item {
+          flex-direction: column;
+        }
+
+        .cart-item-image {
+          width: 100%;
+          text-align: center;
+        }
+
+        .cart-item-image img {
+          width: 70%;
+        }
+
+        .cart-item-info {
+          width: 100%;
+        }
+      }
+
+      /* Small Mobile (360px and below) */
+      @media (max-width: 360px) {
+        .upper-nav {
+          justify-content: center;
+          text-align: center;
+        }
+
+        .upper-nav .left,
+        .upper-nav .right {
+          justify-content: center;
+        }
+
+        .upper-nav .left p {
+          margin: 5px 8px;
+        }
+
+        .upper-nav .left p:not(:last-child)::after {
+          margin-left: 5px;
+          right: -8px;
+        }
+
+        .wishlist-button {
+          padding: 12px 15px;
+          font-size: 14px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Main Container -->
+    <div class="screen">
+      <!-- Top Navigation Bar -->
+      <nav class="upper-nav" aria-label="Utility navigation">
+        <div class="left">
+          <p>Find a Store</p>
+          <p>Help</p>
+          <p>Corporate Orders</p>
+        </div>
+        <div class="right">
+          <p>Hi, Guest <i class="fa-regular fa-user" aria-hidden="true"></i></p>
+        </div>
+      </nav>
+
+      <!-- Main Navigation -->
+      <header class="lower-nav">
+        <!-- Logo -->
+        <div class="logo">
+          <img
+            class="logo-img"
+            src="https://www.asianfootwears.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.9fed0b3f.png&w=640&q=75"
+            alt="Asian Footwears logo"
+          />
+        </div>
+
+        <!-- Hamburger Menu Button (Mobile Only) -->
+        <button class="hamburger-menu" aria-label="Menu">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Navigation Menu -->
+        <nav class="nav-menu" aria-label="Main navigation">
+          <p>Mens</p>
+          <p>Womens</p>
+          <p>Kids</p>
+          <p>Collections</p>
+          <p>Institutional</p>
+          <p>Quantum Series</p>
+          <p>Accessories</p>
+        </nav>
+
+        <!-- Action Icons -->
+        <div class="other-activity">
+          <i class="fa-solid fa-magnifying-glass" aria-label="Search"></i>
+          <i class="fa-regular fa-heart" aria-label="Wishlist"></i>
+          <i class="fa-solid fa-bag-shopping" aria-label="Shopping cart"></i>
+        </div>
+      </header>
+
+      <!-- Main Content Area -->
+      <main>
+        <section class="offer-label">
+          <p>
+            Mid Season Sale! Save Upto 70% OFF + extra 10% off Use Code:
+            MIDSALE10
+          </p>
+        </section>
+        <article class="main-content">
+          <div class="main-cart">
+            <section class="my-cart">
+              <div class="cart-header">
+                <h3 class="cart-title">MY CART (1)</h3>
+                <p class="cart-description">
+                  Proceed to checkout to apply coupons and avail discounts.
+                </p>
+              </div>
+
+              <div class="cart-item">
+                <!-- Close button -->
+                <span
+                  class="close-btn"
+                  onclick="this.closest('.cart-item').remove()"
+                >
+                  &times;
+                </span>
+
+                <!-- Image -->
+                <div class="cart-item-image">
+                  <img
+                    src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fcdn.asianlive.in%2Fproduct_assets%2Fmexico-01%2Fwhite-lgrey-orange%2Fprimary-photo%2Fprimary%20photo_44124357365025094981.jpg&w=828&q=75"
+                    alt="Product Image"
+                  />
+                </div>
+
+                <!-- Product Info -->
+                <div class="cart-item-info">
+                  <h4 class="cart-item-name">MEXICO 01</h4>
+                  <p class="cart-item-size">Size : UK 8</p>
+                  <p class="cart-item-color">White Lgrey Orange</p>
+                  <p class="cart-item-price">Rs.807.45/-</p>
+                  <hr />
+                  <p class="move-to-wishlist">Move to wishlist</p>
+                </div>
+              </div>
+            </section>
+
+            <section class="cart-summary-section">
+              <div class="discount-coupons">
+                <h3>Discount & Coupons</h3>
+                <p>Proceed to checkout to apply coupons and avail discounts.</p>
+              </div>
+
+              <div class="pay-details">
+                <h3>PRICE DETAILS</h3>
+
+                <div class="pay-row">
+                  <p>Cart Total</p>
+                  <p>Rs. 807.45</p>
+                </div>
+
+                <div class="pay-row">
+                  <p>Coupon Discount</p>
+                  <p style="color: rgb(4, 180, 147)">- Rs. 80.75</p>
+                </div>
+
+                <div class="pay-row">
+                  <p>Delivery Charges (Standard)</p>
+                  <p style="color: rgb(4, 180, 147)">Free</p>
+                </div>
+
+                <hr />
+
+                <div class="order-total">
+                  <p style="font-weight: 600">Order Total</p>
+                  <p style="font-weight: 600">Rs.726.7</p>
+                </div>
+
+                <!-- Place Order Button -->
+                <button class="place-order-btn">Place Order</button>
+              </div>
+            </section>
+          </div>
+          <section class="wishlist-items">
+            <div class="wishlist-outer-container">
+              <button class="wishlist-button">
+                <i class="fa-regular fa-heart"></i>
+                <span class="wishlist-text">Add Items from Wishlist</span>
+                <i class="fa fa-angle-right" style="color: #888"></i>
+              </button>
+            </div>
+          </section>
+        </article>
+      </main>
+
+      <!-- Footer Section -->
+      <footer>
+        <div class="footer-content">
+          <!-- Company Info Section -->
+          <section class="footer-logo-section">
+            <img
+              class="footer-logo"
+              src="https://www.asianfootwears.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fasian-wave-white.e9ed6354.png&w=256&q=75"
+              alt="Asian Footwear Logo"
+            />
+            <p class="footer-description">
+              Asian is one of the fastest growing and the most loved footwear
+              brands in India. Check out our incredible range and become an
+              AsianRider today
+            </p>
+            <!-- Social Media Links -->
+            <div class="social-icons">
+              <a href="#" class="social-icon" aria-label="LinkedIn"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="#" class="social-icon" aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-icon" aria-label="YouTube"
+                ><i class="fab fa-youtube"></i
+              ></a>
+              <a href="#" class="social-icon" aria-label="Twitter"
+                ><i class="fab fa-x-twitter"></i
+              ></a>
+            </div>
+          </section>
+
+          <!-- Contact Information -->
+          <section class="footer-contact">
+            <h3 class="footer-heading">
+              Contact Us
+              <span class="footer-heading-underline"></span>
+            </h3>
+            <address>
+              <p class="contact-text">
+                For inquiries about refunds, order issues:
+              </p>
+              <p class="contact-detail">
+                <i class="fas fa-phone contact-icon" aria-hidden="true"></i>
+                +91 7561000092
+              </p>
+              <p class="contact-detail">
+                <i class="fas fa-envelope contact-icon" aria-hidden="true"></i>
+                info@asianfootwears.com
+              </p>
+              <p class="contact-detail">
+                <i
+                  class="fas fa-map-marker-alt address-icon"
+                  aria-hidden="true"
+                ></i>
+                J-20, Udyog Nagar, Peeragarhi, Delhi<br />New Delhi - 110041
+              </p>
+            </address>
+            <div>
+              <p class="contact-text">For corporate/bulk purchases:</p>
+              <p class="contact-detail">
+                <i class="fas fa-phone contact-icon" aria-hidden="true"></i>
+                +91 9996027231
+              </p>
+            </div>
+          </section>
+
+          <!-- Quick Links Section -->
+          <nav class="footer-links" aria-label="Footer navigation">
+            <h3 class="footer-heading">
+              Quick Links
+              <span class="footer-heading-underline"></span>
+            </h3>
+            <ul class="footer-link-item">
+              <li><a href="#" class="footer-link">Privacy Policy</a></li>
+              <li><a href="#" class="footer-link">Refund Policy</a></li>
+              <li><a href="#" class="footer-link">Shipping Policy</a></li>
+              <li><a href="#" class="footer-link">Terms of Service</a></li>
+              <li>
+                <a href="#" class="footer-link">Corporate / Bulk Orders</a>
+              </li>
+              <li><a href="#" class="footer-link">Blog</a></li>
+              <li><a href="#" class="footer-link">Contact Us</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- Copyright Notice -->
+        <div class="footer-copyright">
+          <p>
+            All Rights Reserved by Asian Footwears Pvt. Ltd.<br />2025 ©
+            Copyright
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const hamburger = document.querySelector(".hamburger-menu");
+        const navMenu = document.querySelector(".nav-menu");
+
+        hamburger.addEventListener("click", function () {
+          navMenu.classList.toggle("active");
+          // Toggle between hamburger and close icon
+          const icon = hamburger.querySelector("i");
+          if (navMenu.classList.contains("active")) {
+            icon.classList.remove("fa-bars");
+            icon.classList.add("fa-times");
+          } else {
+            icon.classList.remove("fa-times");
+            icon.classList.add("fa-bars");
+          }
+        });
+
+        // Close menu when clicking on a nav item (for mobile)
+        const navItems = document.querySelectorAll(".nav-menu p");
+        navItems.forEach((item) => {
+          item.addEventListener("click", function () {
+            if (window.innerWidth <= 599) {
+              navMenu.classList.remove("active");
+              const icon = hamburger.querySelector("i");
+              icon.classList.remove("fa-times");
+              icon.classList.add("fa-bars");
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

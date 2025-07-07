@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Asian Footwears - Premium quality footwear for men, women and kids"
+    />
+    <title>Asian Footwears - Product Listing</title>
+
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <style>
+      /* ========== DEFAULT STYLES ========== */
+      /* Reset and Base Styles */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+      }
+
+      /* Main Container */
+      .screen {
+        width: 100%;
+        overflow-x: hidden;
+      }
+
+      /* Top Navigation Bar */
+      .upper-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #f6f6f6;
+        padding: 5px 5%;
+        font-size: 12px;
+        border-top: 1px solid #e3d7e8;
+        border-bottom: 1px solid #e3d7e8;
+        flex-wrap: wrap;
+      }
+
+      .upper-nav .left,
+      .upper-nav .right {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .upper-nav p {
+        margin-right: 13px;
+        cursor: pointer;
+        position: relative;
+        color: #000;
+        white-space: nowrap;
+        margin: 5px 13px 5px 0;
+      }
+
+      .upper-nav .left p:not(:last-child)::after {
+        content: "|";
+        margin-left: 13px;
+        color: #000;
+        position: absolute;
+        right: -10px;
+      }
+
+      /* Main Navigation */
+      .lower-nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 5%;
+        border-bottom: 1px solid #ccc;
+        background-color: white;
+        position: relative;
+      }
+
+      .lower-nav .logo {
+        width: 120px;
+        margin-bottom: 15px;
+      }
+
+      .lower-nav .logo-img {
+        width: 100%;
+        max-width: 100px;
+      }
+
+      .lower-nav .nav-menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        font-size: 14px;
+        margin-bottom: 15px;
+      }
+
+      .lower-nav .nav-menu p {
+        cursor: pointer;
+        font-weight: 200;
+        color: #000;
+        white-space: nowrap;
+        padding: 5px 0;
+      }
+
+      .lower-nav .other-activity {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        font-size: 16px;
+      }
+
+      .lower-nav .other-activity i {
+        cursor: pointer;
+        color: #000;
+      }
+
+      /* Hamburger Menu Styles */
+      .lower-nav .hamburger-menu {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        color: #000;
+        padding: 10px;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        z-index: 100;
+      }
+
+      /* Main Content */
+      .main-content {
+        width: 80%;
+        margin: 0 auto;
+        padding: 10px 0;
+      }
+
+      .offer-label {
+        background-color: #000;
+        color: white;
+        width: 100%;
+        text-align: center;
+        padding: 5px;
+      }
+
+      /* Footer */
+      footer {
+        background-color: #111;
+        color: #fff;
+        padding: 40px 0 20px;
+        font-family: "Arial", sans-serif;
+      }
+
+      .footer-content {
+        width: 85%;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+      }
+
+      .footer-logo-section,
+      .footer-contact,
+      .footer-links {
+        flex: 1;
+        min-width: 250px;
+      }
+
+      .footer-logo {
+        width: 140px;
+        margin-bottom: 20px;
+      }
+
+      .footer-description {
+        margin: 0 0 20px 0;
+        line-height: 1.6;
+        color: #ccc;
+        font-size: 14px;
+      }
+
+      .social-icons {
+        font-size: 20px;
+        display: flex;
+        gap: 15px;
+        margin-bottom: 20px;
+      }
+
+      .social-icon {
+        color: #fff;
+        transition: color 0.3s;
+      }
+
+      .social-icon:hover {
+        color: #ff6b00;
+      }
+
+      .footer-heading {
+        font-size: 18px;
+        margin-bottom: 15px;
+        color: #fff;
+        position: relative;
+        padding-bottom: 8px;
+      }
+
+      .footer-heading-underline {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 2px;
+        background: #ff6b00;
+      }
+
+      .contact-text {
+        font-weight: 600;
+        margin-bottom: 12px;
+        color: #ddd;
+        font-size: 14px;
+      }
+
+      .contact-detail {
+        margin: 6px 0;
+        display: flex;
+        align-items: center;
+        color: #ccc;
+        font-size: 14px;
+      }
+
+      .contact-icon {
+        margin-right: 10px;
+        color: #ff6b00;
+        font-size: 14px;
+      }
+
+      .address-icon {
+        margin-right: 10px;
+        color: #ff6b00;
+        margin-top: 3px;
+        font-size: 14px;
+      }
+
+      .footer-link-item {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        line-height: 2;
+      }
+
+      .footer-link {
+        color: #ccc;
+        text-decoration: none;
+        transition: color 0.3s;
+        font-size: 14px;
+      }
+
+      .footer-link:hover {
+        color: #ff6b00;
+      }
+
+      .footer-copyright {
+        width: 85%;
+        max-width: 1200px;
+        margin: 30px auto 0;
+        border-top: 1px solid #333;
+        padding-top: 20px;
+        text-align: center;
+        font-size: 13px;
+        color: #999;
+      }
+
+      /* ========== RESPONSIVE STYLES ========== */
+      /* Large Desktop (1024px and up) */
+      @media (min-width: 1024px) {
+        .upper-nav {
+          padding: 5px 140px;
+        }
+
+        .lower-nav {
+          padding: 0 140px;
+        }
+
+        .lower-nav .nav-menu {
+          gap: 35px;
+          font-size: 17px;
+        }
+
+        .lower-nav .other-activity {
+          gap: 25px;
+          font-size: 18px;
+        }
+      }
+
+      /* Desktop (768px and up) */
+      @media (min-width: 768px) {
+        .lower-nav {
+          height: 80px;
+          flex-direction: row;
+          padding: 0 5%;
+        }
+
+        .lower-nav .logo {
+          margin-bottom: 0;
+        }
+
+        .lower-nav .nav-menu {
+          flex-wrap: nowrap;
+          gap: 20px;
+          font-size: 15px;
+          margin-bottom: 0;
+        }
+
+        footer {
+          padding: 50px 0 25px;
+        }
+
+        .footer-content {
+          gap: 40px;
+          flex-wrap: nowrap;
+        }
+      }
+
+      /* Tablet (600px to 767px) */
+      @media (min-width: 600px) and (max-width: 767px) {
+        .footer-logo-section,
+        .footer-contact,
+        .footer-links {
+          flex: 1 1 calc(50% - 15px);
+        }
+      }
+
+      /* Mobile (480px and below) */
+      @media (max-width: 599px) {
+        .upper-nav {
+          padding: 5px 3%;
+          font-size: 10px;
+          justify-content: center;
+        }
+
+        .upper-nav .left p:not(:last-child)::after {
+          margin-left: 8px;
+          right: -8px;
+        }
+
+        .main-content {
+          width: 95%;
+        }
+
+        footer {
+          padding: 30px 0 15px;
+        }
+
+        .footer-content {
+          width: 90%;
+          gap: 25px;
+        }
+
+        .footer-heading {
+          font-size: 16px;
+        }
+
+        .footer-description,
+        .contact-detail,
+        .footer-link {
+          font-size: 13px;
+        }
+
+        .footer-copyright {
+          font-size: 12px;
+          padding-top: 15px;
+          margin-top: 20px;
+        }
+
+        /* Enhanced Hamburger menu styles */
+        .lower-nav .hamburger-menu {
+          display: block;
+        }
+
+        .lower-nav {
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: center;
+          padding: 15px 5%;
+        }
+
+        .lower-nav .logo {
+          order: 1;
+          margin-bottom: 15px;
+          width: 100%;
+          text-align: center;
+        }
+
+        .lower-nav .other-activity {
+          order: 3;
+          width: 100%;
+          justify-content: center;
+          margin-top: 15px;
+        }
+
+        .lower-nav .nav-menu {
+          display: none;
+          width: 100%;
+          flex-direction: column;
+          background-color: white;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          z-index: 99;
+          padding: 15px 0;
+          box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+          border-bottom: 1px solid #ccc;
+        }
+
+        .lower-nav .nav-menu.active {
+          display: flex;
+        }
+
+        .lower-nav .nav-menu p {
+          padding: 10px 0;
+          width: 100%;
+          border-bottom: 1px solid #f0f0f0;
+        }
+
+        .lower-nav .nav-menu p:last-child {
+          border-bottom: none;
+        }
+      }
+
+      /* Small Mobile (360px and below) */
+      @media (max-width: 360px) {
+        .upper-nav .left p {
+          margin: 5px 8px;
+        }
+
+        .upper-nav .left p:not(:last-child)::after {
+          margin-left: 5px;
+          right: -8px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Main Container -->
+    <div class="screen">
+      <!-- Top Navigation Bar -->
+      <nav class="upper-nav" aria-label="Utility navigation">
+        <div class="left">
+          <p>Find a Store</p>
+          <p>Help</p>
+          <p>Corporate Orders</p>
+        </div>
+        <div class="right">
+          <p>Hi, Guest <i class="fa-regular fa-user" aria-hidden="true"></i></p>
+        </div>
+      </nav>
+
+      <!-- Main Navigation -->
+      <header class="lower-nav">
+        <!-- Logo -->
+        <div class="logo">
+          <img
+            class="logo-img"
+            src="https://www.asianfootwears.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.9fed0b3f.png&w=640&q=75"
+            alt="Asian Footwears logo"
+          />
+        </div>
+
+        <!-- Hamburger Menu Button (Mobile Only) -->
+        <button class="hamburger-menu" aria-label="Menu">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Navigation Menu -->
+        <nav class="nav-menu" aria-label="Main navigation">
+          <p>Mens</p>
+          <p>Womens</p>
+          <p>Kids</p>
+          <p>Collections</p>
+          <p>Institutional</p>
+          <p>Quantum Series</p>
+          <p>Accessories</p>
+        </nav>
+
+        <!-- Action Icons -->
+        <div class="other-activity">
+          <i class="fa-solid fa-magnifying-glass" aria-label="Search"></i>
+          <i class="fa-regular fa-heart" aria-label="Wishlist"></i>
+          <i class="fa-solid fa-bag-shopping" aria-label="Shopping cart"></i>
+        </div>
+      </header>
+
+      <!-- Main Content Area -->
+      <main>
+        <section class="offer-label">
+          <p>
+            Mid Season Sale! Save Upto 70% OFF + extra 10% off Use Code:
+            MIDSALE10
+          </p>
+        </section>
+        <article class="main-content">
+          <div
+            class="order-process"
+            style="
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              gap: 0;
+              margin: 40px 0;
+              width: 50%;
+              margin-left: auto;
+              margin-right: auto;
+            "
+          >
+            <!-- Step 1: User -->
+            <div
+              style="
+                background-color: white;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                padding: 10px;
+                border-radius: 50%;
+                width: 36px;
+                height: 36px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: #6b7280;
+                font-size: 14px;
+              "
+            >
+              <i class="fa-solid fa-user" aria-hidden="true"></i>
+            </div>
+
+            <!-- Line 1 -->
+            <div style="flex: 1; height: 2.5px; background-color: black"></div>
+
+            <!-- Step 2: Location -->
+            <div
+              style="
+                background-color: white;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                padding: 10px;
+                border-radius: 50%;
+                width: 36px;
+                height: 36px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: #6b7280;
+                font-size: 14px;
+              "
+            >
+              <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+            </div>
+
+            <!-- Line 2 -->
+            <div style="flex: 1; height: 2.5px; background-color: black"></div>
+
+            <!-- Step 3: Payment (active) -->
+            <div style="text-align: center">
+              <div
+                style="
+                  background-color: black;
+                  color: white;
+                  padding: 10px;
+                  border-radius: 50%;
+                  width: 40px;
+                  height: 40px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  font-size: 16px;
+                  margin-top: 12px;
+                "
+              >
+                <i class="fa-solid fa-credit-card" aria-hidden="true"></i>
+              </div>
+              <div
+                style="
+                  font-size: 12px;
+                  margin-top: 5px;
+                  color: black;
+                  text-align: center;
+                "
+              >
+                Payment
+              </div>
+            </div>
+          </div>
+
+          <div class="payment-container">
+            <section
+              class="Shipping-details"
+              style="
+                width: 50%;
+                background-color: white;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                padding: 20px;
+                border-radius: 10px;
+                font-family: sans-serif;
+              "
+            >
+              <!-- Shipping Header -->
+              <div
+                class="shipping-header"
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  margin-bottom: 20px;
+                "
+              >
+                <h3 style="margin: 0; font-size: 18px">SHIPPING DETAILS</h3>
+                <p
+                  class="change-address"
+                  style="
+                    color: rgb(0 113 217);
+                    text-decoration: underline;
+                    margin: 0;
+                    cursor: pointer;
+                    font-size: 14px;
+                  "
+                >
+                  Change Address
+                </p>
+              </div>
+
+              <hr
+                style="border: none; border-top: 1px solid #e5e7eb; margin: 0"
+              />
+
+              <!-- Shipping Address -->
+              <div class="shipping-address-div" style="margin: 20px 0">
+                <p
+                  style="
+                    color: #6b7280;
+                    font-size: 15px;
+
+                    line-height: 1.5;
+                  "
+                >
+                  Near Ganesh Mandir, Shivtej Nagar, Opposite Birla Soft
+                  Company., Hinjewadi Pune 411017 Pune.
+                </p>
+                <p
+                  style="
+                    color: #6b7280;
+                    font-size: 15px;
+
+                    line-height: 1.5;
+                  "
+                >
+                  Pune, Maharashtra
+                </p>
+                <p
+                  style="
+                    color: #6b7280;
+                    font-size: 15px;
+
+                    line-height: 1.5;
+                  "
+                >
+                  Mob : 9834873769
+                </p>
+              </div>
+
+              <hr
+                style="border: none; border-top: 1px solid #e5e7eb; margin: 0"
+              />
+
+              <!-- Payment Details -->
+              <div class="Payment-details-container" style="margin-top: 20px">
+                <div class="payment-header" style="margin-bottom: 15px">
+                  <h3 style="margin: 0 0 5px 0; font-size: 18px">Payment</h3>
+                  <p style="margin: 0; color: #6b7280; font-size: 14px">
+                    Choose your preferred payment method
+                  </p>
+                </div>
+
+                <!-- Payment Methods -->
+                <div
+                  class="payments-methods"
+                  style="
+                    border: 1px solid #e5e7eb;
+                    border-radius: 10px;
+                    overflow: hidden;
+                  "
+                >
+                  <div
+                    class="payment-methods-header"
+                    style="
+                      display: flex;
+                      align-items: center;
+                      padding: 15px 20px;
+                    "
+                  >
+                    <div
+                      class="payment-methods-header-text"
+                      style="
+                        flex: 1;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                      "
+                    >
+                      <h4 style="margin: 0; font-size: 16px">
+                        Select Payment Method
+                      </h4>
+                    </div>
+                    <div
+                      class="payment-methods-header-icon"
+                      style="flex-shrink: 0; margin-left: 15px"
+                    >
+                      <img
+                        src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fcdn.asianlive.in%2Fdigital-website%2FSafeAndSecurePayment_6019661435803128727.png&w=384&q=75"
+                        alt="Safe and Secure Payment"
+                        style="width: 120px; height: auto"
+                      />
+                    </div>
+                  </div>
+                  <hr
+                    style="
+                      border: none;
+                      border-top: 1px solid #e5e7eb;
+                      margin: 0;
+                    "
+                  />
+
+                  <!-- Payment options would go here -->
+                  <div class="upi-container">
+                    <div class="upi-option">
+                      <div
+                        class="upi-row"
+                        style="
+                          display: flex;
+                          align-items: center;
+                          justify-content: space-between;
+
+                          width: 90%;
+                          max-width: 800px;
+                          margin: 20px auto;
+                          font-family: sans-serif;
+                        "
+                      >
+                        <!-- Left side: Icons and text -->
+                        <div
+                          class="upi-icons"
+                          style="display: flex; align-items: center; gap: 10px"
+                        >
+                          <i
+                            class="fa fa-check-circle"
+                            style="color: rgb(0 113 217); font-size: 18px"
+                            aria-hidden="true"
+                          ></i>
+                          <img
+                            src="Img\bhim-upi.png"
+                            alt="UPI"
+                            style="height: 20px"
+                          />
+
+                          <span style="font-weight: bold; font-size: 15px"
+                            >UPI</span
+                          >
+                          <span
+                            style="
+                              background-color: rgb(0 113 217);
+                              color: white;
+                              padding: 4px 10px;
+                              border-radius: 6px;
+                              font-size: 12px;
+                              font-weight: bold;
+                            "
+                            >Fastest - Recommended</span
+                          >
+                        </div>
+
+                        <!-- Right side: Chevron icon -->
+                        <div>
+                          <i
+                            class="fa fa-chevron-up"
+                            style="font-size: 14px; color: black"
+                            aria-hidden="true"
+                          ></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </article>
+      </main>
+
+      <!-- Footer Section -->
+      <footer>
+        <div class="footer-content">
+          <!-- Company Info Section -->
+          <section class="footer-logo-section">
+            <img
+              class="footer-logo"
+              src="https://www.asianfootwears.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fasian-wave-white.e9ed6354.png&w=256&q=75"
+              alt="Asian Footwear Logo"
+            />
+            <p class="footer-description">
+              Asian is one of the fastest growing and the most loved footwear
+              brands in India. Check out our incredible range and become an
+              AsianRider today
+            </p>
+            <!-- Social Media Links -->
+            <div class="social-icons">
+              <a href="#" class="social-icon" aria-label="LinkedIn"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="#" class="social-icon" aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-icon" aria-label="YouTube"
+                ><i class="fab fa-youtube"></i
+              ></a>
+              <a href="#" class="social-icon" aria-label="Twitter"
+                ><i class="fab fa-x-twitter"></i
+              ></a>
+            </div>
+          </section>
+
+          <!-- Contact Information -->
+          <section class="footer-contact">
+            <h3 class="footer-heading">
+              Contact Us
+              <span class="footer-heading-underline"></span>
+            </h3>
+            <address>
+              <p class="contact-text">
+                For inquiries about refunds, order issues:
+              </p>
+              <p class="contact-detail">
+                <i class="fas fa-phone contact-icon" aria-hidden="true"></i>
+                +91 7561000092
+              </p>
+              <p class="contact-detail">
+                <i class="fas fa-envelope contact-icon" aria-hidden="true"></i>
+                info@asianfootwears.com
+              </p>
+              <p class="contact-detail">
+                <i
+                  class="fas fa-map-marker-alt address-icon"
+                  aria-hidden="true"
+                ></i>
+                J-20, Udyog Nagar, Peeragarhi, Delhi<br />New Delhi - 110041
+              </p>
+            </address>
+            <div>
+              <p class="contact-text">For corporate/bulk purchases:</p>
+              <p class="contact-detail">
+                <i class="fas fa-phone contact-icon" aria-hidden="true"></i>
+                +91 9996027231
+              </p>
+            </div>
+          </section>
+
+          <!-- Quick Links Section -->
+          <nav class="footer-links" aria-label="Footer navigation">
+            <h3 class="footer-heading">
+              Quick Links
+              <span class="footer-heading-underline"></span>
+            </h3>
+            <ul class="footer-link-item">
+              <li><a href="#" class="footer-link">Privacy Policy</a></li>
+              <li><a href="#" class="footer-link">Refund Policy</a></li>
+              <li><a href="#" class="footer-link">Shipping Policy</a></li>
+              <li><a href="#" class="footer-link">Terms of Service</a></li>
+              <li>
+                <a href="#" class="footer-link">Corporate / Bulk Orders</a>
+              </li>
+              <li><a href="#" class="footer-link">Blog</a></li>
+              <li><a href="#" class="footer-link">Contact Us</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- Copyright Notice -->
+        <div class="footer-copyright">
+          <p>
+            All Rights Reserved by Asian Footwears Pvt. Ltd.<br />2025 ©
+            Copyright
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const hamburger = document.querySelector(".hamburger-menu");
+        const navMenu = document.querySelector(".nav-menu");
+
+        hamburger.addEventListener("click", function () {
+          navMenu.classList.toggle("active");
+          // Toggle between hamburger and close icon
+          const icon = hamburger.querySelector("i");
+          if (navMenu.classList.contains("active")) {
+            icon.classList.remove("fa-bars");
+            icon.classList.add("fa-times");
+          } else {
+            icon.classList.remove("fa-times");
+            icon.classList.add("fa-bars");
+          }
+        });
+
+        // Close menu when clicking on a nav item (for mobile)
+        const navItems = document.querySelectorAll(".nav-menu p");
+        navItems.forEach((item) => {
+          item.addEventListener("click", function () {
+            if (window.innerWidth <= 599) {
+              navMenu.classList.remove("active");
+              const icon = hamburger.querySelector("i");
+              icon.classList.remove("fa-times");
+              icon.classList.add("fa-bars");
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

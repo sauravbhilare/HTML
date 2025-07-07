@@ -1,0 +1,1448 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Asian Footwears - Premium quality footwear for men, women and kids"
+    />
+    <title>Asian Footwears - Product Listing</title>
+
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <style>
+      /* ========== DEFAULT STYLES ========== */
+      /* Reset and Base Styles */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+      }
+
+      /* Main Container */
+      .screen {
+        width: 100%;
+        overflow-x: hidden;
+      }
+
+      /* Top Navigation Bar */
+      .upper-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #f6f6f6;
+        padding: 5px 5%;
+        font-size: 12px;
+        border-top: 1px solid #e3d7e8;
+        border-bottom: 1px solid #e3d7e8;
+        flex-wrap: wrap;
+      }
+
+      .left {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .left p {
+        margin-right: 13px;
+        cursor: pointer;
+        position: relative;
+        color: #000;
+        white-space: nowrap;
+        margin: 5px 13px 5px 0;
+      }
+
+      .left p:not(:last-child)::after {
+        content: "|";
+        margin-left: 13px;
+        color: #000;
+        position: absolute;
+        right: -10px;
+      }
+
+      .right {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .right p {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        color: #000;
+        white-space: nowrap;
+        margin: 5px 0;
+      }
+
+      /* Main Navigation */
+      .lower-nav {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 5%;
+        border-bottom: 1px solid #ccc;
+        background-color: white;
+        position: relative;
+      }
+
+      .logo {
+        width: 120px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 15px;
+      }
+
+      .logo-img {
+        width: 100%;
+        max-width: 100px;
+      }
+
+      .nav-menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        font-size: 14px;
+        margin-bottom: 15px;
+        text-align: center;
+      }
+
+      .nav-menu p {
+        cursor: pointer;
+        font-weight: 200;
+        color: #000;
+        white-space: nowrap;
+        padding: 5px 0;
+      }
+
+      .other-activity {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        font-size: 16px;
+        color: #000;
+      }
+
+      .other-activity i {
+        cursor: pointer;
+        color: #000;
+      }
+
+      /* Hamburger Menu Styles */
+      .hamburger-menu {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        color: #000;
+        padding: 10px;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        z-index: 100;
+      }
+
+      /* Main Content */
+      .main-content {
+        width: 80%;
+        margin: 0 auto;
+        padding: 10px 0;
+      }
+
+      .offer-label {
+        background-color: #000;
+        color: white;
+        width: 100%;
+        text-align: center;
+        padding: 5px;
+      }
+
+      /* Product Display */
+      .product-display {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        gap: 10px;
+        margin-top: 15px;
+        flex-wrap: wrap;
+      }
+
+      .multi-pro-img {
+        width: 10%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .up-btn,
+      .down-btn {
+        width: 100%;
+        text-align: center;
+      }
+
+      .up-btn button,
+      .down-btn button {
+        border: none;
+        border-radius: 10px;
+        padding: 5px 15px;
+        text-align: center;
+        cursor: pointer;
+        background-color: #f6f6f6;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        font-size: 20px;
+        width: 100%;
+      }
+
+      .pro-multi-imgs {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        overflow-y: auto;
+        max-height: 550px;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        width: 100px;
+        margin: 0 auto;
+      }
+
+      .pro-multi-imgs::-webkit-scrollbar {
+        display: none;
+      }
+
+      .pro-multi-imgs figure {
+        border: 1px solid #e0e0e0;
+        border-radius: 10px;
+        padding: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .pro-multi-imgs figure:hover {
+        border-color: #0071d9;
+      }
+
+      .pro-multi-imgs figure img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .pro-img {
+        width: 40%;
+        padding: 10px;
+
+        align-items: center;
+        justify-content: center;
+        flex-grow: 1;
+      }
+
+      .pro-img-container {
+        width: 100%;
+        height: auto;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .pro-img-container img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        display: block;
+        border-radius: 20px;
+      }
+
+      /* Updated Product Info Section */
+      .pro-info {
+        width: 100%;
+        padding: 15px;
+      }
+
+      /* Consistent card styling for all product info sections */
+      .pro-details,
+      .pro-colors,
+      .pro-size,
+      .add-to-cart-btn,
+      .return-policy,
+      .offer-section {
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        background-color: #fff;
+        margin-bottom: 15px;
+        width: 100%;
+        transition: all 0.3s ease;
+      }
+
+      .pro-details:hover,
+      .pro-colors:hover,
+      .pro-size:hover,
+      .return-policy:hover,
+      .offer-section:hover {
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+      }
+
+      /* Ensure consistent padding */
+      .pro-details,
+      .pro-colors,
+      .pro-size,
+      .return-policy {
+        padding: 20px;
+      }
+
+      .pro-name {
+        font-size: 22px;
+        font-weight: bold;
+        margin-bottom: 5px;
+      }
+
+      .pro-sub-name {
+        font-size: 15px;
+        color: #888;
+        margin-bottom: 15px;
+      }
+
+      .pro-price-details {
+        margin-top: 15px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .pro-discounted-price {
+        font-size: 24px;
+        font-weight: bold;
+        color: #000;
+        margin: 0;
+      }
+
+      .pro-org-price {
+        font-size: 18px;
+        color: gray;
+        text-decoration: line-through;
+        margin: 0;
+      }
+
+      .pro-discount {
+        font-size: 18px;
+        color: rgb(3, 166, 135);
+        padding: 3px 8px;
+        border-radius: 5px;
+        background-color: rgba(3, 166, 135, 0.1);
+      }
+
+      .like {
+        width: 36px;
+        height: 36px;
+        background-color: #fff;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        margin-left: 5px;
+        border: none;
+        transition: all 0.3s ease;
+      }
+
+      .like:hover {
+        background-color: #f0f0f0;
+      }
+
+      .like i {
+        font-size: 18px;
+        color: #888;
+      }
+
+      .tax {
+        font-size: 15px;
+        color: #888;
+        width: 100%;
+        margin-top: 5px;
+      }
+
+      .select-color {
+        font-size: 16px;
+        margin: 10px 0;
+        font-weight: bold;
+      }
+
+      .count-color {
+        font-weight: lighter;
+        font-size: 15px;
+      }
+
+      .color-options {
+        display: flex;
+        gap: 10px;
+        overflow-x: auto;
+        padding-bottom: 10px;
+      }
+
+      .color-option {
+        min-width: 75px;
+        height: 95px;
+        border-radius: 10px;
+        border: 1px solid #e0e0e0;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2px;
+        box-sizing: border-box;
+        overflow: hidden;
+        background: none;
+        flex-shrink: 0;
+        transition: all 0.3s ease;
+      }
+
+      .color-option:hover {
+        border-color: #0071d9;
+        transform: translateY(-2px);
+      }
+
+      .color-option img {
+        border-radius: 8px;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .pro-size-details {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .size-chart {
+        color: rgb(0 113 217);
+        cursor: pointer;
+        background: none;
+        border: none;
+        font-size: 14px;
+      }
+
+      .size-options {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: center;
+        margin-top: 15px;
+      }
+
+      .size-option-box {
+        width: 50px;
+        height: 50px;
+        border-radius: 10px;
+        border: 1px solid #e0e0e0;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: none;
+        transition: all 0.3s ease;
+      }
+
+      .size-option-box:hover {
+        border-color: #0071d9;
+        background-color: #f5f9ff;
+      }
+
+      .add-to-cart-btn button {
+        width: 100%;
+        padding: 18px;
+        background-color: rgb(0 113 217);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+        margin-top: 10px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+      }
+
+      .add-to-cart-btn button:hover {
+        background-color: #005bb5;
+      }
+
+      .return-policy-Details {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .return-policy-icon img {
+        width: 80px;
+        height: 80px;
+      }
+
+      .return-policy-title {
+        font-weight: bold;
+        font-size: 16px;
+      }
+
+      .return-policy-description {
+        font-size: 15px;
+        color: #666;
+      }
+
+      .return-policy-img img {
+        width: 100%;
+        border-radius: 8px;
+        margin-top: 10px;
+      }
+
+      /* Offer Section */
+      .offer-section {
+        margin: 20px auto;
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .offer-container {
+        border: 1px solid #e0e0e0;
+        border-radius: 10px;
+        padding: 25px;
+        position: relative;
+      }
+
+      .offer-badge {
+        background-color: rgb(3 166 135);
+        color: white;
+        padding: 8px 15px;
+        border: none;
+        border-radius: 5px;
+        font-size: 14px;
+        position: absolute;
+        top: -15px;
+        left: 20px;
+        font-weight: bold;
+      }
+
+      .offer-description {
+        color: #555;
+        font-size: 14px;
+        line-height: 1.5;
+        margin-top: 20px;
+      }
+
+      .offer-description strong {
+        color: #000;
+      }
+
+      .offer-code {
+        color: black;
+        font-weight: bold;
+        font-size: 16px;
+        margin-top: 10px;
+      }
+
+      /* Footer */
+      footer {
+        background-color: #111;
+        color: #fff;
+        padding: 40px 0 20px;
+        font-family: "Arial", sans-serif;
+      }
+
+      .footer-content {
+        width: 85%;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+      }
+
+      .footer-logo-section {
+        flex: 1;
+        min-width: 250px;
+      }
+
+      .footer-logo {
+        width: 140px;
+        margin-bottom: 20px;
+      }
+
+      .footer-description {
+        margin: 0 0 20px 0;
+        line-height: 1.6;
+        color: #ccc;
+        font-size: 14px;
+      }
+
+      .social-icons {
+        font-size: 20px;
+        display: flex;
+        gap: 15px;
+        margin-bottom: 20px;
+      }
+
+      .social-icon {
+        color: #fff;
+        transition: color 0.3s;
+      }
+
+      .social-icon:hover {
+        color: #ff6b00;
+      }
+
+      .footer-contact {
+        flex: 1;
+        min-width: 250px;
+      }
+
+      .footer-heading {
+        font-size: 18px;
+        margin-bottom: 15px;
+        color: #fff;
+        position: relative;
+        padding-bottom: 8px;
+      }
+
+      .footer-heading-underline {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 2px;
+        background: #ff6b00;
+      }
+
+      .contact-text {
+        font-weight: 600;
+        margin-bottom: 12px;
+        color: #ddd;
+        font-size: 14px;
+      }
+
+      .contact-detail {
+        margin: 6px 0;
+        display: flex;
+        align-items: center;
+        color: #ccc;
+        font-size: 14px;
+      }
+
+      .contact-icon {
+        margin-right: 10px;
+        color: #ff6b00;
+        font-size: 14px;
+      }
+
+      .address-icon {
+        margin-right: 10px;
+        color: #ff6b00;
+        margin-top: 3px;
+        font-size: 14px;
+      }
+
+      .footer-links {
+        flex: 1;
+        min-width: 200px;
+      }
+
+      .footer-link-item {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        line-height: 2;
+      }
+
+      .footer-link {
+        color: #ccc;
+        text-decoration: none;
+        transition: color 0.3s;
+        font-size: 14px;
+      }
+
+      .footer-link:hover {
+        color: #ff6b00;
+      }
+
+      .footer-copyright {
+        width: 85%;
+        max-width: 1200px;
+        margin: 30px auto 0;
+        border-top: 1px solid #333;
+        padding-top: 20px;
+        text-align: center;
+        font-size: 13px;
+        color: #999;
+      }
+
+      /* ========== RESPONSIVE STYLES ========== */
+      /* Large Desktop (1024px and up) */
+      @media (min-width: 1024px) {
+        .upper-nav {
+          padding: 5px 140px;
+        }
+
+        .lower-nav {
+          padding: 0 140px;
+        }
+
+        .nav-menu {
+          gap: 35px;
+          font-size: 17px;
+        }
+
+        .other-activity {
+          gap: 25px;
+          font-size: 18px;
+        }
+
+        .pro-info {
+          width: 30%;
+        }
+      }
+
+      /* Desktop (768px and up) */
+      @media (min-width: 768px) {
+        .upper-nav {
+          padding: 5px 5%;
+          font-size: 12px;
+        }
+
+        .lower-nav {
+          height: 80px;
+          flex-direction: row;
+          padding: 0 5%;
+        }
+
+        .logo {
+          width: 120px;
+          margin-bottom: 0;
+        }
+
+        .nav-menu {
+          flex-wrap: nowrap;
+          gap: 20px;
+          font-size: 15px;
+          margin-bottom: 0;
+        }
+
+        .other-activity {
+          gap: 20px;
+          font-size: 16px;
+        }
+
+        .pro-info {
+          width: 30%;
+        }
+
+        .offer-section {
+          margin: 20px 0;
+          max-width: 100%;
+        }
+
+        footer {
+          padding: 50px 0 25px;
+        }
+
+        .footer-content {
+          gap: 40px;
+          flex-wrap: nowrap;
+        }
+
+        .footer-logo-section {
+          flex: 1;
+        }
+        .footer-contact {
+          flex: 1;
+        }
+        .footer-links {
+          flex: 1;
+        }
+      }
+
+      /* Tablet (600px to 767px) */
+      @media (min-width: 600px) and (max-width: 767px) {
+        .footer-logo-section,
+        .footer-contact,
+        .footer-links {
+          flex: 1 1 calc(50% - 15px);
+        }
+
+        .product-display {
+          flex-direction: column;
+        }
+
+        .multi-pro-img {
+          width: 100%;
+          flex-direction: row;
+          order: 2;
+        }
+
+        .pro-multi-imgs {
+          flex-direction: row;
+          max-height: none;
+          max-width: 100%;
+          overflow-x: auto;
+          width: auto;
+          gap: 10px;
+          padding: 10px 0;
+        }
+
+        .pro-multi-imgs figure {
+          min-width: 80px;
+          margin: 0;
+        }
+
+        .pro-img {
+          width: 100%;
+          order: 1;
+        }
+
+        .pro-info {
+          width: 100%;
+          order: 3;
+        }
+
+        .up-btn,
+        .down-btn {
+          display: none;
+        }
+      }
+
+      /* Mobile (480px and below) */
+      @media (max-width: 599px) {
+        .upper-nav {
+          padding: 5px 3%;
+          font-size: 10px;
+          justify-content: center;
+        }
+
+        .left p:not(:last-child)::after {
+          margin-left: 8px;
+          right: -8px;
+        }
+
+        .nav-menu {
+          gap: 8px;
+          font-size: 12px;
+        }
+
+        .nav-menu p {
+          padding: 3px 0;
+        }
+
+        .other-activity {
+          gap: 15px;
+          font-size: 14px;
+        }
+
+        .main-content {
+          width: 95%;
+        }
+
+        .product-display {
+          flex-direction: column;
+          padding: 5px;
+        }
+
+        .multi-pro-img {
+          width: 100%;
+          flex-direction: row;
+          order: 2;
+        }
+
+        .pro-multi-imgs {
+          flex-direction: row;
+          max-height: none;
+          max-width: 100%;
+          overflow-x: auto;
+          width: auto;
+          gap: 5px;
+          padding: 5px 0;
+        }
+
+        .pro-multi-imgs figure {
+          min-width: 70px;
+          margin: 0;
+          border: 1px solid #ccc;
+        }
+
+        .pro-img {
+          width: 100%;
+          order: 1;
+          padding: 5px;
+        }
+
+        .pro-img-container {
+          border-radius: 10px;
+        }
+
+        .pro-info {
+          width: 100%;
+          order: 3;
+          padding: 5px;
+        }
+
+        .pro-details {
+          padding: 15px;
+        }
+
+        .pro-colors,
+        .pro-size,
+        .return-policy {
+          padding: 15px;
+        }
+
+        .color-option {
+          width: 60px;
+          height: 80px;
+        }
+
+        .up-btn,
+        .down-btn {
+          display: none;
+        }
+
+        footer {
+          padding: 30px 0 15px;
+        }
+
+        .footer-content {
+          width: 90%;
+          gap: 25px;
+        }
+
+        .footer-heading {
+          font-size: 16px;
+        }
+
+        .footer-description,
+        .contact-detail,
+        .footer-link {
+          font-size: 13px;
+        }
+
+        .footer-copyright {
+          font-size: 12px;
+          padding-top: 15px;
+          margin-top: 20px;
+        }
+
+        /* Enhanced Hamburger menu styles */
+        .hamburger-menu {
+          display: block;
+        }
+
+        .lower-nav {
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: center;
+          padding: 15px 5%;
+        }
+
+        .logo {
+          order: 1;
+          margin-bottom: 15px;
+          width: 100%;
+          text-align: center;
+        }
+
+        .other-activity {
+          order: 3;
+          width: 100%;
+          justify-content: center;
+          margin-top: 15px;
+        }
+
+        .nav-menu {
+          display: none;
+          width: 100%;
+          flex-direction: column;
+          background-color: white;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          z-index: 99;
+          padding: 15px 0;
+          box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+          border-bottom: 1px solid #ccc;
+        }
+
+        .nav-menu.active {
+          display: flex;
+        }
+
+        .nav-menu p {
+          padding: 10px 0;
+          width: 100%;
+          border-bottom: 1px solid #f0f0f0;
+        }
+
+        .nav-menu p:last-child {
+          border-bottom: none;
+        }
+      }
+
+      /* Small Mobile (360px and below) */
+      @media (max-width: 360px) {
+        .upper-nav {
+          justify-content: center;
+          text-align: center;
+        }
+
+        .left,
+        .right {
+          justify-content: center;
+        }
+
+        .left p {
+          margin: 5px 8px;
+        }
+
+        .left p:not(:last-child)::after {
+          margin-left: 5px;
+          right: -8px;
+        }
+
+        .pro-details {
+          padding: 10px;
+        }
+
+        .pro-name {
+          font-size: 18px;
+        }
+
+        .pro-discounted-price {
+          font-size: 20px;
+        }
+
+        .pro-org-price,
+        .pro-discount {
+          font-size: 16px;
+        }
+
+        .color-option {
+          width: 50px;
+          height: 70px;
+        }
+
+        .size-option-box {
+          width: 40px;
+          height: 40px;
+          font-size: 14px;
+        }
+
+        .add-to-cart-btn button {
+          padding: 15px;
+          font-size: 13px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Main Container -->
+    <div class="screen">
+      <!-- Top Navigation Bar -->
+      <nav class="upper-nav" aria-label="Utility navigation">
+        <div class="left">
+          <p>Find a Store</p>
+          <p>Help</p>
+          <p>Corporate Orders</p>
+        </div>
+        <div class="right">
+          <p>Hi, Guest <i class="fa-regular fa-user" aria-hidden="true"></i></p>
+        </div>
+      </nav>
+
+      <!-- Main Navigation -->
+      <header class="lower-nav">
+        <!-- Logo -->
+        <div class="logo">
+          <img
+            class="logo-img"
+            src="https://www.asianfootwears.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.9fed0b3f.png&w=640&q=75"
+            alt="Asian Footwears logo"
+          />
+        </div>
+
+        <!-- Hamburger Menu Button (Mobile Only) -->
+        <button class="hamburger-menu" aria-label="Menu">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Navigation Menu -->
+        <nav class="nav-menu" aria-label="Main navigation">
+          <p>Mens</p>
+          <p>Womens</p>
+          <p>Kids</p>
+          <p>Collections</p>
+          <p>Institutional</p>
+          <p>Quantum Series</p>
+          <p>Accessories</p>
+        </nav>
+
+        <!-- Action Icons -->
+        <div class="other-activity">
+          <i class="fa-solid fa-magnifying-glass" aria-label="Search"></i>
+          <i class="fa-regular fa-heart" aria-label="Wishlist"></i>
+          <i class="fa-solid fa-bag-shopping" aria-label="Shopping cart"></i>
+        </div>
+      </header>
+
+      <!-- Main Content Area -->
+      <main>
+        <section class="offer-label">
+          <p>
+            Mid Season Sale! Save Upto 70% OFF + extra 10% off Use Code:
+            MIDSALE10
+          </p>
+        </section>
+        <article class="main-content">
+          <div class="product-display">
+            <aside class="multi-pro-img">
+              <!-- Up Button -->
+              <div class="up-btn">
+                <button aria-label="Scroll thumbnails up">
+                  <i class="fa fa-angle-up"></i>
+                </button>
+              </div>
+
+              <!-- Image List -->
+              <div class="pro-multi-imgs">
+                <!-- Product Thumbnails -->
+                <figure>
+                  <img
+                    src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fcdn.asianlive.in%2Fproduct_assets%2Fmexico-01%2Fwhite-lgrey-orange%2Fcreative-angle-photo%2Fcreative%20angle%20photo_55069372107373903443.jpg&w=256&q=75"
+                    alt="Product creative angle view"
+                  />
+                </figure>
+
+                <figure>
+                  <img
+                    src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fcdn.asianlive.in%2Fproduct_assets%2Fmexico-01%2Fwhite-lgrey-orange%2Fphoto-top-angle%2Ftop%20angle%20photo_89355338685913876961.jpg&w=256&q=75"
+                    alt="Product top angle view"
+                  />
+                </figure>
+
+                <figure>
+                  <img
+                    src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fcdn.asianlive.in%2Fproduct_assets%2Fmexico-01%2Fwhite-lgrey-orange%2Fsole-photo%2Fsole%20photo_75637814370643894021.jpg&w=256&q=75"
+                    alt="Product sole view"
+                  />
+                </figure>
+
+                <figure>
+                  <img
+                    src="http://asianfootwears.com/_next/image?url=https%3A%2F%2Fcdn.asianlive.in%2Fproduct_assets%2Fmexico-01%2Fwhite-lgrey-orange%2Fback-photo%2Fback%20photo_95509340556227837594.jpg&w=256&q=75"
+                    alt="Product back view"
+                  />
+                </figure>
+
+                <figure>
+                  <img
+                    src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fcdn.asianlive.in%2Fproduct_assets%2Fmexico-01%2Fwhite-lgrey-orange%2Fphoto-side-angle%2Fside%20angle%20photo_47063870599623320936.jpg&w=256&q=75"
+                    alt="Product side angle view"
+                  />
+                </figure>
+              </div>
+
+              <!-- Down Button -->
+              <div class="down-btn">
+                <button aria-label="Scroll thumbnails down">
+                  <i class="fa fa-angle-down"></i>
+                </button>
+              </div>
+            </aside>
+
+            <figure class="pro-img">
+              <div class="pro-img-container">
+                <img
+                  src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fcdn.asianlive.in%2Fproduct_assets%2Fmexico-01%2Fwhite-lgrey-orange%2Fprimary-photo%2Fprimary%20photo_44124357365025094981.jpg&w=2048&q=75"
+                  alt="MEXICO 01 Sneaker primary view"
+                />
+              </div>
+            </figure>
+
+            <section class="pro-info">
+              <div class="pro-info-div">
+                <div class="pro-details">
+                  <div class="pro-name-details">
+                    <h1 class="pro-name">MEXICO 01</h1>
+                    <p class="pro-sub-name">Asian MEXICO-01 Sneaker For Men</p>
+                  </div>
+
+                  <div class="pro-price-details">
+                    <div>
+                      <h2 class="pro-discounted-price">₹ 807.45</h2>
+                      <p class="pro-org-price">MRP ₹ 1499</p>
+                    </div>
+
+                    <div>
+                      <span class="pro-discount">(46% off)</span>
+
+                      <!-- Heart icon -->
+                      <button class="like" aria-label="Add to wishlist">
+                        <i class="fa-regular fa-heart"></i>
+                      </button>
+                    </div>
+
+                    <p class="tax">Inclusive of all taxes</p>
+                  </div>
+                </div>
+                <div class="pro-colors">
+                  <h2 class="select-color">
+                    SELECT COLOR<span class="count-color"> (3 colors)</span>
+                  </h2>
+                  <div class="color-options">
+                    <button
+                      class="color-option"
+                      aria-label="White black grey color option"
+                    >
+                      <img
+                        src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fcdn.asianlive.in%2Fproduct_assets%2Fmexico-01%2Fwhite-black-lgrey%2Fprimary-photo%2Fprimary%20photo_4835156832754153020.jpg&w=256&q=75"
+                        alt="White black grey color"
+                      />
+                    </button>
+                    <button
+                      class="color-option"
+                      aria-label="White grey color option"
+                    >
+                      <img
+                        src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fcdn.asianlive.in%2Fproduct_assets%2Fmexico-01%2Fwhite-lgrey%2Fprimary-photo%2Fprimary%20photo_14550048659813559249.jpg&w=256&q=75"
+                        alt="White grey color"
+                      />
+                    </button>
+                    <button
+                      class="color-option"
+                      aria-label="White grey orange color option"
+                    >
+                      <img
+                        src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fcdn.asianlive.in%2Fproduct_assets%2Fmexico-01%2Fwhite-lgrey-orange%2Fprimary-photo%2Fprimary%20photo_44124357365025094981.jpg&w=256&q=75"
+                        alt="White grey orange color"
+                      />
+                    </button>
+                  </div>
+                </div>
+                <div class="pro-size">
+                  <div class="pro-size-details">
+                    <div class="size-title">
+                      <h2 class="select-color">
+                        SELECT SIZE<span class="count-color"> (UK Size)</span>
+                      </h2>
+                    </div>
+                    <div class="size-chart-link">
+                      <button class="size-chart">Size chart</button>
+                    </div>
+                  </div>
+                  <div class="size-options">
+                    <button class="size-option-box" aria-label="Size 6 UK">
+                      6
+                    </button>
+                    <button class="size-option-box" aria-label="Size 7 UK">
+                      7
+                    </button>
+                    <button class="size-option-box" aria-label="Size 8 UK">
+                      8
+                    </button>
+                    <button class="size-option-box" aria-label="Size 9 UK">
+                      9
+                    </button>
+                    <button class="size-option-box" aria-label="Size 10 UK">
+                      10
+                    </button>
+                  </div>
+                </div>
+                <div class="add-to-cart-btn">
+                  <button>ADD TO CART</button>
+                </div>
+                <section class="return-policy">
+                  <div class="return-policy-Details">
+                    <div class="return-policy-icon">
+                      <img
+                        src="https://www.asianfootwears.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Freturn.d3a0cd58.png&w=256&q=75"
+                        alt="Return policy icon"
+                      />
+                    </div>
+                    <div class="return-policy-text">
+                      <h2 class="return-policy-title">FREE 7 DAYS RETURN</h2>
+                      <p class="return-policy-description">
+                        Choose to return or exchange for a different product
+                      </p>
+                    </div>
+                  </div>
+                  <figure class="return-policy-img">
+                    <img
+                      src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fs3-ap-southeast-1.amazonaws.com%2Fasianapp%2Fdigital-website%2FFooter_mob_61630651548999322189.jpg&w=1080&q=75"
+                      alt="Return policy details"
+                    />
+                  </figure>
+                </section>
+
+                <section class="offer-section">
+                  <div class="offer-container">
+                    <button class="offer-badge">% Offers</button>
+                    <p class="offer-description">
+                      Monsoon Sale! Save Upto <strong>70% OFF</strong> + extra
+                      <strong>10% off</strong> (Minimum order value 500)<br />
+                      Excluded Accessories. Use Code:
+                    </p>
+                    <p class="offer-code">MONSOON10</p>
+                  </div>
+                </section>
+              </div>
+            </section>
+          </div>
+        </article>
+      </main>
+
+      <!-- Footer Section -->
+      <footer>
+        <div class="footer-content">
+          <!-- Company Info Section -->
+          <section class="footer-logo-section">
+            <img
+              class="footer-logo"
+              src="https://www.asianfootwears.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fasian-wave-white.e9ed6354.png&w=256&q=75"
+              alt="Asian Footwear Logo"
+            />
+            <p class="footer-description">
+              Asian is one of the fastest growing and the most loved footwear
+              brands in India. Check out our incredible range and become an
+              AsianRider today
+            </p>
+            <!-- Social Media Links -->
+            <div class="social-icons">
+              <a href="#" class="social-icon" aria-label="LinkedIn"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="#" class="social-icon" aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-icon" aria-label="YouTube"
+                ><i class="fab fa-youtube"></i
+              ></a>
+              <a href="#" class="social-icon" aria-label="Twitter"
+                ><i class="fab fa-x-twitter"></i
+              ></a>
+            </div>
+          </section>
+
+          <!-- Contact Information -->
+          <section class="footer-contact">
+            <h3 class="footer-heading">
+              Contact Us
+              <span class="footer-heading-underline"></span>
+            </h3>
+            <address>
+              <p class="contact-text">
+                For inquiries about refunds, order issues:
+              </p>
+              <p class="contact-detail">
+                <i class="fas fa-phone contact-icon" aria-hidden="true"></i>
+                +91 7561000092
+              </p>
+              <p class="contact-detail">
+                <i class="fas fa-envelope contact-icon" aria-hidden="true"></i>
+                info@asianfootwears.com
+              </p>
+              <p class="contact-detail">
+                <i
+                  class="fas fa-map-marker-alt address-icon"
+                  aria-hidden="true"
+                ></i>
+                J-20, Udyog Nagar, Peeragarhi, Delhi<br />New Delhi - 110041
+              </p>
+            </address>
+            <div>
+              <p class="contact-text">For corporate/bulk purchases:</p>
+              <p class="contact-detail">
+                <i class="fas fa-phone contact-icon" aria-hidden="true"></i>
+                +91 9996027231
+              </p>
+            </div>
+          </section>
+
+          <!-- Quick Links Section -->
+          <nav class="footer-links" aria-label="Footer navigation">
+            <h3 class="footer-heading">
+              Quick Links
+              <span class="footer-heading-underline"></span>
+            </h3>
+            <ul class="footer-link-item">
+              <li><a href="#" class="footer-link">Privacy Policy</a></li>
+              <li><a href="#" class="footer-link">Refund Policy</a></li>
+              <li><a href="#" class="footer-link">Shipping Policy</a></li>
+              <li><a href="#" class="footer-link">Terms of Service</a></li>
+              <li>
+                <a href="#" class="footer-link">Corporate / Bulk Orders</a>
+              </li>
+              <li><a href="#" class="footer-link">Blog</a></li>
+              <li><a href="#" class="footer-link">Contact Us</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- Copyright Notice -->
+        <div class="footer-copyright">
+          <p>
+            All Rights Reserved by Asian Footwears Pvt. Ltd.<br />2025 ©
+            Copyright
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const hamburger = document.querySelector(".hamburger-menu");
+        const navMenu = document.querySelector(".nav-menu");
+
+        hamburger.addEventListener("click", function () {
+          navMenu.classList.toggle("active");
+          // Toggle between hamburger and close icon
+          const icon = hamburger.querySelector("i");
+          if (navMenu.classList.contains("active")) {
+            icon.classList.remove("fa-bars");
+            icon.classList.add("fa-times");
+          } else {
+            icon.classList.remove("fa-times");
+            icon.classList.add("fa-bars");
+          }
+        });
+
+        // Close menu when clicking on a nav item (for mobile)
+        const navItems = document.querySelectorAll(".nav-menu p");
+        navItems.forEach((item) => {
+          item.addEventListener("click", function () {
+            if (window.innerWidth <= 599) {
+              navMenu.classList.remove("active");
+              const icon = hamburger.querySelector("i");
+              icon.classList.remove("fa-times");
+              icon.classList.add("fa-bars");
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
