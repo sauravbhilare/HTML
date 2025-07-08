@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic Meta Tags -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Asian Footwears - Premium quality footwear for men, women and kids"
+    />
+    <title>Asian Footwears - User Profile</title>
+
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <style>
+      /* ========== DEFAULT STYLES ========== */
+      /* Reset and Base Styles */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: rgb(255 255 255);
+      }
+
+      /* Main Container */
+      .screen {
+        width: 100%;
+        overflow-x: hidden;
+      }
+
+      /* Top Navigation Bar */
+      .upper-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #f6f6f6;
+        padding: 5px 5%;
+        font-size: 12px;
+        border-top: 1px solid #e3d7e8;
+        border-bottom: 1px solid #e3d7e8;
+        flex-wrap: wrap;
+      }
+
+      .upper-nav .left,
+      .upper-nav .right {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .upper-nav p {
+        margin-right: 13px;
+        cursor: pointer;
+        position: relative;
+        color: #000;
+        white-space: nowrap;
+        margin: 5px 13px 5px 0;
+      }
+
+      .upper-nav .left p:not(:last-child)::after {
+        content: "|";
+        margin-left: 13px;
+        color: #000;
+        position: absolute;
+        right: -10px;
+      }
+
+      /* Main Navigation */
+      .lower-nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 5%;
+        border-bottom: 1px solid #ccc;
+        background-color: white;
+        position: relative;
+      }
+
+      .lower-nav .logo {
+        width: 120px;
+        margin-bottom: 15px;
+      }
+
+      .lower-nav .logo-img {
+        width: 100%;
+        max-width: 100px;
+      }
+
+      .lower-nav .nav-menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        font-size: 14px;
+        margin-bottom: 15px;
+      }
+
+      .lower-nav .nav-menu p {
+        cursor: pointer;
+        font-weight: 200;
+        color: #000;
+        white-space: nowrap;
+        padding: 5px 0;
+      }
+
+      .lower-nav .other-activity {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        font-size: 16px;
+      }
+
+      .lower-nav .other-activity i {
+        cursor: pointer;
+        color: #000;
+      }
+
+      /* Hamburger Menu Styles */
+      .lower-nav .hamburger-menu {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 24px;
+        cursor: pointer;
+        color: #000;
+        padding: 10px;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        z-index: 100;
+      }
+
+      /* Main Content */
+      .main-content {
+        width: 80%;
+        margin: 0 auto;
+        padding: 10px 0;
+      }
+
+      .offer-label {
+        background-color: #000;
+        color: white;
+        width: 100%;
+        text-align: center;
+        padding: 5px;
+      }
+
+      .divider {
+        border: none;
+        border-top: 1px solid #e5e7eb;
+        margin: 15px 0;
+      }
+
+      /* Profile Section Styles */
+      .profile-info-container {
+        width: 100%;
+        display: flex;
+        gap: 80px;
+        margin-top: 20px;
+      }
+
+      .profile-img-container {
+        width: 30%;
+        border: 1px solid #e5e7eb;
+        border-radius: 5px;
+      }
+
+      .profile-img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 30px;
+      }
+
+      .profile-img img {
+        width: 30%;
+        border-radius: 50%;
+      }
+
+      .menu-container {
+        width: 100%;
+      }
+
+      .profile-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 20px;
+        border-bottom: 1px solid #eee;
+        cursor: pointer;
+      }
+
+      .profile-header.selected {
+        background-color: #f9f9f9;
+      }
+
+      .profile-header:last-child {
+        border-bottom: none;
+      }
+
+      .menu-left {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .selected-indicator {
+        width: 4px;
+        height: 24px;
+        background-color: red;
+        border-radius: 2px;
+      }
+
+      .menu-text {
+        font-weight: 500;
+      }
+
+      .menu-text.selected {
+        font-weight: 700;
+        color: black;
+      }
+
+      .menu-right {
+        color: #888;
+      }
+
+      /* Profile Info Section */
+      .profile-info {
+        width: 70%;
+        margin-top: 20px;
+      }
+
+      .user-data {
+        width: 100%;
+      }
+
+      .form-group {
+        width: 100%;
+        margin-bottom: 15px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-left: 10px;
+        margin-bottom: 5px;
+        font-size: 14px;
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+        color: black;
+      }
+
+      .form-row {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 15px;
+      }
+
+      .form-col {
+        width: 45%;
+      }
+
+      .gender-toggle {
+        display: flex;
+        width: 100%;
+        border: 1px solid #ccc;
+        border-radius: 15px;
+        overflow: hidden;
+        margin-top: 5px;
+        font-size: 14px;
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .gender-option {
+        flex: 1;
+        padding: 15px 0;
+        cursor: pointer;
+      }
+
+      .gender-option.male {
+        background-color: black;
+        color: white;
+      }
+
+      .gender-option.female {
+        background-color: white;
+        color: black;
+      }
+
+      .required-field {
+        color: red;
+      }
+
+      .btn-save {
+        width: 100%;
+        padding: 10px;
+        background-color: rgb(0 113 217);
+        border-radius: 5px;
+        color: white;
+        font-size: 16px;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+      }
+
+      /* Footer */
+      footer {
+        background-color: #111;
+        color: #fff;
+        padding: 40px 0 20px;
+        font-family: "Arial", sans-serif;
+      }
+
+      .footer-content {
+        width: 85%;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+      }
+
+      .footer-logo-section,
+      .footer-contact,
+      .footer-links {
+        flex: 1;
+        min-width: 250px;
+      }
+
+      .footer-logo {
+        width: 140px;
+        margin-bottom: 20px;
+      }
+
+      .footer-description {
+        margin: 0 0 20px 0;
+        line-height: 1.6;
+        color: #ccc;
+        font-size: 14px;
+      }
+
+      .social-icons {
+        font-size: 20px;
+        display: flex;
+        gap: 15px;
+        margin-bottom: 20px;
+      }
+
+      .social-icon {
+        color: #fff;
+        transition: color 0.3s;
+      }
+
+      .social-icon:hover {
+        color: #ff6b00;
+      }
+
+      .footer-heading {
+        font-size: 18px;
+        margin-bottom: 15px;
+        color: #fff;
+        position: relative;
+        padding-bottom: 8px;
+      }
+
+      .footer-heading-underline {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 50px;
+        height: 2px;
+        background: #ff6b00;
+      }
+
+      .contact-text {
+        font-weight: 600;
+        margin-bottom: 12px;
+        color: #ddd;
+        font-size: 14px;
+      }
+
+      .contact-detail {
+        margin: 6px 0;
+        display: flex;
+        align-items: center;
+        color: #ccc;
+        font-size: 14px;
+      }
+
+      .contact-icon {
+        margin-right: 10px;
+        color: #ff6b00;
+        font-size: 14px;
+      }
+
+      .address-icon {
+        margin-right: 10px;
+        color: #ff6b00;
+        margin-top: 3px;
+        font-size: 14px;
+      }
+
+      .footer-link-item {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        line-height: 2;
+      }
+
+      .footer-link {
+        color: #ccc;
+        text-decoration: none;
+        transition: color 0.3s;
+        font-size: 14px;
+      }
+
+      .footer-link:hover {
+        color: #ff6b00;
+      }
+
+      .footer-copyright {
+        width: 85%;
+        max-width: 1200px;
+        margin: 30px auto 0;
+        border-top: 1px solid #333;
+        padding-top: 20px;
+        text-align: center;
+        font-size: 13px;
+        color: #999;
+      }
+
+      /* ========== RESPONSIVE STYLES ========== */
+      /* Large Desktop (1024px and up) */
+      @media (min-width: 1024px) {
+        .upper-nav {
+          padding: 5px 140px;
+        }
+
+        .lower-nav {
+          padding: 0 140px;
+        }
+
+        .lower-nav .nav-menu {
+          gap: 35px;
+          font-size: 17px;
+        }
+
+        .lower-nav .other-activity {
+          gap: 25px;
+          font-size: 18px;
+        }
+
+        .main-content {
+          width: 80%;
+          max-width: 1200px;
+        }
+      }
+
+      /* Desktop (768px and up) */
+      @media (min-width: 768px) {
+        .lower-nav {
+          height: 80px;
+          flex-direction: row;
+          padding: 0 5%;
+        }
+
+        .lower-nav .logo {
+          margin-bottom: 0;
+        }
+
+        .lower-nav .nav-menu {
+          flex-wrap: nowrap;
+          gap: 20px;
+          font-size: 15px;
+          margin-bottom: 0;
+        }
+
+        footer {
+          padding: 50px 0 25px;
+        }
+
+        .footer-content {
+          gap: 40px;
+          flex-wrap: nowrap;
+        }
+      }
+
+      /* Tablet (600px to 767px) */
+      @media (min-width: 600px) and (max-width: 767px) {
+        .footer-logo-section,
+        .footer-contact,
+        .footer-links {
+          flex: 1 1 calc(50% - 15px);
+        }
+
+        .main-content {
+          width: 90%;
+        }
+
+        .profile-info-container {
+          flex-direction: column;
+          gap: 30px;
+        }
+
+        .profile-img-container,
+        .profile-info {
+          width: 100%;
+        }
+      }
+
+      /* Mobile (480px and below) */
+      @media (max-width: 599px) {
+        .upper-nav {
+          padding: 5px 3%;
+          font-size: 10px;
+          justify-content: center;
+        }
+
+        .upper-nav .left p:not(:last-child)::after {
+          margin-left: 8px;
+          right: -8px;
+        }
+
+        .main-content {
+          width: 95%;
+        }
+
+        footer {
+          padding: 30px 0 15px;
+        }
+
+        .footer-content {
+          width: 90%;
+          gap: 25px;
+        }
+
+        .footer-heading {
+          font-size: 16px;
+        }
+
+        .footer-description,
+        .contact-detail,
+        .footer-link {
+          font-size: 13px;
+        }
+
+        .footer-copyright {
+          font-size: 12px;
+          padding-top: 15px;
+          margin-top: 20px;
+        }
+
+        /* Enhanced Hamburger menu styles */
+        .lower-nav .hamburger-menu {
+          display: block;
+        }
+
+        .lower-nav {
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: center;
+          padding: 15px 5%;
+        }
+
+        .lower-nav .logo {
+          order: 1;
+          margin-bottom: 15px;
+          width: 100%;
+          text-align: center;
+        }
+
+        .lower-nav .other-activity {
+          order: 3;
+          width: 100%;
+          justify-content: center;
+          margin-top: 15px;
+        }
+
+        .lower-nav .nav-menu {
+          display: none;
+          width: 100%;
+          flex-direction: column;
+          background-color: white;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          z-index: 99;
+          padding: 15px 0;
+          box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+          border-bottom: 1px solid #ccc;
+        }
+
+        .lower-nav .nav-menu.active {
+          display: flex;
+        }
+
+        .lower-nav .nav-menu p {
+          padding: 10px 0;
+          width: 100%;
+          border-bottom: 1px solid #f0f0f0;
+        }
+
+        .lower-nav .nav-menu p:last-child {
+          border-bottom: none;
+        }
+
+        /* Profile section responsive */
+        .profile-info-container {
+          flex-direction: column;
+          gap: 30px;
+        }
+
+        .profile-img-container,
+        .profile-info {
+          width: 100%;
+        }
+
+        .form-row {
+          flex-direction: column;
+        }
+
+        .form-col {
+          width: 100%;
+        }
+      }
+
+      /* Small Mobile (360px and below) */
+      @media (max-width: 360px) {
+        .upper-nav .left p {
+          margin: 5px 8px;
+        }
+
+        .upper-nav .left p:not(:last-child)::after {
+          margin-left: 5px;
+          right: -8px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Main Container -->
+    <div class="screen">
+      <!-- Top Navigation Bar -->
+      <nav class="upper-nav" aria-label="Utility navigation">
+        <div class="left">
+          <p>Find a Store</p>
+          <p>Help</p>
+          <p>Corporate Orders</p>
+        </div>
+        <div class="right">
+          <p>Hi, Guest <i class="fa-regular fa-user" aria-hidden="true"></i></p>
+        </div>
+      </nav>
+
+      <!-- Main Navigation -->
+      <header class="lower-nav">
+        <!-- Logo -->
+        <div class="logo">
+          <img
+            class="logo-img"
+            src="https://www.asianfootwears.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.9fed0b3f.png&w=640&q=75"
+            alt="Asian Footwears logo"
+          />
+        </div>
+
+        <!-- Hamburger Menu Button (Mobile Only) -->
+        <button class="hamburger-menu" aria-label="Menu">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Navigation Menu -->
+        <nav class="nav-menu" aria-label="Main navigation">
+          <p>Mens</p>
+          <p>Womens</p>
+          <p>Kids</p>
+          <p>Collections</p>
+          <p>Institutional</p>
+          <p>Quantum Series</p>
+          <p>Accessories</p>
+        </nav>
+
+        <!-- Action Icons -->
+        <div class="other-activity">
+          <i class="fa-solid fa-magnifying-glass" aria-label="Search"></i>
+          <i class="fa-regular fa-heart" aria-label="Wishlist"></i>
+          <i class="fa-solid fa-bag-shopping" aria-label="Shopping cart"></i>
+        </div>
+      </header>
+
+      <!-- Main Content Area -->
+      <main>
+        <section class="offer-label">
+          <p>
+            Mid Season Sale! Save Upto 70% OFF + extra 10% off Use Code:
+            MIDSALE10
+          </p>
+        </section>
+        <article class="main-content">
+          <div class="profile-info-container">
+            <section class="profile-img-container">
+              <div class="profile-img">
+                <img
+                  src="https://www.asianfootwears.com/_next/image?url=https%3A%2F%2Fcdn.pixabay.com%2Fphoto%2F2015%2F10%2F05%2F22%2F37%2Fblank-profile-picture-973460_960_720.png&w=640&q=75"
+                  alt="Profile Image"
+                  class="profile-image"
+                />
+              </div>
+              <hr class="divider" />
+              <div class="menu-container">
+                <!-- User Details (Selected) -->
+                <div class="profile-header selected">
+                  <div class="menu-left">
+                    <div class="selected-indicator"></div>
+                    <i class="fa-regular fa-user"></i>
+                    <span class="menu-text selected">User Details</span>
+                  </div>
+                  <div class="menu-right">
+                    <i class="fa fa-chevron-right"></i>
+                  </div>
+                </div>
+
+                <!-- My Orders -->
+                <div class="profile-header">
+                  <div class="menu-left">
+                    <i class="fa fa-box-open"></i>
+                    <span class="menu-text">My Orders</span>
+                  </div>
+                  <div class="menu-right">
+                    <i class="fa fa-chevron-right"></i>
+                  </div>
+                </div>
+
+                <!-- My Address -->
+                <div class="profile-header">
+                  <div class="menu-left">
+                    <i class="fa fa-location-dot"></i>
+                    <span class="menu-text">My Address</span>
+                  </div>
+                  <div class="menu-right">
+                    <i class="fa fa-chevron-right"></i>
+                  </div>
+                </div>
+
+                <!-- Sign Out -->
+                <div class="profile-header">
+                  <div class="menu-left">
+                    <i class="fa fa-power-off"></i>
+                    <span class="menu-text">Sign out</span>
+                  </div>
+                  <div class="menu-right">
+                    <i class="fa fa-chevron-right"></i>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="profile-info">
+              <div class="user-data">
+                <!-- Name -->
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    placeholder="Name"
+                    class="form-control"
+                  />
+                </div>
+
+                <!-- Email ID -->
+                <div class="form-group">
+                  <label for="email">Email ID</label>
+                  <input
+                    type="email"
+                    id="email"
+                    placeholder="Email ID"
+                    class="form-control"
+                  />
+                </div>
+
+                <!-- Mobile Number -->
+                <div class="form-group">
+                  <label for="mobile">Mobile</label>
+                  <input
+                    type="tel"
+                    id="mobile"
+                    placeholder="Mobile"
+                    class="form-control"
+                  />
+                </div>
+
+                <!--Dob/Gender-->
+                <div class="form-row">
+                  <!-- DOB Section -->
+                  <div class="form-col">
+                    <label for="dob"
+                      >DOB <span class="required-field">*</span></label
+                    >
+                    <input
+                      type="date"
+                      id="dob"
+                      placeholder="DOB"
+                      class="form-control"
+                    />
+                  </div>
+
+                  <!-- Gender Section -->
+                  <div class="form-col">
+                    <label>Gender <span class="required-field">*</span></label>
+                    <div class="gender-toggle">
+                      <div
+                        class="gender-option male selected"
+                        onclick="selectGender('male')"
+                      >
+                        MALE
+                      </div>
+                      <div
+                        class="gender-option female"
+                        onclick="selectGender('female')"
+                      >
+                        FEMALE
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Alternate Mobile -->
+                <div class="form-group">
+                  <label for="alt-mobile">Alternate Mobile</label>
+                  <input
+                    type="tel"
+                    id="alt-mobile"
+                    placeholder="Alternate Mobile"
+                    class="form-control"
+                  />
+                </div>
+
+                <!-- Save Button -->
+                <div class="form-group">
+                  <button class="btn-save">SAVE CHANGES</button>
+                </div>
+              </div>
+            </section>
+          </div>
+        </article>
+      </main>
+
+      <!-- Footer Section -->
+      <footer>
+        <div class="footer-content">
+          <!-- Company Info Section -->
+          <section class="footer-logo-section">
+            <img
+              class="footer-logo"
+              src="https://www.asianfootwears.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fasian-wave-white.e9ed6354.png&w=256&q=75"
+              alt="Asian Footwear Logo"
+            />
+            <p class="footer-description">
+              Asian is one of the fastest growing and the most loved footwear
+              brands in India. Check out our incredible range and become an
+              AsianRider today
+            </p>
+            <!-- Social Media Links -->
+            <div class="social-icons">
+              <a href="#" class="social-icon" aria-label="LinkedIn"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="#" class="social-icon" aria-label="Instagram"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-icon" aria-label="YouTube"
+                ><i class="fab fa-youtube"></i
+              ></a>
+              <a href="#" class="social-icon" aria-label="Twitter"
+                ><i class="fab fa-x-twitter"></i
+              ></a>
+            </div>
+          </section>
+
+          <!-- Contact Information -->
+          <section class="footer-contact">
+            <h3 class="footer-heading">
+              Contact Us
+              <span class="footer-heading-underline"></span>
+            </h3>
+            <address>
+              <p class="contact-text">
+                For inquiries about refunds, order issues:
+              </p>
+              <p class="contact-detail">
+                <i class="fas fa-phone contact-icon" aria-hidden="true"></i>
+                +91 7561000092
+              </p>
+              <p class="contact-detail">
+                <i class="fas fa-envelope contact-icon" aria-hidden="true"></i>
+                info@asianfootwears.com
+              </p>
+              <p class="contact-detail">
+                <i
+                  class="fas fa-map-marker-alt address-icon"
+                  aria-hidden="true"
+                ></i>
+                J-20, Udyog Nagar, Peeragarhi, Delhi<br />New Delhi - 110041
+              </p>
+            </address>
+            <div>
+              <p class="contact-text">For corporate/bulk purchases:</p>
+              <p class="contact-detail">
+                <i class="fas fa-phone contact-icon" aria-hidden="true"></i>
+                +91 9996027231
+              </p>
+            </div>
+          </section>
+
+          <!-- Quick Links Section -->
+          <nav class="footer-links" aria-label="Footer navigation">
+            <h3 class="footer-heading">
+              Quick Links
+              <span class="footer-heading-underline"></span>
+            </h3>
+            <ul class="footer-link-item">
+              <li><a href="#" class="footer-link">Privacy Policy</a></li>
+              <li><a href="#" class="footer-link">Refund Policy</a></li>
+              <li><a href="#" class="footer-link">Shipping Policy</a></li>
+              <li><a href="#" class="footer-link">Terms of Service</a></li>
+              <li>
+                <a href="#" class="footer-link">Corporate / Bulk Orders</a>
+              </li>
+              <li><a href="#" class="footer-link">Blog</a></li>
+              <li><a href="#" class="footer-link">Contact Us</a></li>
+            </ul>
+          </nav>
+        </div>
+
+        <!-- Copyright Notice -->
+        <div class="footer-copyright">
+          <p>
+            All Rights Reserved by Asian Footwears Pvt. Ltd.<br />2025 ©
+            Copyright
+          </p>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const hamburger = document.querySelector(".hamburger-menu");
+        const navMenu = document.querySelector(".nav-menu");
+
+        hamburger.addEventListener("click", function () {
+          navMenu.classList.toggle("active");
+          // Toggle between hamburger and close icon
+          const icon = hamburger.querySelector("i");
+          if (navMenu.classList.contains("active")) {
+            icon.classList.remove("fa-bars");
+            icon.classList.add("fa-times");
+          } else {
+            icon.classList.remove("fa-times");
+            icon.classList.add("fa-bars");
+          }
+        });
+
+        // Close menu when clicking on a nav item (for mobile)
+        const navItems = document.querySelectorAll(".nav-menu p");
+        navItems.forEach((item) => {
+          item.addEventListener("click", function () {
+            if (window.innerWidth <= 599) {
+              navMenu.classList.remove("active");
+              const icon = hamburger.querySelector("i");
+              icon.classList.remove("fa-times");
+              icon.classList.add("fa-bars");
+            }
+          });
+        });
+      });
+
+      function selectGender(gender) {
+        const maleOption = document.querySelector(".gender-option.male");
+        const femaleOption = document.querySelector(".gender-option.female");
+
+        if (gender === "male") {
+          maleOption.classList.add("selected");
+          maleOption.style.backgroundColor = "black";
+          maleOption.style.color = "white";
+          femaleOption.classList.remove("selected");
+          femaleOption.style.backgroundColor = "white";
+          femaleOption.style.color = "black";
+        } else {
+          femaleOption.classList.add("selected");
+          femaleOption.style.backgroundColor = "black";
+          femaleOption.style.color = "white";
+          maleOption.classList.remove("selected");
+          maleOption.style.backgroundColor = "white";
+          maleOption.style.color = "black";
+        }
+      }
+    </script>
+  </body>
+</html>
